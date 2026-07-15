@@ -1,0 +1,37 @@
+---
+// Bookmarks component (scaffold).
+//
+// The markup below renders during the static build. The dynamic behavior —
+// adding a bookmark, generating a short slug, and persisting to the browser —
+// must run ONLY in the client-side <script> boundary at the bottom of this
+// file. Astro runs that script in the browser, never during the build, so
+// browser-only APIs are safe there.
+//
+// You will implement the behavior in Step 3.
+---
+<form id="add-bookmark">
+  <input id="url" name="url" type="url" placeholder="https://example.com" required />
+  <button type="submit">Add</button>
+</form>
+
+<ul id="bookmark-list" aria-live="polite">
+  <!-- Bookmarks render here in the browser. -->
+</ul>
+
+<script>
+  // CLIENT-SIDE BOUNDARY — runs in the browser only.
+  //
+  // TODO (Step 3): implement the bookmarks feature here.
+  //   1. On form submit, read the original URL.
+  //   2. Generate a short slug (for example, base62 of a counter or hash).
+  //   3. Save the original URL and its slug, then persist them in the browser.
+  //   4. Render each saved bookmark as: <original URL> — <slug>.
+  //
+  // Because this code lives in a client <script>, browser storage APIs are
+  // safe to use here without breaking the static build.
+  const form = document.getElementById('add-bookmark');
+  form?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    // Implement in Step 3.
+  });
+</script>

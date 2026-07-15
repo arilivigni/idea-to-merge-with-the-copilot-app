@@ -1,0 +1,174 @@
+name: Step 1
+
+on:
+  workflow_dispatch:
+  issues:
+    types:
+      - opened
+
+permissions:
+  contents: write
+  actions: write
+  issues: write
+
+env:
+  STEP_2_FILE: ".github/steps/2-step.md"
+
+jobs:
+  find_exercise:
+    name: Find Exercise Issue
+    uses: skills/exercise-toolkit/.github/workflows/find-exercise-issue.yml@v0.9.3
+
+  check_step_work:
+    name: Check step work
+    runs-on: ubuntu-latest
+    needs: [find_exercise]
+    env:
+      ISSUE_REPOSITORY: ${{ github.repository }}
+      ISSUE_NUMBER: ${{ needs.find_exercise.outputs.issue-number }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Get response templates
+        uses: actions/checkout@v5
+        with:
+          repository: skills/exercise-toolkit
+          path: exercise-toolkit
+          ref: v0.9.3
+
+      - name: Find last comment
+        id: find-last-comment
+        uses: peter-evans/find-comment@v3
+        with:
+          repository: ${{ env.ISSUE_REPOSITORY }}
+          issue-number: ${{ env.ISSUE_NUMBER }}
+          direction: last
+
+      - name: Update comment - checking work
+        uses: GrantBirki/comment@v2.1.1
+        with:
+          repository: ${{ env.ISSUE_REPOSITORY }}
+          issue-number: ${{ env.ISSUE_NUMBER }}
+          comment-id: ${{ steps.find-last-comment.outputs.comment-id }}
+          file: exercise-toolkit/markdown-templates/step-feedback/checking-work.md
+          edit-mode: replace
+
+      - name: Check issue is not the walkthrough issue
+        id: check-not-walkthrough
+        continue-on-error: true
+        env:
+          NEW_ISSUE_NUMBER: ${{ github.event.issue.number }}
+          WALKTHROUGH_ISSUE_NUMBER: ${{ needs.find_exercise.outputs.issue-number }}
+        run: |
+          if [ "$NEW_ISSUE_NUMBER" != "$WALKTHROUGH_ISSUE_NUMBER" ]; then
+            echo "New issue is a work item, not the walkthrough issue"
+            exit 0
+          else
+            echo "This is the walkthrough issue, not a new work item"
+            exit 1
+          fi
+
+      - name: Check issue title mentions bookmarks
+        id: check-issue-title
+        continue-on-error: true
+        env:
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+        run: |
+          if [[ "$ISSUE_TITLE" =~ [Bb]ookmark ]]; then
+            echo "Issue title mentions bookmarks"
+            exit 0
+          else
+            echo "Issue title does not mention bookmarks"
+            exit 1
+          fi
+
+      - name: Check issue body describes what the app stores
+        id: check-issue-body
+        continue-on-error: true
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: |
+          if [ -z "$ISSUE_BODY" ] || [ ${#ISSUE_BODY} -le 30 ]; then
+            echo "Issue body is empty or too short"
+            exit 1
+          fi
+          if echo "$ISSUE_BODY" | grep -iq "slug" && echo "$ISSUE_BODY" | grep -iq "url"; then
+            echo "Issue body names the original URL and the short slug"
+            exit 0
+          else
+            echo "Issue body should mention the original URL and a short slug"
+            exit 1
+          fi
+
+      - name: Update comment - step results
+        uses: GrantBirki/comment@v2.1.1
+        with:
+          repository: ${{ env.ISSUE_REPOSITORY }}
+          issue-number: ${{ env.ISSUE_NUMBER }}
+          comment-id: ${{ steps.find-last-comment.outputs.comment-id }}
+          edit-mode: replace
+          file: exercise-toolkit/markdown-templates/step-feedback/step-results-table.md
+          vars: |
+            step_number: 1
+            results_table:
+              - description: "A new work item issue was opened (not the walkthrough issue)"
+                passed: ${{ steps.check-not-walkthrough.outcome == 'success' }}
+              - description: "Issue title mentions bookmarks"
+                passed: ${{ steps.check-issue-title.outcome == 'success' }}
+              - description: "Issue describes what the app stores (URL + short slug)"
+                passed: ${{ steps.check-issue-body.outcome == 'success' }}
+
+      - name: Fail job if not all checks passed
+        if: contains(steps.*.outcome, 'failure')
+        run: exit 1
+
+  post_next_step_content:
+    name: Post next step content
+    needs: [find_exercise, check_step_work]
+    runs-on: ubuntu-latest
+    env:
+      ISSUE_REPOSITORY: ${{ github.repository }}
+      ISSUE_NUMBER: ${{ needs.find_exercise.outputs.issue-number }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Get response templates
+        uses: actions/checkout@v5
+        with:
+          repository: skills/exercise-toolkit
+          path: exercise-toolkit
+          ref: v0.9.3
+
+      - name: Create comment - step finished
+        uses: GrantBirki/comment@v2.1.1
+        with:
+          repository: ${{ env.ISSUE_REPOSITORY }}
+          issue-number: ${{ env.ISSUE_NUMBER }}
+          file: exercise-toolkit/markdown-templates/step-feedback/step-finished-prepare-next-step.md
+          vars: |
+            next_step_number: 2
+
+      - name: Create comment - add step content
+        uses: GrantBirki/comment@v2.1.1
+        with:
+          repository: ${{ env.ISSUE_REPOSITORY }}
+          issue-number: ${{ env.ISSUE_NUMBER }}
+          file: ${{ env.STEP_2_FILE }}
+
+      - name: Create comment - watching for progress
+        uses: GrantBirki/comment@v2.1.1
+        with:
+          repository: ${{ env.ISSUE_REPOSITORY }}
+          issue-number: ${{ env.ISSUE_NUMBER }}
+          file: exercise-toolkit/markdown-templates/step-feedback/watching-for-progress.md
+
+      - name: Disable current workflow and enable next one
+        run: |
+          gh workflow disable "${{github.workflow}}"
+          gh workflow enable "Step 2"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
