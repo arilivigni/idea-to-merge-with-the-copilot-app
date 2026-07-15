@@ -12,6 +12,30 @@ The GitHub Copilot App gives you **quick chat** for lightweight tasks and a conn
 
 The app you'll build stores each bookmark as two things: the **original URL** and a locally generated **short slug** (a display alias — there's no shortener service or backend).
 
+### Running this exercise in the Copilot App
+
+You can complete every step inside the app using a **three-panel** layout:
+
+| Panel | What it shows |
+| --- | --- |
+| **1 · Issue** | The walkthrough issue where each step's instructions and grading feedback appear as comments. |
+| **2 · Codespace editor** | The repository code — used for the light edits in Steps 2 and 5, and to watch the session in Step 3. |
+| **3 · App preview** | A browser canvas on the Codespace's **public** port, rendering the running app for the Step 5 demo. |
+
+Two commit patterns keep ceremony proportional to the change:
+
+- **Light edit → `main`** (Steps 2 and 5): a single-file change committed straight to the default branch.
+- **Feature work → issue-driven session → PR** (Step 3): the real build, delivered on its own branch and merged in Step 4.
+
+> [!IMPORTANT]
+> Do **Step 2 before starting the Step 3 session.** The build session branches from `main` and inherits the custom instructions, so the client-boundary rule must already be there.
+
+### Resetting or retrying
+
+- Each check re-runs automatically when you re-trigger it (edit the issue, push the file again, or reopen/update the PR).
+- If a step's feedback shows a red ❌, follow the **Having trouble?** notes in that step's comment and try again — there's no penalty for retries.
+- To start completely fresh, delete your copy and copy the exercise again.
+
 #### References
 
 - [Getting started with the Copilot App](https://docs.github.com/en/copilot)
