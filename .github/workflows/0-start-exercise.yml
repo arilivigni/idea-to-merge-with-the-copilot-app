@@ -62,9 +62,8 @@ jobs:
           issue-number: ${{ env.ISSUE_NUMBER }}
           file: exercise-toolkit/markdown-templates/step-feedback/watching-for-progress.md
 
-      - name: Disable this workflow and enable the next step
+      - name: Enable next step workflow
         run: |
-          gh workflow disable "Step 0"
           gh workflow enable "Step 1"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
