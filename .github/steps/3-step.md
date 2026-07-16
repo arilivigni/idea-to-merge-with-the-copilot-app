@@ -32,7 +32,13 @@ This is where the extra ceremony pays off. Launching a session **from the app is
    > ![Static Badge](https://img.shields.io/badge/Prompt-text?style=for-the-badge&logo=github-copilot&logoColor=white&labelColor=purple&color=purple)
    >
    > ```prompt
-   > Implement the bookmarks feature in src/components/Bookmarks.astro. Add a bookmark by its original URL, generate a short base62 slug for it, and save both to localStorage. Keep all localStorage access behind a client:load boundary (or the inline <script>) so the static Astro build never touches browser APIs.
+   > Implement the bookmarks feature in src/components/Bookmarks.astro:
+   > - Add a bookmark by its original URL
+   > - Generate a short base62 slug for each bookmark
+   > - Save both the URL and the slug to localStorage
+   > - Keep all localStorage access behind a client:load boundary
+   >   (or the inline <script>) so the static Astro build never
+   >   touches browser APIs
    > ```
 
 1. Commit and **open a pull request** whose body links the app issue with a closing keyword:
