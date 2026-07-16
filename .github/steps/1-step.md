@@ -63,7 +63,7 @@ To use the GitHub Copilot app, the first step — as you might imagine — is to
 
 <!-- image: connected repository shown in the app with quick chat open -->
 
-### ⌨️ Activity 2: Create the app issue from chat (graded)
+### ⌨️ Activity 2: Create the app issue from chat
 
 1. In quick chat, ask Copilot to draft an issue to build the bookmarks app. For example:
 
