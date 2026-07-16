@@ -22,7 +22,7 @@ jobs:
     uses: skills/exercise-toolkit/.github/workflows/start-exercise.yml@v0.9.3
     with:
       exercise-title: "Idea to Merge with the Copilot App"
-      intro-message: "Welcome! You'll take an idea from chat to a merged pull request — entirely in the GitHub Copilot App — while building a small bookmarks app. Let's go 🚀"
+      intro-message: "Welcome! You'll take an idea from a session to a merged pull request — entirely in the GitHub Copilot App — while building a small bookmarks app. Let's go 🚀"
 
   post_next_step_content:
     name: Post next step content

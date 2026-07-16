@@ -22,8 +22,8 @@ You'll complete every step **inside the app**, using three surfaces:
 
 Two commit patterns keep ceremony proportional to the change:
 
-- **Light edit → `main`** (Steps 2 and 5): a single-file change made in the editor canvas and committed straight to the default branch.
-- **Feature work → issue-driven session → PR** (Step 3): the real build, delivered on its own branch and merged in Step 4.
+- **Light edit → `main`** (Steps 2 and 4): a single-file change made in the editor canvas and committed straight to the default branch.
+- **Feature work → issue-driven session → PR** (Step 3): the real build, delivered on its own branch and merged in Step 3.
 
 > [!IMPORTANT]
 > Do **Step 2 before starting the Step 3 session.** The build session branches from `main` and inherits the custom instructions, so the client-boundary rule must already be there.
@@ -37,7 +37,7 @@ Two commit patterns keep ceremony proportional to the change:
 #### References
 
 - [Getting started with the Copilot App](https://docs.github.com/en/copilot/how-tos/github-copilot-app/getting-started)
-- [Managing issues and pull requests with the Copilot App](https://docs.github.com/en/copilot/how-tos/github-copilot-app/getting-started)
+- [Managing issues and pull requests with the Copilot App](https://docs.github.com/en/copilot/how-tos/github-copilot-app/managing-issues-and-pull-requests)
 
 ### ⌨️ Activity 1: Install and connect
 
