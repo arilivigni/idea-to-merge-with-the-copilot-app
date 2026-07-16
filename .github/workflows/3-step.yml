@@ -176,21 +176,43 @@ jobs:
             exit 1
           fi
 
-      - name: Check a work item issue is now closed
+      - name: Check the merged pull request closed its linked work item issue
         id: check-issue-closed
         continue-on-error: true
-        run: |
-          CLOSED_COUNT=$(gh issue list --repo ${{ github.repository }} --state closed --json number --jq 'length')
-          echo "Closed issues: $CLOSED_COUNT"
-          if [ "$CLOSED_COUNT" -ge 1 ]; then
-            echo "At least one work item issue is closed"
-            exit 0
-          else
-            echo "No closed work item issues found"
-            exit 1
-          fi
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          WALKTHROUGH_ISSUE_NUMBER: ${{ needs.find_exercise.outputs.issue-number }}
+        run: |
+          if [ -z "$PR_NUMBER" ]; then
+            echo "No pull request in context (manual dispatch); skipping linked-issue check."
+            exit 0
+          fi
+
+          # Ask GitHub which issues this PR is set to close, and their state.
+          CLOSED_LINKED=$(gh api graphql \
+            -f query='query($owner:String!,$repo:String!,$pr:Int!){
+              repository(owner:$owner,name:$repo){
+                pullRequest(number:$pr){
+                  closingIssuesReferences(first:20){ nodes { number state } }
+                }
+              }
+            }' \
+            -f owner="${{ github.repository_owner }}" \
+            -f repo="${{ github.event.repository.name }}" \
+            -F pr="$PR_NUMBER" \
+            --jq "[.data.repository.pullRequest.closingIssuesReferences.nodes[]
+                   | select(.number != ($WALKTHROUGH_ISSUE_NUMBER|tonumber))
+                   | select(.state == \"CLOSED\")] | length")
+
+          echo "Linked work item issues now closed by this PR: $CLOSED_LINKED"
+          if [ "$CLOSED_LINKED" -ge 1 ]; then
+            echo "The merged pull request closed its linked work item issue."
+            exit 0
+          else
+            echo "No linked work item issue was closed. Ensure the PR body used a closing keyword (e.g. 'Closes #<app-issue-number>') pointing at your bookmarks issue, not the walkthrough issue."
+            exit 1
+          fi
 
       - name: Update comment - step results
         uses: GrantBirki/comment@v2.1.1
@@ -205,7 +227,7 @@ jobs:
             results_table:
               - description: "The pull request was merged into main"
                 passed: ${{ steps.check-merged.outcome == 'success' }}
-              - description: "The linked work item issue was closed"
+              - description: "The merged PR closed its linked work item issue"
                 passed: ${{ steps.check-issue-closed.outcome == 'success' }}
 
       - name: Fail job if not all checks passed
