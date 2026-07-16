@@ -10,6 +10,7 @@ _Take an idea from a chat message to a merged pull request — entirely in the G
 - **Prerequisites**:
   - The **GitHub Copilot App** installed and signed in
   - A GitHub Copilot subscription (Free, Pro, Pro+, Business, or Enterprise)
+  - **Node.js 18+ and npm** installed locally (to run the app in Step 5)
   - Basic familiarity with GitHub issues and pull requests
 - **How long**: This exercise takes roughly **45 minutes** to complete. The Step 3 build-and-ship work is the long pole, so allow a little more on your first run.
 

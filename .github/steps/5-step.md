@@ -9,6 +9,9 @@ You'll run the app from a session's **Terminal** and preview it in a **browser c
 - Start the dev server in the session **Terminal**, then open a **browser canvas** on the local dev URL to see the app running.
 - This is a **light commit**: the screenshot goes **directly to `main`** — no session or PR.
 
+> [!NOTE]
+> Run this session **locally** (choose **a new working tree** or **your local repository** as the run location) so the dev server is reachable at `http://localhost:4321`. If you use a cloud sandbox, the app runs remotely and you'd need its forwarded preview URL instead.
+
 <!-- image: browser canvas previewing the running app -->
 
 #### References
@@ -17,9 +20,10 @@ You'll run the app from a session's **Terminal** and preview it in a **browser c
 
 ### ⌨️ Activity 1: Preview, capture, and submit (graded)
 
-1. In a session **Terminal** on your repository, start the dev server:
+1. In a session **Terminal** on your repository, install dependencies (first run only) and start the dev server:
 
    ```bash
+   npm install
    npm run dev
    ```
 
