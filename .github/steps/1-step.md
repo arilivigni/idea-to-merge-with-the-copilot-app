@@ -58,10 +58,11 @@ To use the GitHub Copilot app, the first step — as you might imagine — is to
 
 1. Open the app once it's installed.
 1. Select **Sign in to GitHub** and follow the prompts to authenticate.
-1. Connect **your copy** of this exercise repository (`{{full_repo_name}}`).
-1. Open **quick chat** and confirm Copilot can summarize the repository context.
+1. After authenticating, you'll be asked about connecting your repositories. Select the (`{{full_repo_name}}`) repo you just created.
 
-<!-- image: connected repository shown in the app with quick chat open -->
+   <!-- image: connecting the exercise repository in the app -->
+
+1. Open **quick chat** and confirm Copilot can summarize the repository context.
 
 ### ⌨️ Activity 2: Create the app issue from chat
 
@@ -73,7 +74,11 @@ To use the GitHub Copilot app, the first step — as you might imagine — is to
    - has a **title that mentions bookmarks** (for example, `Build the bookmarks app`), and
    - has a **body that names both** the **original URL** and the **short slug**.
 
-<!-- image: created issue with the title marker applied -->
+   <!-- image: created issue with the title marker applied -->
+
+1. Open the issue you just created in a **browser canvas** so you can keep it visible while you work through the rest of the exercise. In the app, open a browser canvas and navigate to the new issue (for example, `https://github.com/{{full_repo_name}}/issues`), then select your **Build the bookmarks app** issue.
+
+   <!-- image: created issue open in a browser canvas -->
 
 > [!TIP]
 > If chat can't see repository context, re-check that **your copy** of the exercise repository is connected before drafting the issue.
