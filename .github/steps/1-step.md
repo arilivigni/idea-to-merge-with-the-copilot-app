@@ -66,7 +66,7 @@ To use the GitHub Copilot app, the first step — as you might imagine — is to
 
 1. Open a **session** on your checked-out repository, then prompt the agent to bring this exercise up in the right side panel:
 
-   > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
+   > ![Static Badge](https://img.shields.io/badge/Prompt-text?style=for-the-badge&logo=github-copilot&logoColor=white&labelColor=purple&color=purple)
    >
    > ```prompt
    > open the main readme of this repository in a browser canvas
@@ -82,7 +82,7 @@ To use the GitHub Copilot app, the first step — as you might imagine — is to
 
 1. In your session, ask Copilot to draft an issue to build the bookmarks app. For example:
 
-   > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
+   > ![Static Badge](https://img.shields.io/badge/Prompt-text?style=for-the-badge&logo=github-copilot&logoColor=white&labelColor=purple&color=purple)
    >
    > ```prompt
    > Draft a GitHub issue titled "Build the bookmarks app". In the body, describe an Astro app that saves each bookmark as its original URL plus a locally generated short slug, persisted in the browser. Then create the issue in this repository.

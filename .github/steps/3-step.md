@@ -29,7 +29,7 @@ This is where the extra ceremony pays off. Launching a session **from the app is
    <!-- image: issue-driven session running with the Files and Changes tabs -->
 1. Prompt the agent to implement the bookmarks feature in `src/components/Bookmarks.astro`: add a bookmark, generate a short slug, and save both to **`localStorage`** from a **`client:load`** boundary (or the inline `<script>` already scaffolded). For example:
 
-   > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
+   > ![Static Badge](https://img.shields.io/badge/Prompt-text?style=for-the-badge&logo=github-copilot&logoColor=white&labelColor=purple&color=purple)
    >
    > ```prompt
    > Implement the bookmarks feature in src/components/Bookmarks.astro. Add a bookmark by its original URL, generate a short base62 slug for it, and save both to localStorage. Keep all localStorage access behind a client:load boundary (or the inline <script>) so the static Astro build never touches browser APIs.
