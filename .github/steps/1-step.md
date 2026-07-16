@@ -46,12 +46,18 @@ Two commit patterns keep ceremony proportional to the change:
 > [!NOTE]
 > This activity is **app-only** and can't be graded — there's no repository signal for install or sign-in. Complete it to unlock the graded work in Activity 2.
 
-1. Install the **GitHub Copilot App** and sign in. Download it from **https://github.com/features/ai/github-app**, then choose the download for your platform (macOS, Windows, or Linux).
+To use the GitHub Copilot app, the first step — as you might imagine — is to install it. Versions are available for Windows, macOS, and Linux. Let's install the app, authenticate, and add your exercise repository to the app.
+
+1. In a browser, open the landing page for the GitHub Copilot app: **https://github.com/features/ai/github-app**.
 
    <img width="70%" alt="GitHub Copilot app download page with platform options" src="../images/step1-app-download-page.png" />
 
+1. Download the app for your platform and install it following the instructions provided on the landing page.
+
    <img width="70%" alt="Downloading and installing the GitHub Copilot app" src="../images/step1-app-download.gif" />
 
+1. Open the app once it's installed.
+1. Select **Sign in to GitHub** and follow the prompts to authenticate.
 1. Connect **your copy** of this exercise repository (`{{full_repo_name}}`).
 1. Open **quick chat** and confirm Copilot can summarize the repository context.
 
