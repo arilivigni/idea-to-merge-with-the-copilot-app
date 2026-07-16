@@ -8,6 +8,8 @@ files use `<!-- image: ... -->` HTML-comment placeholders so issue comments rend
 
 | File | Step | Shows |
 | --- | --- | --- |
+| `step1-app-download-page.png` | 1 | GitHub Copilot app download page with platform options |
+| `step1-app-download.gif` | 1 | Downloading and installing the GitHub Copilot app |
 | `step1-install-signin.png` | 1 | App install / sign-in screen |
 | `step1-chat-draft-issue.png` | 1 | Quick chat drafting the bookmarks issue |
 | `step1-connected-repo.png` | 1 | Connected repository with quick chat open |
