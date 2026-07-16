@@ -43,5 +43,6 @@ Two rules matter for this app:
 - The file must contain the exact tokens **`localStorage`** and **`client:load`**.
 - Remove the seeded **`TODO`** marker entirely — the check fails while any TODO remains.
 - Make sure you pushed to **`main`**, not a branch.
+- Still stuck on the app itself? See [Getting started with the Copilot App](https://docs.github.com/en/copilot/how-tos/github-copilot-app/getting-started).
 
 </details>

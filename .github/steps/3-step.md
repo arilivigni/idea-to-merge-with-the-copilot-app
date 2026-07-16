@@ -19,7 +19,7 @@ This is where the extra ceremony pays off. Launching a session **from the app is
 
 #### References
 
-- [Agent sessions in the Copilot App](https://docs.github.com/en/copilot)
+- [Agent sessions in the Copilot App](https://docs.github.com/en/copilot/how-tos/github-copilot-app/getting-started)
 - [Astro components and client directives](https://docs.astro.build/en/reference/directives-reference/#client-directives)
 
 ### ⌨️ Activity 1: Build in a session, then open the PR (graded)
@@ -43,5 +43,6 @@ This is where the extra ceremony pays off. Launching a session **from the app is
 - The PR body must contain a closing keyword and an issue number, e.g. `Closes #2`.
 - `src/components/Bookmarks.astro` must reference **`localStorage`**.
 - The app must build. If the build fails, make sure `localStorage` runs inside the client `<script>` / `client:load` boundary, never at the top of the component frontmatter.
+- Still stuck on the app itself? See [Getting started with the Copilot App](https://docs.github.com/en/copilot/how-tos/github-copilot-app/getting-started).
 
 </details>

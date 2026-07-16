@@ -38,8 +38,8 @@ Two commit patterns keep ceremony proportional to the change:
 
 #### References
 
-- [Getting started with the Copilot App](https://docs.github.com/en/copilot)
-- [Managing issues and pull requests with Copilot](https://docs.github.com/en/copilot)
+- [Getting started with the Copilot App](https://docs.github.com/en/copilot/how-tos/github-copilot-app/getting-started)
+- [Managing issues and pull requests with the Copilot App](https://docs.github.com/en/copilot/how-tos/github-copilot-app/getting-started)
 
 ### ⌨️ Activity 1: Install and connect (guided, not graded)
 
@@ -79,5 +79,6 @@ Two commit patterns keep ceremony proportional to the change:
 - The title must contain the word **bookmark** (any case).
 - The body must mention both a **URL** and a **slug**, and be more than a sentence long.
 - Edit the issue title or body to re-run the check.
+- Still stuck on the app itself? See [Getting started with the Copilot App](https://docs.github.com/en/copilot/how-tos/github-copilot-app/getting-started).
 
 </details>

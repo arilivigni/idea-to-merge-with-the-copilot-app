@@ -36,5 +36,6 @@ You'll run the app in a Codespace and preview it in a **browser canvas** on the 
 - The file must be exactly `submission/demo-proof.png`.
 - It must be a real screenshot (a tiny or empty file will fail the check).
 - Make sure you pushed to **`main`**.
+- Still stuck on the app itself? See [Getting started with the Copilot App](https://docs.github.com/en/copilot/how-tos/github-copilot-app/getting-started).
 
 </details>

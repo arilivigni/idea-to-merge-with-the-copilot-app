@@ -16,7 +16,7 @@ The Copilot App can review and merge pull requests directly.
 
 #### References
 
-- [Managing pull requests with Copilot](https://docs.github.com/en/copilot)
+- [Managing pull requests with the Copilot App](https://docs.github.com/en/copilot/how-tos/github-copilot-app/getting-started)
 
 ### ⌨️ Activity 1: Merge and confirm closure (graded)
 
@@ -31,5 +31,6 @@ The Copilot App can review and merge pull requests directly.
 
 - Make sure you **merge** the PR (not just close it).
 - If the app issue stays open, confirm the PR body used `Closes #<app-issue-number>`, then close the issue manually.
+- Still stuck on the app itself? See [Getting started with the Copilot App](https://docs.github.com/en/copilot/how-tos/github-copilot-app/getting-started).
 
 </details>
