@@ -27,6 +27,8 @@ You'll run the app from a session's **Terminal** and preview it in a **browser c
    npm run dev
    ```
 
+   <!-- image: npm run dev running in the session Terminal -->
+
 1. Open a **browser canvas** on the local dev URL (for example, `http://localhost:4321`).
 1. Add a bookmark and confirm both the **original URL** and its **short slug** display.
 1. Capture a screenshot of the running app showing at least one bookmark **and** its slug, and save it as **`submission/demo-proof.png`**.

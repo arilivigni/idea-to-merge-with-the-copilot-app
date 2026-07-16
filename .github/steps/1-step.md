@@ -22,6 +22,8 @@ You'll complete every step **inside the app**, using three surfaces:
 | **Browser canvas** | The right side panel renders **live GitHub pages** — the README, your issue, the pull request, and the running app — with clickable links and buttons. Just ask the agent, for example: `open the main readme of this repository in a browser canvas`. |
 | **Files & Changes tabs + editor canvas** | Every session has built-in **Files** and **Changes** tabs for the working tree and diff. For the light hand-edits, open a file in a **lightweight editor canvas** and save it. |
 
+<!-- image: the app's three surfaces — chat, a browser canvas, and the Files/Changes tabs -->
+
 Two commit patterns keep ceremony proportional to the change:
 
 - **Light edit → `main`** (Steps 2 and 5): a single-file change made in the editor canvas and committed straight to the default branch.
