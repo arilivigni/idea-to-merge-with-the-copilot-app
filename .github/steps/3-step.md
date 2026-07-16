@@ -7,6 +7,11 @@ The rules are set. 🛠️ Now deliver the feature the way a team really does: i
 This is where the extra ceremony pays off. Launching a session **from the app issue** lets the agent implement the feature on its **own branch** and open a pull request — unlike the light `main` edits in Steps 2 and 5.
 
 - The session branches **from `main`**, so it inherits your Step 2 custom instructions.
+- Before it starts, you set three controls from the dropdowns below the prompt: **where it runs** (a new working tree, your local repository, or a cloud sandbox), the **session mode**, and the **model** and reasoning effort (**Auto** lets the app pick).
+- The **session mode** sets how much autonomy the agent has:
+  - **Interactive** — the agent proposes changes and waits for your input.
+  - **Plan** — the agent drafts a plan you approve before it executes.
+  - **Autopilot** — the agent works end to end on its own.
 - Each bookmark stores its **original URL** and a locally generated **short slug** (base62 of a hash/counter, for example). There is **no shortener service, redirect, or backend** — the slug is a display alias.
 - Bookmarks persist with **`localStorage`**, accessed **only** behind a **`client:load`** boundary so the static build doesn't fail.
 
@@ -19,12 +24,20 @@ This is where the extra ceremony pays off. Launching a session **from the app is
 
 #### References
 
-- [Agent sessions in the Copilot App](https://docs.github.com/en/copilot/how-tos/github-copilot-app/getting-started)
+- [Working with agent sessions in the Copilot App](https://docs.github.com/en/copilot/how-tos/github-copilot-app/agent-sessions)
 - [Astro components and client directives](https://docs.astro.build/en/reference/directives-reference/#client-directives)
 
 ### ⌨️ Activity 1: Build in a session, then open the PR (graded)
 
-1. From the **app issue** you created in Step 1, **launch an issue-driven session** (open the issue in **My work**, then click **New session**). Follow the work in the conversation, and use the session's **Files** and **Changes** tabs — or a **lightweight editor canvas** — to inspect or adjust files on the session branch.
+1. From the **app issue** you created in Step 1, **launch an issue-driven session**: open the issue in **My work**, then click **New session** so the issue context loads automatically.
+1. Set the session controls from the dropdowns below the prompt field:
+   - **Run location:** choose **a new working tree** (or your local repository) so the work lands on its own branch.
+   - **Session mode:** pick **Plan** to review the agent's approach first, or **Interactive** to work step by step. Avoid **Autopilot** for this exercise so you can see each change.
+   - **Model:** leave it on **Auto** unless you have a preference.
+
+   <!-- image: session mode, model, and run-location dropdowns below the prompt -->
+
+   Follow the work in the conversation, and use the session's **Files** and **Changes** tabs — or a **lightweight editor canvas** — to inspect or adjust files on the session branch.
 
    <!-- image: issue-driven session running with the Files and Changes tabs -->
 1. Prompt the agent to implement the bookmarks feature in `src/components/Bookmarks.astro`: add a bookmark, generate a short slug, and save both to **`localStorage`** from a **`client:load`** boundary (or the inline `<script>` already scaffolded). For example:
@@ -51,6 +64,9 @@ This is where the extra ceremony pays off. Launching a session **from the app is
 
 > [!TIP]
 > Point `Closes #<n>` at the **app issue** (not this walkthrough issue) so merging in Step 4 closes the right one automatically.
+
+> [!TIP]
+> Inside the prompt field you can reference an issue with **`#`**, pull a file into context with **`@`**, and run slash commands with **`/`** — handy for steering the agent as it builds.
 
 <details>
 <summary>Having trouble? 🤷</summary><br/>
