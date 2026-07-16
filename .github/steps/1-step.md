@@ -56,9 +56,13 @@ To use the GitHub Copilot app, the first step — as you might imagine — is to
 
 1. Open the app once it's installed.
 1. Select **Sign in to GitHub** and follow the prompts to authenticate.
-1. After authenticating, you'll be asked about connecting your repositories. Select the (`{{full_repo_name}}`) repo you just created. (You can also add it later with the **+** next to **Sessions** → **Repository URL**.)
+1. After authenticating, add your exercise repository. Click the **+** next to **Sessions**, then choose **Repository URL…**.
 
-   <!-- image: connecting the exercise repository in the app -->
+   <img width="40%" alt="Add project menu in the Copilot App with Repository URL highlighted" src="../images/step1-add-repo-url.png" />
+
+1. Paste the clone URL for the (`{{full_repo_name}}`) repo you just created, pick your GitHub account, and select **Clone**.
+
+   <img width="55%" alt="Clone repository dialog with the exercise repository URL entered" src="../images/step1-clone-repo-url.png" />
 
 1. Start a **New session** on your checked-out repository, then prompt the agent to bring this exercise up in the right side panel:
 
