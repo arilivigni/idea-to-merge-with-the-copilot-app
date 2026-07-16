@@ -41,7 +41,7 @@ Two commit patterns keep ceremony proportional to the change:
 - [Getting started with the Copilot App](https://docs.github.com/en/copilot/how-tos/github-copilot-app/getting-started)
 - [Managing issues and pull requests with the Copilot App](https://docs.github.com/en/copilot/how-tos/github-copilot-app/getting-started)
 
-### ⌨️ Activity 1: Install and connect (guided, not graded)
+### ⌨️ Activity 1: Install and connect
 
 > [!NOTE]
 > This activity is **app-only** and can't be graded — there's no repository signal for install or sign-in. Complete it to unlock the graded work in Activity 2.
