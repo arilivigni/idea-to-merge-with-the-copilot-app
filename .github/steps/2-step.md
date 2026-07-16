@@ -11,7 +11,7 @@ Two rules matter for this app:
 - **Persistence:** bookmarks are stored in the browser using **`localStorage`**.
 - **Hydration:** browser-only code must run behind a **client-side boundary** so Astro's static build never touches `localStorage` during SSR. In Astro, that's the **`client:load`** directive (or an inline `<script>`).
 
-<!-- image: editing copilot-instructions.md in the Codespace editor -->
+<!-- image: editing copilot-instructions.md in an editor canvas -->
 
 > [!IMPORTANT]
 > The custom instructions must be on `main` **before** you start the Step 3 build session, because that session branches from `main` and inherits these rules.
@@ -24,10 +24,10 @@ Two rules matter for this app:
 ### ⌨️ Activity 1: Commit the instructions to `main` (graded)
 
 > [!NOTE]
-> This is a **light, single-file edit** — commit it **directly to `main`** from a Codespace editor. No session and no pull request are needed.
+> This is a **light, single-file edit** — open the file in a **lightweight editor canvas** and commit it **directly to `main`**. No session and no pull request are needed.
 
-1. Open a **Codespace editor on `main`** for your copy of the repository.
-1. Open `.github/copilot-instructions.md` and **replace the `TODO` placeholder** with the two project rules:
+1. Open `.github/copilot-instructions.md` for your copy of the repository in a **lightweight editor canvas** (use the session's **Files** tab, or ask the agent to open it).
+1. **Replace the `TODO` placeholder** with the two project rules:
    - persistence uses browser **`localStorage`**, and
    - browser code runs behind a **`client:load`** boundary so SSR never touches `localStorage`.
 1. **Commit and push directly to `main`.**

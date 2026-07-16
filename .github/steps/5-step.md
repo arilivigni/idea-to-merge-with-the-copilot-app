@@ -2,28 +2,28 @@
 
 Last stop. 🎬 Show the finished app running, then submit a screenshot as your proof of completion.
 
-### 📖 Theory: preview on a public port
+### 📖 Theory: preview the running app in a browser canvas
 
-You'll run the app in a Codespace and preview it in a **browser canvas** on the Codespace's **public** port. A live local URL can't be verified by Actions, so the graded proof is a committed screenshot.
+You'll run the app from a session's **Terminal** and preview it in a **browser canvas** — all in the app. A live local URL can't be verified by Actions, so the graded proof is a committed screenshot.
 
-- Run the app in the Codespace and expose the dev port with **`publicPort`** so the browser canvas can render its shareable GitHub URL.
+- Start the dev server in the session **Terminal**, then open a **browser canvas** on the local dev URL to see the app running.
 - This is a **light commit**: the screenshot goes **directly to `main`** — no session or PR.
 
-<!-- image: browser canvas previewing the running app on the public port -->
+<!-- image: browser canvas previewing the running app -->
 
 #### References
 
-- [Forwarding ports in a codespace](https://docs.github.com/en/codespaces/developing-in-a-codespace/forwarding-ports-in-your-codespace)
+- [Getting started with the Copilot App](https://docs.github.com/en/copilot/how-tos/github-copilot-app/getting-started)
 
 ### ⌨️ Activity 1: Preview, capture, and submit (graded)
 
-1. In the Codespace, run:
+1. In a session **Terminal** on your repository, start the dev server:
 
    ```bash
    npm run dev
    ```
 
-1. Expose the dev port (4321) as **public** and open a **browser canvas** on that URL.
+1. Open a **browser canvas** on the local dev URL (for example, `http://localhost:4321`).
 1. Add a bookmark and confirm both the **original URL** and its **short slug** display.
 1. Capture a screenshot of the running app showing at least one bookmark **and** its slug, and save it as **`submission/demo-proof.png`**.
 1. **Commit and push the screenshot directly to `main`.**

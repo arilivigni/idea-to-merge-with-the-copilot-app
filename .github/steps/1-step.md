@@ -14,17 +14,17 @@ The app you'll build stores each bookmark as two things: the **original URL** an
 
 ### Running this exercise in the Copilot App
 
-You can complete every step inside the app using a **three-panel** layout:
+You'll complete every step **inside the app**, using three surfaces:
 
-| Panel | What it shows |
+| Surface | What it's for |
 | --- | --- |
-| **1 · Issue** | The walkthrough issue where each step's instructions and grading feedback appear as comments. |
-| **2 · Codespace editor** | The repository code — used for the light edits in Steps 2 and 5, and to watch the session in Step 3. |
-| **3 · App preview** | A browser canvas on the Codespace's **public** port, rendering the running app for the Step 5 demo. |
+| **Chat & sessions** | Drive the work — use **quick chat** for lightweight asks, and an **issue-driven session** (which runs on its own branch) for the build in Step 3. |
+| **Browser canvas** | The right side panel renders **live GitHub pages** — the README, your issue, the pull request, and the running app — with clickable links and buttons. Just ask the agent, for example: `open the main readme of this repository in a browser canvas`. |
+| **Files & Changes tabs + editor canvas** | Every session has built-in **Files** and **Changes** tabs for the working tree and diff. For the light hand-edits, open a file in a **lightweight editor canvas** and save it. |
 
 Two commit patterns keep ceremony proportional to the change:
 
-- **Light edit → `main`** (Steps 2 and 5): a single-file change committed straight to the default branch.
+- **Light edit → `main`** (Steps 2 and 5): a single-file change made in the editor canvas and committed straight to the default branch.
 - **Feature work → issue-driven session → PR** (Step 3): the real build, delivered on its own branch and merged in Step 4.
 
 > [!IMPORTANT]
@@ -58,9 +58,17 @@ To use the GitHub Copilot app, the first step — as you might imagine — is to
 
 1. Open the app once it's installed.
 1. Select **Sign in to GitHub** and follow the prompts to authenticate.
-1. After authenticating, you'll be asked about connecting your repositories. Select the (`{{full_repo_name}}`) repo you just created.
+1. After authenticating, you'll be asked about connecting your repositories. Select the (`{{full_repo_name}}`) repo you just created. (You can also add it later with the **+** next to **Sessions** → **Repository URL**.)
 
    <!-- image: connecting the exercise repository in the app -->
+
+1. Open a **session** on your repository, then prompt the agent to bring this exercise up in the right side panel:
+
+   > open the main readme of this repository in a browser canvas
+
+   The README renders as a live page you can read and click through without leaving the app.
+
+   <!-- image: exercise README open in a browser canvas -->
 
 1. Open **quick chat** and confirm Copilot can summarize the repository context.
 

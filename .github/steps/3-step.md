@@ -24,7 +24,7 @@ This is where the extra ceremony pays off. Launching a session **from the app is
 
 ### ⌨️ Activity 1: Build in a session, then open the PR (graded)
 
-1. From the **app issue** you created in Step 1, **launch an issue-driven session**. Optionally open a Codespace editor on the session branch to watch or adjust the work.
+1. From the **app issue** you created in Step 1, **launch an issue-driven session** (open the issue in **My work**, then click **New session**). Follow the work in the conversation, and use the session's **Files** and **Changes** tabs — or a **lightweight editor canvas** — to inspect or adjust files on the session branch.
 1. Implement the bookmarks feature in `src/components/Bookmarks.astro`: add a bookmark, generate a short slug, and save both to **`localStorage`** from a **`client:load`** boundary (or the inline `<script>` already scaffolded).
 1. Commit and **open a pull request** whose body links the app issue with a closing keyword:
 
