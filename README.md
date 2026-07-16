@@ -10,7 +10,7 @@ _Take an idea from a session to a merged pull request — entirely in the GitHub
 - **Prerequisites**:
   - The **GitHub Copilot App** installed and signed in
   - A GitHub Copilot subscription (Free, Pro, Pro+, Business, or Enterprise)
-  - **Node.js 18+ and npm** installed locally (to run the app in Step 5)
+  - **Node.js 18+ and npm** installed locally (to run the app in Step 4)
   - Basic familiarity with GitHub issues and pull requests
 - **How long**: This exercise takes roughly **45 minutes** to complete. The Step 3 build-and-ship work is the long pole, so allow a little more on your first run.
 
@@ -18,9 +18,8 @@ In this exercise, you will:
 
 1. Create a work item **issue from a session**.
 2. Set project rules in **`.github/copilot-instructions.md`** on `main`.
-3. Build the bookmarks app in an **issue-driven session** and open a pull request.
-4. **Review and merge** the pull request, auto-closing the linked issue.
-5. Preview the running app in a **browser canvas** and submit your proof.
+3. Build the bookmarks app in an **issue-driven session**, then open, **review, and merge** the pull request — auto-closing the linked issue.
+4. Preview the running app in a **browser canvas** and submit your proof.
 
 ### How to start this exercise
 

@@ -9,6 +9,7 @@ on:
       - opened
       - reopened
       - synchronize
+      - closed
 
 permissions:
   contents: write
@@ -24,8 +25,10 @@ jobs:
     name: Find Exercise Issue
     uses: skills/exercise-toolkit/.github/workflows/find-exercise-issue.yml@v0.9.3
 
-  check_step_work:
-    name: Check step work
+  # Activity 1 — runs when the pull request is opened or updated (not on close)
+  check_build:
+    name: Check step work - build and PR
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.action != 'closed' }}
     runs-on: ubuntu-latest
     needs: [find_exercise]
     env:
@@ -121,9 +124,97 @@ jobs:
         if: contains(steps.*.outcome, 'failure')
         run: exit 1
 
+  # Activity 2 — runs only when the pull request is merged
+  check_merge:
+    name: Check step work - review and merge
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.pull_request.merged == true }}
+    runs-on: ubuntu-latest
+    needs: [find_exercise]
+    env:
+      ISSUE_REPOSITORY: ${{ github.repository }}
+      ISSUE_NUMBER: ${{ needs.find_exercise.outputs.issue-number }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Get response templates
+        uses: actions/checkout@v5
+        with:
+          repository: skills/exercise-toolkit
+          path: exercise-toolkit
+          ref: v0.9.3
+
+      - name: Find last comment
+        id: find-last-comment
+        uses: peter-evans/find-comment@v3
+        with:
+          repository: ${{ env.ISSUE_REPOSITORY }}
+          issue-number: ${{ env.ISSUE_NUMBER }}
+          direction: last
+
+      - name: Update comment - checking work
+        uses: GrantBirki/comment@v2.1.1
+        with:
+          repository: ${{ env.ISSUE_REPOSITORY }}
+          issue-number: ${{ env.ISSUE_NUMBER }}
+          comment-id: ${{ steps.find-last-comment.outputs.comment-id }}
+          file: exercise-toolkit/markdown-templates/step-feedback/checking-work.md
+          edit-mode: replace
+
+      - name: Check the pull request was merged
+        id: check-merged
+        continue-on-error: true
+        env:
+          PR_MERGED: ${{ github.event.pull_request.merged }}
+        run: |
+          if [ "$PR_MERGED" = "true" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "Pull request was merged"
+            exit 0
+          else
+            echo "Pull request was closed without merging"
+            exit 1
+          fi
+
+      - name: Check a work item issue is now closed
+        id: check-issue-closed
+        continue-on-error: true
+        run: |
+          CLOSED_COUNT=$(gh issue list --repo ${{ github.repository }} --state closed --json number --jq 'length')
+          echo "Closed issues: $CLOSED_COUNT"
+          if [ "$CLOSED_COUNT" -ge 1 ]; then
+            echo "At least one work item issue is closed"
+            exit 0
+          else
+            echo "No closed work item issues found"
+            exit 1
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update comment - step results
+        uses: GrantBirki/comment@v2.1.1
+        with:
+          repository: ${{ env.ISSUE_REPOSITORY }}
+          issue-number: ${{ env.ISSUE_NUMBER }}
+          comment-id: ${{ steps.find-last-comment.outputs.comment-id }}
+          edit-mode: replace
+          file: exercise-toolkit/markdown-templates/step-feedback/step-results-table.md
+          vars: |
+            step_number: 3
+            results_table:
+              - description: "The pull request was merged into main"
+                passed: ${{ steps.check-merged.outcome == 'success' }}
+              - description: "The linked work item issue was closed"
+                passed: ${{ steps.check-issue-closed.outcome == 'success' }}
+
+      - name: Fail job if not all checks passed
+        if: contains(steps.*.outcome, 'failure')
+        run: exit 1
+
   post_next_step_content:
     name: Post next step content
-    needs: [find_exercise, check_step_work]
+    needs: [find_exercise, check_merge]
     runs-on: ubuntu-latest
     env:
       ISSUE_REPOSITORY: ${{ github.repository }}

@@ -1,12 +1,12 @@
-name: Step 4
+name: Step 4 # Last step of the exercise
 
 on:
   workflow_dispatch:
-  pull_request:
+  push:
     branches:
       - main
-    types:
-      - closed
+    paths:
+      - 'submission/demo-proof.png'
 
 permissions:
   contents: write
@@ -14,12 +14,12 @@ permissions:
   issues: write
 
 env:
-  STEP_5_FILE: ".github/steps/5-step.md"
+  REVIEW_FILE: ".github/steps/x-review.md"
 
 jobs:
   find_exercise:
     name: Find Exercise Issue
-    if: github.event.pull_request.merged == true || github.event_name == 'workflow_dispatch'
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.created == false }}
     uses: skills/exercise-toolkit/.github/workflows/find-exercise-issue.yml@v0.9.3
 
   check_step_work:
@@ -58,35 +58,36 @@ jobs:
           file: exercise-toolkit/markdown-templates/step-feedback/checking-work.md
           edit-mode: replace
 
-      - name: Check the pull request was merged
-        id: check-merged
+      - name: Check demo proof was added
+        id: check-proof-exists
         continue-on-error: true
-        env:
-          PR_MERGED: ${{ github.event.pull_request.merged }}
         run: |
-          if [ "$PR_MERGED" = "true" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            echo "Pull request was merged"
+          if [ -f submission/demo-proof.png ]; then
+            echo "Demo proof file exists"
             exit 0
           else
-            echo "Pull request was closed without merging"
+            echo "Demo proof file is missing"
             exit 1
           fi
 
-      - name: Check a work item issue is now closed
-        id: check-issue-closed
+      - name: Check demo proof is a real screenshot
+        id: check-proof-size
         continue-on-error: true
         run: |
-          CLOSED_COUNT=$(gh issue list --repo ${{ github.repository }} --state closed --json number --jq 'length')
-          echo "Closed issues: $CLOSED_COUNT"
-          if [ "$CLOSED_COUNT" -ge 1 ]; then
-            echo "At least one work item issue is closed"
-            exit 0
+          if [ -f submission/demo-proof.png ]; then
+            SIZE=$(wc -c < submission/demo-proof.png)
+            echo "Demo proof size: $SIZE bytes"
+            if [ "$SIZE" -gt 10000 ]; then
+              echo "Demo proof looks like a real screenshot"
+              exit 0
+            else
+              echo "Demo proof is too small to be a real screenshot"
+              exit 1
+            fi
           else
-            echo "No closed work item issues found"
+            echo "Demo proof file is missing"
             exit 1
           fi
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Update comment - step results
         uses: GrantBirki/comment@v2.1.1
@@ -99,17 +100,17 @@ jobs:
           vars: |
             step_number: 4
             results_table:
-              - description: "The pull request was merged into main"
-                passed: ${{ steps.check-merged.outcome == 'success' }}
-              - description: "The linked work item issue was closed"
-                passed: ${{ steps.check-issue-closed.outcome == 'success' }}
+              - description: "A demo proof screenshot was added to submission/"
+                passed: ${{ steps.check-proof-exists.outcome == 'success' }}
+              - description: "The screenshot is a real capture (not an empty placeholder)"
+                passed: ${{ steps.check-proof-size.outcome == 'success' }}
 
       - name: Fail job if not all checks passed
         if: contains(steps.*.outcome, 'failure')
         run: exit 1
 
-  post_next_step_content:
-    name: Post next step content
+  post_review_content:
+    name: Post review content
     needs: [find_exercise, check_step_work]
     runs-on: ubuntu-latest
     env:
@@ -127,32 +128,29 @@ jobs:
           path: exercise-toolkit
           ref: v0.9.3
 
-      - name: Create comment - step finished
+      - name: Create comment - review next
         uses: GrantBirki/comment@v2.1.1
         with:
           repository: ${{ env.ISSUE_REPOSITORY }}
           issue-number: ${{ env.ISSUE_NUMBER }}
-          file: exercise-toolkit/markdown-templates/step-feedback/step-finished-prepare-next-step.md
-          vars: |
-            next_step_number: 5
+          file: exercise-toolkit/markdown-templates/step-feedback/lesson-review.md
 
-      - name: Create comment - add step content
+      - name: Create comment - add review content
         uses: GrantBirki/comment@v2.1.1
         with:
           repository: ${{ env.ISSUE_REPOSITORY }}
           issue-number: ${{ env.ISSUE_NUMBER }}
-          file: ${{ env.STEP_5_FILE }}
+          file: ${{ env.REVIEW_FILE }}
 
-      - name: Create comment - watching for progress
-        uses: GrantBirki/comment@v2.1.1
-        with:
-          repository: ${{ env.ISSUE_REPOSITORY }}
-          issue-number: ${{ env.ISSUE_NUMBER }}
-          file: exercise-toolkit/markdown-templates/step-feedback/watching-for-progress.md
-
-      - name: Disable current workflow and enable next one
-        run: |
-          gh workflow disable "${{github.workflow}}"
-          gh workflow enable "Step 5"
+      - name: Disable current workflow
+        run: gh workflow disable "${{github.workflow}}"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  finish_exercise:
+    name: Finish Exercise
+    needs: [find_exercise, post_review_content]
+    uses: skills/exercise-toolkit/.github/workflows/finish-exercise.yml@v0.9.3
+    with:
+      issue-url: ${{ needs.find_exercise.outputs.issue-url }}
+      exercise-title: "Idea to Merge with the Copilot App"

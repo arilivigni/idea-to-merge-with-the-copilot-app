@@ -1,36 +1,47 @@
-## Step 4: Review and merge the pull request
+## Step 4: Preview the running app and submit your proof
 
-The feature is ready for review. ✅ Close the loop by reviewing and merging the pull request — right from the app.
+Last stop. 🎬 Show the finished app running, then submit a screenshot as your proof of completion.
 
-### 📖 Theory: review and merge in the app
+### 📖 Theory: preview the running app in a browser canvas
 
-The Copilot App can review and merge pull requests directly.
+You'll run the app from a session's **Terminal** and preview it in a **browser canvas** — all in the app. A live local URL can't be verified by Actions, so the graded proof is a committed screenshot.
 
-- Only **one** pull request is open — the **app PR** from Step 3. (Step 2's instructions went straight to `main`, so there's no second PR to confuse it with.)
-- This exercise uses an **unprotected** branch, so the merge isn't blocked by required checks or reviews. You review, then merge. (Required-check gating comes in a follow-on exercise.)
-- Because the PR body uses a closing keyword, merging automatically **closes the linked app issue**.
+- Start the dev server in the session **Terminal**, then open a **browser canvas** on the local dev URL to see the app running.
+- This is a **light commit**: the screenshot goes **directly to `main`** — no session or PR.
 
-<!-- image: pull request review view inside the app -->
+> [!NOTE]
+> Run this session **locally** (choose **a new working tree** or **your local repository** as the run location) so the dev server is reachable at `http://localhost:4321`. If you use a cloud sandbox, the app runs remotely and you'd need its forwarded preview URL instead.
 
-<!-- image: merged pull request with the linked issue closed -->
+<!-- image: browser canvas previewing the running app -->
 
 #### References
 
-- [Managing pull requests with the Copilot App](https://docs.github.com/en/copilot/how-tos/github-copilot-app/getting-started)
+- [Getting started with the Copilot App](https://docs.github.com/en/copilot/how-tos/github-copilot-app/getting-started)
 
-### ⌨️ Activity 1: Merge and confirm closure (graded)
+### ⌨️ Activity 1: Preview, capture, and submit (graded)
 
-1. Review the **app PR** (the only open PR) in the app.
-1. Confirm the Step 3 build check is green, then **merge** the pull request.
-1. Confirm the linked **app issue** is now **closed**.
+1. In a session **Terminal** on your repository, install dependencies (first run only) and start the dev server:
 
-<!-- image: merged PR confirming the linked issue is closed -->
+   ```bash
+   npm install
+   npm run dev
+   ```
+
+   <!-- image: npm run dev running in the session Terminal -->
+
+1. Open a **browser canvas** on the local dev URL (for example, `http://localhost:4321`).
+1. Add a bookmark and confirm both the **original URL** and its **short slug** display.
+1. Capture a screenshot of the running app showing at least one bookmark **and** its slug, and save it as **`submission/demo-proof.png`**.
+1. **Commit and push the screenshot directly to `main`.**
+
+<!-- image: canvas showing the running app with a bookmark and its short slug -->
 
 <details>
 <summary>Having trouble? 🤷</summary><br/>
 
-- Make sure you **merge** the PR (not just close it).
-- If the app issue stays open, confirm the PR body used `Closes #<app-issue-number>`, then close the issue manually.
+- The file must be exactly `submission/demo-proof.png`.
+- It must be a real screenshot (a tiny or empty file will fail the check).
+- Make sure you pushed to **`main`**.
 - Still stuck on the app itself? See [Getting started with the Copilot App](https://docs.github.com/en/copilot/how-tos/github-copilot-app/getting-started).
 
 </details>

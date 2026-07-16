@@ -1,10 +1,10 @@
-## Step 3: Build the app in a session and open a pull request
+## Step 3: Build, open, and merge the pull request
 
-The rules are set. 🛠️ Now deliver the feature the way a team really does: in a dedicated, issue-driven session that opens a pull request for review.
+The rules are set. 🛠️ Now deliver the feature the way a team really does: build it in a dedicated, issue-driven session, open a pull request, then review and merge it — all in the app.
 
 ### 📖 Theory: the issue-driven session
 
-This is where the extra ceremony pays off. Launching a session **from the app issue** lets the agent implement the feature on its **own branch** and open a pull request — unlike the light `main` edits in Steps 2 and 5.
+This is where the extra ceremony pays off. Launching a session **from the app issue** lets the agent implement the feature on its **own branch** and open a pull request — unlike the light `main` edits in Steps 2 and 4.
 
 - The session branches **from `main`**, so it inherits your Step 2 custom instructions.
 - Before it starts, you set three controls from the dropdowns below the prompt: **where it runs** (a new working tree, your local repository, or a cloud sandbox), the **session mode**, and the **model** and reasoning effort (**Auto** lets the app pick).
@@ -14,6 +14,9 @@ This is where the extra ceremony pays off. Launching a session **from the app is
   - **Autopilot** — the agent works end to end on its own.
 - Each bookmark stores its **original URL** and a locally generated **short slug** (base62 of a hash/counter, for example). There is **no shortener service, redirect, or backend** — the slug is a display alias.
 - Bookmarks persist with **`localStorage`**, accessed **only** behind a **`client:load`** boundary so the static build doesn't fail.
+- When the work looks good, you **review and merge** the pull request right in the app. Because only the **app PR** is open (Step 2's instructions went straight to `main`), there's no second PR to confuse it with.
+- This exercise uses an **unprotected** branch, so the merge isn't blocked by required checks or reviews. (Required-check gating comes in a follow-on exercise.)
+- Because the PR body uses a closing keyword, merging automatically **closes the linked app issue**.
 
 <!-- image: bookmarks UI showing an original URL and its short slug -->
 
@@ -63,7 +66,7 @@ This is where the extra ceremony pays off. Launching a session **from the app is
 <!-- image: opened pull request referencing the app issue -->
 
 > [!TIP]
-> Point `Closes #<n>` at the **app issue** (not this walkthrough issue) so merging in Step 4 closes the right one automatically.
+> Point `Closes #<n>` at the **app issue** (not this walkthrough issue) so merging in Activity 2 closes the right one automatically.
 
 > [!TIP]
 > Inside the prompt field you can reference an issue with **`#`**, pull a file into context with **`@`**, and run slash commands with **`/`** — handy for steering the agent as it builds.
@@ -74,6 +77,30 @@ This is where the extra ceremony pays off. Launching a session **from the app is
 - The PR body must contain a closing keyword and an issue number, e.g. `Closes #2`.
 - `src/components/Bookmarks.astro` must reference **`localStorage`**.
 - The app must build. If the build fails, make sure `localStorage` runs inside the client `<script>` / `client:load` boundary, never at the top of the component frontmatter.
+- Still stuck on the app itself? See [Getting started with the Copilot App](https://docs.github.com/en/copilot/how-tos/github-copilot-app/getting-started).
+
+</details>
+
+
+### ⌨️ Activity 2: Review and merge the pull request (graded)
+
+1. Review the **app PR** (the only open PR) in the app.
+
+   <!-- image: pull request review view inside the app -->
+
+1. Confirm the Step 3 build check is green, then **merge** the pull request.
+1. Confirm the linked **app issue** is now **closed**.
+
+   <!-- image: merged PR confirming the linked issue is closed -->
+
+> [!TIP]
+> You can enable **agent merge** from the top of the app to have Copilot resolve what's blocking the PR and merge it as soon as GitHub allows.
+
+<details>
+<summary>Having trouble? 🤷</summary><br/>
+
+- Make sure you **merge** the PR (not just close it).
+- If the app issue stays open, confirm the PR body used `Closes #<app-issue-number>`, then close the issue manually.
 - Still stuck on the app itself? See [Getting started with the Copilot App](https://docs.github.com/en/copilot/how-tos/github-copilot-app/getting-started).
 
 </details>
