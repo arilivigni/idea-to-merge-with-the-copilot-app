@@ -56,7 +56,7 @@ To use the GitHub Copilot app, the first step — as you might imagine — is to
 
 1. Download the app for your platform and install it following the instructions provided on the landing page.
 
-   <img width="70%" alt="Downloading and installing the GitHub Copilot app" src="../images/step1-app-download.gif" />
+   <img width="60%" alt="Downloading and installing the GitHub Copilot app" src="../images/step1-app-download.gif" />
 
 1. Open the app once it's installed.
 1. Select **Sign in to GitHub** and follow the prompts to authenticate.
