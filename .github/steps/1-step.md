@@ -4,11 +4,11 @@ Welcome, {{login}}! 👋 Every good change starts as an idea. In this exercise y
 
 ### 📖 Theory: from chat to a work item
 
-The GitHub Copilot App gives you **quick chat** for lightweight tasks and a connected view of your repository's issues and pull requests — all without leaving the app. A great first move is to turn a rough idea into a tracked **issue** so planning and execution live in the same place.
+The GitHub Copilot App gives you **agent sessions** that run against your checked-out repository, plus a connected view of its issues and pull requests — all without leaving the app. A great first move is to turn a rough idea into a tracked **issue** so planning and execution live in the same place.
 
 <!-- image: app install and sign-in screen -->
 
-<!-- image: quick chat drafting the bookmarks app issue -->
+<!-- image: an agent session drafting the bookmarks app issue -->
 
 The app you'll build stores each bookmark as two things: the **original URL** and a locally generated **short slug** (a display alias — there's no shortener service or backend).
 
@@ -18,7 +18,7 @@ You'll complete every step **inside the app**, using three surfaces:
 
 | Surface | What it's for |
 | --- | --- |
-| **Chat & sessions** | Drive the work — use **quick chat** for lightweight asks, and an **issue-driven session** (which runs on its own branch) for the build in Step 3. |
+| **Chat & sessions** | Drive the work — open an **agent session** on your checked-out repository, and use an **issue-driven session** (which runs on its own branch) for the build in Step 3. |
 | **Browser canvas** | The right side panel renders **live GitHub pages** — the README, your issue, the pull request, and the running app — with clickable links and buttons. Just ask the agent, for example: `open the main readme of this repository in a browser canvas`. |
 | **Files & Changes tabs + editor canvas** | Every session has built-in **Files** and **Changes** tabs for the working tree and diff. For the light hand-edits, open a file in a **lightweight editor canvas** and save it. |
 
@@ -64,21 +64,29 @@ To use the GitHub Copilot app, the first step — as you might imagine — is to
 
    <!-- image: connecting the exercise repository in the app -->
 
-1. Open a **session** on your repository, then prompt the agent to bring this exercise up in the right side panel:
+1. Open a **session** on your checked-out repository, then prompt the agent to bring this exercise up in the right side panel:
 
+   > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
+   >
+   > ```prompt
    > open the main readme of this repository in a browser canvas
+   > ```
 
    The README renders as a live page you can read and click through without leaving the app.
 
    <!-- image: exercise README open in a browser canvas -->
 
-1. Open **quick chat** and confirm Copilot can summarize the repository context.
+1. In the session, confirm Copilot can see the repository context (for example, ask it to summarize the README).
 
 ### ⌨️ Activity 2: Create the app issue from chat
 
-1. In quick chat, ask Copilot to draft an issue to build the bookmarks app. For example:
+1. In your session, ask Copilot to draft an issue to build the bookmarks app. For example:
 
-   > Draft a GitHub issue titled "Build the bookmarks app". In the body, describe an Astro app that saves each **bookmark** as its **original URL** plus a locally generated short **slug**, persisted in the browser. Then create the issue in this repository.
+   > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
+   >
+   > ```prompt
+   > Draft a GitHub issue titled "Build the bookmarks app". In the body, describe an Astro app that saves each bookmark as its original URL plus a locally generated short slug, persisted in the browser. Then create the issue in this repository.
+   > ```
 
 1. Make sure the created issue:
    - has a **title that mentions bookmarks** (for example, `Build the bookmarks app`), and
@@ -91,7 +99,7 @@ To use the GitHub Copilot app, the first step — as you might imagine — is to
    <!-- image: created issue open in a browser canvas -->
 
 > [!TIP]
-> If chat can't see repository context, re-check that **your copy** of the exercise repository is connected before drafting the issue.
+> If the session can't see repository context, re-check that **your copy** of the exercise repository is connected before drafting the issue.
 
 <details>
 <summary>Having trouble? 🤷</summary><br/>
