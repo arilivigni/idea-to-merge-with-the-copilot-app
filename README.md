@@ -1,11 +1,11 @@
 # Idea to Merge with the Copilot App
 
-_Take an idea from a chat message to a merged pull request — entirely in the GitHub Copilot App — while building a small bookmarks app._
+_Take an idea from a session to a merged pull request — entirely in the GitHub Copilot App — while building a small bookmarks app._
 
 ## Welcome
 
 - **Who is this for**: Developers who want to run the full GitHub workflow — issue, session, pull request, merge, preview — without leaving the GitHub Copilot App.
-- **What you'll learn**: How to turn a chat idea into a tracked issue, set repository custom instructions, build a feature in an issue-driven session, review and merge the pull request, and preview the running app in a canvas.
+- **What you'll learn**: How to turn an idea into a tracked issue, set repository custom instructions, build a feature in an issue-driven session, review and merge the pull request, and preview the running app in a canvas.
 - **What you'll build**: A tiny **Astro** bookmarks app that saves each URL with a locally generated **short slug**, persisted in the browser with `localStorage`.
 - **Prerequisites**:
   - The **GitHub Copilot App** installed and signed in
@@ -16,7 +16,7 @@ _Take an idea from a chat message to a merged pull request — entirely in the G
 
 In this exercise, you will:
 
-1. Create a work item **issue from chat**.
+1. Create a work item **issue from a session**.
 2. Set project rules in **`.github/copilot-instructions.md`** on `main`.
 3. Build the bookmarks app in an **issue-driven session** and open a pull request.
 4. **Review and merge** the pull request, auto-closing the linked issue.

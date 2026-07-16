@@ -1,14 +1,10 @@
-## Step 1: Create an issue from chat in the Copilot App
+## Step 1: Create an issue from a session in the Copilot App
 
-Welcome, {{login}}! 👋 Every good change starts as an idea. In this exercise you'll take one idea — a small bookmarks app — all the way from a chat message to a merged pull request, entirely inside the **GitHub Copilot App**.
+Welcome, {{login}}! 👋 Every good change starts as an idea. In this exercise you'll take one idea — a small bookmarks app — all the way from a session to a merged pull request, entirely inside the **GitHub Copilot App**.
 
-### 📖 Theory: from chat to a work item
+### 📖 Theory: from a session to a work item
 
 The GitHub Copilot App gives you **agent sessions** that run against your checked-out repository, plus a connected view of its issues and pull requests — all without leaving the app. A great first move is to turn a rough idea into a tracked **issue** so planning and execution live in the same place.
-
-<!-- image: app install and sign-in screen -->
-
-<!-- image: an agent session drafting the bookmarks app issue -->
 
 The app you'll build stores each bookmark as two things: the **original URL** and a locally generated **short slug** (a display alias — there's no shortener service or backend).
 
@@ -18,11 +14,11 @@ You'll complete every step **inside the app**, using three surfaces:
 
 | Surface | What it's for |
 | --- | --- |
-| **Chat & sessions** | Drive the work — open an **agent session** on your checked-out repository, and use an **issue-driven session** (which runs on its own branch) for the build in Step 3. |
+| **Sessions** | Drive the work — start a **New session** on your checked-out repository, and use an **issue-driven session** (which runs on its own branch) for the build in Step 3. |
 | **Browser canvas** | The right side panel renders **live GitHub pages** — the README, your issue, the pull request, and the running app — with clickable links and buttons. Just ask the agent, for example: `open the main readme of this repository in a browser canvas`. |
 | **Files & Changes tabs + editor canvas** | Every session has built-in **Files** and **Changes** tabs for the working tree and diff. For the light hand-edits, open a file in a **lightweight editor canvas** and save it. |
 
-<!-- image: the app's three surfaces — chat, a browser canvas, and the Files/Changes tabs -->
+<!-- image: the app's three surfaces — a session, a browser canvas, and the Files/Changes tabs -->
 
 Two commit patterns keep ceremony proportional to the change:
 
@@ -64,7 +60,7 @@ To use the GitHub Copilot app, the first step — as you might imagine — is to
 
    <!-- image: connecting the exercise repository in the app -->
 
-1. Open a **session** on your checked-out repository, then prompt the agent to bring this exercise up in the right side panel:
+1. Start a **New session** on your checked-out repository, then prompt the agent to bring this exercise up in the right side panel:
 
    > ![Static Badge](https://img.shields.io/badge/Prompt-text?style=for-the-badge&logo=github-copilot&logoColor=white&labelColor=purple&color=purple)
    >
@@ -79,7 +75,7 @@ To use the GitHub Copilot app, the first step — as you might imagine — is to
 
 1. In the session, confirm Copilot can see the repository context (for example, ask it to summarize the README).
 
-### ⌨️ Activity 2: Create the app issue from chat
+### ⌨️ Activity 2: Create the app issue from a session
 
 1. In your session, ask Copilot to draft an issue to build the bookmarks app. For example:
 

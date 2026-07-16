@@ -1,12 +1,12 @@
 ## Review
 
-_Congratulations — you took an idea from **chat to a merged pull request**, entirely in the GitHub Copilot App!_ 🎉
+_Congratulations — you took an idea from a **session to a merged pull request**, entirely in the GitHub Copilot App!_ 🎉
 
 <img src="https://octodex.github.com/images/jetpacktocat.png" alt="celebrate" width=200 align=right>
 
 Here's what you accomplished:
 
-- ✅ Created a work item **issue from chat** in the Copilot App
+- ✅ Created a work item **issue from a session** in the Copilot App
 - ✅ Set project rules in **`.github/copilot-instructions.md`** on `main`
 - ✅ Built the bookmarks app in an **issue-driven session** and opened a PR
 - ✅ **Reviewed and merged** the PR, auto-closing the linked issue
