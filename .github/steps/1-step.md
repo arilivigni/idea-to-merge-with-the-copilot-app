@@ -64,16 +64,19 @@ To use the GitHub Copilot app, the first step — as you might imagine — is to
 
    <img width="55%" alt="Clone repository dialog with the exercise repository URL entered" src="../images/step1-clone-repo-url.png" />
 
-1. Start a **New session** on your checked-out repository, then prompt the agent to bring this exercise up in the right side panel:
+1. Start a **New session** on your checked-out repository, then prompt the agent to sign in and bring this exercise up in the right side panel — in one shot:
 
    > ![Static Badge](https://img.shields.io/badge/Prompt-text?style=for-the-badge&logo=github-copilot&logoColor=white&labelColor=purple&color=purple)
    >
    > ```prompt
-   > - Open the main README of this repository in a browser canvas
+   > - Open a browser canvas and go to https://github.com/login
+   > - Sign me in to GitHub, then open the main README of this repository
    > - Keep it open in the right side panel so I can read and click through it
    > ```
 
-   The README renders as a live page you can read and click through without leaving the app.
+   The browser canvas has its own sign-in, so signing in here keeps the
+   README (and later your issue and pull request) rendered as **live,
+   logged-in pages** you can read and click through without leaving the app.
 
    <!-- image: exercise README open in a browser canvas -->
 
