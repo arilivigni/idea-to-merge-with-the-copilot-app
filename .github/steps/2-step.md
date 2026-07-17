@@ -27,9 +27,13 @@ Two rules matter for this app:
 > This is a **light, single-file edit** — open the file in a **lightweight editor canvas** and commit it **directly to `main`**. No session and no pull request are needed.
 
 1. Open `.github/copilot-instructions.md` for your copy of the repository in a **lightweight editor canvas** (use the session's **Files** tab, or ask the agent to open it).
-1. **Replace the `TODO` placeholder** with the two project rules:
-   - persistence uses browser **`localStorage`**, and
-   - browser code runs behind a **`client:load`** boundary so SSR never touches `localStorage`.
+1. **Replace the `TODO` placeholder** with the two project rules. Copy and paste this into the editor:
+
+   ```text
+   - persistence uses browser localStorage, and
+   - browser code runs behind a client:load boundary so SSR never touches localStorage.
+   ```
+
 1. **Commit and push directly to `main`.**
 
 <!-- image: diff showing the committed copilot-instructions.md -->
