@@ -70,15 +70,16 @@ To use the GitHub Copilot app, the first step — as you might imagine — is to
    >
    > ```prompt
    > - Open a browser canvas and go to https://github.com/login
-   > - Sign me in to GitHub, then open the main README of this repository
+   > - Sign me in to GitHub, then open the exercise issue #1 of this repository
    > - Keep it open in the right side panel so I can read and click through it
    > ```
 
    The browser canvas has its own sign-in, so signing in here keeps the
-   README (and later your issue and pull request) rendered as **live,
-   logged-in pages** you can read and click through without leaving the app.
+   exercise issue (and later your work item and pull request) rendered as
+   **live, logged-in pages** you can read and click through without leaving
+   the app.
 
-   <!-- image: exercise README open in a browser canvas -->
+   <!-- image: exercise walkthrough issue open in a browser canvas -->
 
 1. In the session, confirm Copilot can see the repository context (for example, ask it to summarize the README).
 
