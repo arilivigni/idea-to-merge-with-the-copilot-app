@@ -96,15 +96,14 @@ To use the GitHub Copilot app, the first step — as you might imagine — is to
    >   - its original URL, and
    >   - a locally generated short slug
    > - Bookmarks are persisted in the browser
+   >
+   > Open a new browser canvas with this new issue once created and keep it
+   > open in the right side panel so I can read and click through it
    > ```
 
 1. Make sure the created issue:
    - has a **title that mentions bookmarks** (for example, `Build the bookmarks app`), and
    - has a **body that names both** the **original URL** and the **short slug**.
-
-   <!-- image: created issue with the title marker applied -->
-
-1. Open the issue you just created in a **browser canvas** so you can keep it visible while you work through the rest of the exercise. In the app, open a browser canvas and navigate to the new issue (for example, `https://github.com/{{full_repo_name}}/issues`), then select your **Build the bookmarks app** issue.
 
    <!-- image: created issue open in a browser canvas -->
 
