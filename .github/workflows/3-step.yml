@@ -189,23 +189,32 @@ jobs:
             exit 0
           fi
 
-          # Ask GitHub which issues this PR is set to close, and their state.
-          CLOSED_LINKED=$(gh api graphql \
-            -f query='query($owner:String!,$repo:String!,$pr:Int!){
-              repository(owner:$owner,name:$repo){
-                pullRequest(number:$pr){
-                  closingIssuesReferences(first:20){ nodes { number state } }
+          # Merging closes the linked issue asynchronously, so poll a few times
+          # to avoid a false failure from reading the state too early.
+          CLOSED_LINKED=0
+          for attempt in 1 2 3 4 5; do
+            CLOSED_LINKED=$(gh api graphql \
+              -f query='query($owner:String!,$repo:String!,$pr:Int!){
+                repository(owner:$owner,name:$repo){
+                  pullRequest(number:$pr){
+                    closingIssuesReferences(first:20){ nodes { number state } }
+                  }
                 }
-              }
-            }' \
-            -f owner="${{ github.repository_owner }}" \
-            -f repo="${{ github.event.repository.name }}" \
-            -F pr="$PR_NUMBER" \
-            --jq "[.data.repository.pullRequest.closingIssuesReferences.nodes[]
-                   | select(.number != ($WALKTHROUGH_ISSUE_NUMBER|tonumber))
-                   | select(.state == \"CLOSED\")] | length")
+              }' \
+              -f owner="${{ github.repository_owner }}" \
+              -f repo="${{ github.event.repository.name }}" \
+              -F pr="$PR_NUMBER" \
+              --jq "[.data.repository.pullRequest.closingIssuesReferences.nodes[]
+                     | select(.number != ($WALKTHROUGH_ISSUE_NUMBER|tonumber))
+                     | select(.state == \"CLOSED\")] | length")
 
-          echo "Linked work item issues now closed by this PR: $CLOSED_LINKED"
+            echo "Attempt $attempt: linked work item issues now closed by this PR: $CLOSED_LINKED"
+            if [ "$CLOSED_LINKED" -ge 1 ]; then
+              break
+            fi
+            sleep 3
+          done
+
           if [ "$CLOSED_LINKED" -ge 1 ]; then
             echo "The merged pull request closed its linked work item issue."
             exit 0
