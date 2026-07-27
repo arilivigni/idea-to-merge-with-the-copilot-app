@@ -29,8 +29,9 @@ files use `<!-- image: ... -->` HTML-comment placeholders so issue comments stil
 | `step3-session-controls.png` | 3 · Act 1 | Session mode, model, and run-location dropdowns below the prompt |
 | `step3-session-files-changes.png` | 3 · Act 1 | Issue-driven session running with the Files and Changes tabs |
 | `step3-pr-references-issue.png` | 3 · Act 1 | Opened pull request referencing the app issue |
-| `step3-pr-review.png` | 3 · Act 2 | Pull request review view inside the app |
-| `step3-merged-issue-closed.png` | 3 · Act 2 | Merged PR confirming the linked issue is closed |
+| `step3-agent-merge.png` | 3 · Act 1 | Agent merge shipping the bookmarks pull request |
+| `step3-merged-pr.png` | 3 · Act 2 | Merged pull request in the app |
+| `step3-issue-closed.png` | 3 · Act 2 | Linked app issue automatically closed |
 | `step4-canvas-preview.png` | 4 · Theory | Browser canvas previewing the running app |
 | `step4-terminal-dev.png` | 4 · Act 1 | `npm run dev` running in the session Terminal |
 | `step4-canvas-bookmark.png` | 4 · Act 1 | Canvas showing the running app with a bookmark and its short slug |

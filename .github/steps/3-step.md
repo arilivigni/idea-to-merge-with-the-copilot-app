@@ -1,6 +1,6 @@
 ## Step 3: Build, open, and merge the pull request
 
-The rules are set. 🛠️ Now deliver the feature the way a team really does: build it in a dedicated, issue-driven session, open a pull request, then review and merge it — all in the app.
+The rules are set. 🛠️ Now deliver the feature the way a team really does: build it in a dedicated, issue-driven session, open a pull request, review it, and ship it with **agent merge** — all in one native flow in the app.
 
 ### 📖 Theory: the issue-driven session
 
@@ -14,7 +14,7 @@ This is where the extra ceremony pays off. Launching a session **from the app is
   - **Autopilot** — the agent works end to end on its own.
 - Each bookmark stores its **original URL** and a locally generated **short slug** (base62 of a hash/counter, for example). There is **no shortener service, redirect, or backend** — the slug is a display alias.
 - Bookmarks persist with **`localStorage`**, accessed **only** behind a **`client:load`** boundary so the static build doesn't fail.
-- When the work looks good, you **review and merge** the pull request right in the app. Because only the **app PR** is open (Step 2's instructions went straight to `main`), there's no second PR to confuse it with.
+- When the work looks good, you review the diff and let **agent merge** open and merge the pull request for you — the same native action you used in Step 2, now on a real feature branch. Because only the **app PR** is open, there's no second PR to confuse it with.
 - This exercise uses an **unprotected** branch, so the merge isn't blocked by required checks or reviews. (Required-check gating comes in a follow-on exercise.)
 - Because the PR body uses a closing keyword, merging automatically **closes the linked app issue**.
 
@@ -30,7 +30,7 @@ This is where the extra ceremony pays off. Launching a session **from the app is
 - [Working with agent sessions in the Copilot App](https://docs.github.com/en/copilot/how-tos/github-copilot-app/agent-sessions)
 - [Astro components and client directives](https://docs.astro.build/en/reference/directives-reference/#client-directives)
 
-### ⌨️ Activity 1: Build in a session, then open the PR (graded)
+### ⌨️ Activity 1: Build the feature and ship it with agent merge (graded)
 
 1. From the **app issue** you created in Step 1, **launch an issue-driven session**: open the issue in **My work**, then click **New session** so the issue context loads automatically.
 1. Set the session controls from the dropdowns below the prompt field:
@@ -43,7 +43,7 @@ This is where the extra ceremony pays off. Launching a session **from the app is
    Follow the work in the conversation, and use the session's **Files** and **Changes** tabs — or a **lightweight editor canvas** — to inspect or adjust files on the session branch.
 
    <!-- image: issue-driven session running with the Files and Changes tabs -->
-1. Prompt the agent to implement the bookmarks feature in `src/components/Bookmarks.astro`: add a bookmark, generate a short slug, and save both to **`localStorage`** from a **`client:load`** boundary (or the inline `<script>` already scaffolded). For example:
+1. In one prompt, have the agent build the feature, **open the pull request**, walk you through the changes, and **ship it with agent merge** — the native Copilot App flow. Replace `<app-issue-number>` with your **Build the bookmarks app** issue number:
 
    > ![Static Badge](https://img.shields.io/badge/Prompt-text?style=for-the-badge&logo=github-copilot&logoColor=white&labelColor=purple&color=purple)
    >
@@ -55,18 +55,22 @@ This is where the extra ceremony pays off. Launching a session **from the app is
    > - Keep all localStorage access behind a client:load boundary
    >   (or the inline <script>) so the static Astro build never
    >   touches browser APIs
+   >
+   > Then ship it the native way:
+   > - Open a pull request with a body that includes
+   >   "Closes #<app-issue-number>"
+   > - Walk me through the diff so I can review the changes
+   > - Use agent merge to merge the pull request into main
    > ```
 
-1. Commit and **open a pull request** whose body links the app issue with a closing keyword:
+1. **Review the diff, then let agent merge land it.** Watch the changes in the session's **Changes** tab (or a browser canvas on the PR), then confirm **Agent merge** from the session's action dropdown so the app merges the pull request into `main`. Because the PR body uses a closing keyword, merging **closes the linked app issue** automatically.
 
-   ```text
-   Closes #<app-issue-number>
-   ```
+   <!-- image: opened pull request referencing the app issue -->
 
-<!-- image: opened pull request referencing the app issue -->
+   <!-- image: agent merge shipping the bookmarks pull request -->
 
 > [!TIP]
-> Point `Closes #<n>` at the **app issue** (not this walkthrough issue) so merging in Activity 2 closes the right one automatically.
+> Point `Closes #<n>` at the **app issue** (not this walkthrough issue) so the merge closes the right one automatically.
 
 > [!TIP]
 > Inside the prompt field you can reference an issue with **`#`**, pull a file into context with **`@`**, and run slash commands with **`/`** — handy for steering the agent as it builds.
@@ -77,30 +81,29 @@ This is where the extra ceremony pays off. Launching a session **from the app is
 - The PR body must contain a closing keyword and an issue number, e.g. `Closes #2`.
 - `src/components/Bookmarks.astro` must reference **`localStorage`**.
 - The app must build. If the build fails, make sure `localStorage` runs inside the client `<script>` / `client:load` boundary, never at the top of the component frontmatter.
+- If **Agent merge** doesn't appear, open the session's action dropdown (top of the session) and select it — the same control you used in Step 2.
 - Still stuck on the app itself? See [Getting started with the Copilot App](https://docs.github.com/en/copilot/how-tos/github-copilot-app/getting-started).
 
 </details>
 
 
-### ⌨️ Activity 2: Review and merge the pull request (graded)
+### ⌨️ Activity 2: Confirm the merge landed (graded)
 
-1. Review the **app PR** (the only open PR) in the app.
+Agent merge handled the merge in Activity 1 — now confirm it landed. You'll see **two result tables** post to this issue: the **build** check when the PR opened, and the **merge** check once agent merge completed.
 
-   <!-- image: pull request review view inside the app -->
+1. Confirm the pull request is **merged into `main`** (open the PR in a browser canvas, or check the **app PR** view).
 
-1. Confirm the Step 3 build check is green, then **merge** the pull request.
-1. Confirm the linked **app issue** is now **closed**.
+   <!-- image: merged pull request in the app -->
 
-   <!-- image: merged PR confirming the linked issue is closed -->
+1. Confirm the linked **app issue** is now **closed** — the closing keyword did this automatically.
 
-> [!TIP]
-> You can enable **agent merge** from the top of the app to have Copilot resolve what's blocking the PR and merge it as soon as GitHub allows.
+   <!-- image: linked app issue automatically closed -->
 
 <details>
 <summary>Having trouble? 🤷</summary><br/>
 
-- Make sure you **merge** the PR (not just close it).
-- If the app issue stays open, confirm the PR body used `Closes #<app-issue-number>`, then close the issue manually.
+- If the merge check hasn't posted, make sure agent merge actually **merged** the PR (not just opened it).
+- If the app issue stays open, confirm the PR body used `Closes #<app-issue-number>` pointing at your bookmarks issue, then close the issue manually.
 - Still stuck on the app itself? See [Getting started with the Copilot App](https://docs.github.com/en/copilot/how-tos/github-copilot-app/getting-started).
 
 </details>
