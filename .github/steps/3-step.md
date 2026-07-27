@@ -89,7 +89,7 @@ This is where the extra ceremony pays off. Launching a session **from the app is
 
 ### ⌨️ Activity 2: Confirm the merge landed (graded)
 
-Agent merge handled the merge in Activity 1 — now confirm it landed. You'll see **two result tables** post to this issue: the **build** check when the PR opened, and the **merge** check once agent merge completed.
+Agent merge handled the merge in Activity 1 — now confirm it landed. You'll see **two result tables** post to this issue: the **build** check when the PR opened, and the **merge** check once agent merge completed. The merge check also **re-builds `main`**, so the exercise only advances when the shipped app still builds.
 
 1. Confirm the pull request is **merged into `main`** (open the PR in a browser canvas, or check the **app PR** view).
 
@@ -103,6 +103,7 @@ Agent merge handled the merge in Activity 1 — now confirm it landed. You'll se
 <summary>Having trouble? 🤷</summary><br/>
 
 - If the merge check hasn't posted, make sure agent merge actually **merged** the PR (not just opened it).
+- The exercise won't advance if the merged app fails to build. If the build row is red, fix the code on `main` (usually a `localStorage` call outside the `client:load` / `<script>` boundary) and push the fix.
 - If the app issue stays open, confirm the PR body used `Closes #<app-issue-number>` pointing at your bookmarks issue, then close the issue manually.
 - Still stuck on the app itself? See [Getting started with the Copilot App](https://docs.github.com/en/copilot/how-tos/github-copilot-app/getting-started).
 

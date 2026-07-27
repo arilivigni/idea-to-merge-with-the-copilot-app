@@ -135,8 +135,10 @@ jobs:
       ISSUE_NUMBER: ${{ needs.find_exercise.outputs.issue-number }}
 
     steps:
-      - name: Checkout
+      - name: Checkout the merged main branch
         uses: actions/checkout@v5
+        with:
+          ref: main
 
       - name: Get response templates
         uses: actions/checkout@v5
@@ -223,6 +225,21 @@ jobs:
             exit 1
           fi
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install dependencies
+        id: install-main
+        continue-on-error: true
+        run: npm ci
+
+      - name: Check the merged app still builds on main
+        id: check-build-main
+        continue-on-error: true
+        run: npm run build
+
       - name: Update comment - step results
         uses: GrantBirki/comment@v2.1.1
         with:
@@ -238,6 +255,8 @@ jobs:
                 passed: ${{ steps.check-merged.outcome == 'success' }}
               - description: "The merged PR closed its linked work item issue"
                 passed: ${{ steps.check-issue-closed.outcome == 'success' }}
+              - description: "The merged app still builds on main"
+                passed: ${{ steps.check-build-main.outcome == 'success' }}
 
       - name: Fail job if not all checks passed
         if: contains(steps.*.outcome, 'failure')
