@@ -12,6 +12,8 @@ files use `<!-- image: ... -->` HTML-comment placeholders so issue comments stil
 | `step1-app-download.gif` | 1 | Downloading and installing the GitHub Copilot app |
 | `step1-add-repo-url.png` | 1 | Add-project menu with **Repository URL…** highlighted |
 | `step1-clone-repo-url.png` | 1 | Clone repository dialog with the exercise URL entered |
+| `step2-add-panel-menu.png` | 2 | Session add-panel (**+**) menu: Files, Markdown editor, and other surfaces |
+| `step2-agent-merge-dropdown.png` | 2 | Session action dropdown with **Agent merge** selected |
 
 ## Still to capture (one per remaining `<!-- image: -->` placeholder)
 
@@ -21,7 +23,6 @@ files use `<!-- image: ... -->` HTML-comment placeholders so issue comments stil
 | `step1-readme-browser-canvas.png` | 1 · Act 1 | Exercise README open in a browser canvas |
 | `step1-issue-created.png` | 1 · Act 2 | Created work-item issue with the bookmarks title |
 | `step1-issue-browser-canvas.png` | 1 · Act 2 | Created issue open in a browser canvas |
-| `step2-edit-instructions.png` | 2 · Act 1 | Editing `copilot-instructions.md` in an editor canvas |
 | `step2-instructions-diff.png` | 2 · Act 1 | Diff of the committed `copilot-instructions.md` |
 | `step3-bookmarks-ui.png` | 3 · Theory | Bookmarks UI: an original URL and its short slug |
 | `step3-pr-opened.png` | 3 · Theory | Pull request opened from the session |

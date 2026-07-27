@@ -20,9 +20,10 @@ You'll complete every step **inside the app**, using three surfaces:
 
 <!-- image: the app's three surfaces — a session, a browser canvas, and the Files/Changes tabs -->
 
-Two commit patterns keep ceremony proportional to the change:
+Three shipping patterns keep ceremony proportional to the change:
 
-- **Light edit → `main`** (Steps 2 and 4): a single-file change made in the editor canvas and committed straight to the default branch.
+- **Light edit → `main`** (Step 4): a single-file change made in the editor canvas and committed straight to the default branch.
+- **Agent merge** (Step 2): a light edit made in a session, then shipped through a pull request the app opens and merges for you automatically.
 - **Feature work → issue-driven session → PR** (Step 3): the real build, delivered on its own branch and merged in Step 3.
 
 > [!IMPORTANT]
