@@ -8,15 +8,93 @@ const { title = 'Bookmarks' } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <style>
-      :root { color-scheme: light dark; }
-      body { font-family: system-ui, sans-serif; max-width: 42rem; margin: 2rem auto; padding: 0 1rem; }
-      h1 { margin-bottom: 0.25rem; }
-      form { display: flex; gap: 0.5rem; margin: 1rem 0; }
-      input { flex: 1; padding: 0.5rem; }
-      button { padding: 0.5rem 0.9rem; }
-      ul { list-style: none; padding: 0; }
-      li { padding: 0.5rem 0; border-bottom: 1px solid #8883; }
-      .slug { font-family: ui-monospace, monospace; opacity: 0.8; }
+      :root {
+        color-scheme: light dark;
+        --accent: #3b82f6;
+        --border: #8883;
+        --muted: color-mix(in srgb, currentColor 60%, transparent);
+        --radius: 0.6rem;
+      }
+      * { box-sizing: border-box; }
+      body {
+        font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+        line-height: 1.5;
+        max-width: 40rem;
+        margin: 0 auto;
+        padding: 2.5rem 1.25rem 4rem;
+      }
+      header { margin-bottom: 1.5rem; }
+      h1 { margin: 0 0 0.25rem; font-size: 1.75rem; }
+      .tagline { margin: 0; color: var(--muted); }
+
+      form {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        align-items: end;
+        margin: 1.5rem 0 0.5rem;
+      }
+      .field { display: flex; flex-direction: column; gap: 0.35rem; flex: 1 1 16rem; }
+      label { font-size: 0.85rem; font-weight: 600; }
+      input {
+        padding: 0.6rem 0.7rem;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        font: inherit;
+        background: transparent;
+        color: inherit;
+      }
+      input:focus-visible,
+      button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+      button {
+        padding: 0.6rem 1rem;
+        border: 1px solid transparent;
+        border-radius: var(--radius);
+        background: var(--accent);
+        color: #fff;
+        font: inherit;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      button:hover { filter: brightness(1.05); }
+      .hint { margin: 0 0 1.5rem; font-size: 0.8rem; color: var(--muted); }
+
+      ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.5rem; }
+      li.bookmark {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.5rem 0.75rem;
+        padding: 0.75rem 0.9rem;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+      }
+      .bookmark .url { flex: 1 1 12rem; overflow-wrap: anywhere; }
+      .bookmark .slug {
+        font-family: ui-monospace, "SF Mono", monospace;
+        font-size: 0.85rem;
+        padding: 0.15rem 0.5rem;
+        border-radius: 999px;
+        background: color-mix(in srgb, var(--accent) 18%, transparent);
+      }
+      .bookmark .copy {
+        background: transparent;
+        color: inherit;
+        border: 1px solid var(--border);
+        padding: 0.3rem 0.6rem;
+        font-size: 0.8rem;
+        font-weight: 500;
+      }
+      .empty {
+        margin: 0;
+        padding: 1.5rem;
+        text-align: center;
+        color: var(--muted);
+        border: 1px dashed var(--border);
+        border-radius: var(--radius);
+      }
+
+      footer { margin-top: 2.5rem; font-size: 0.8rem; color: var(--muted); }
     </style>
   </head>
   <body>

@@ -10,11 +10,27 @@
 // You will implement the behavior in Step 3.
 ---
 <form id="add-bookmark">
-  <input id="url" name="url" type="url" placeholder="https://example.com" required />
-  <button type="submit">Add</button>
+  <div class="field">
+    <label for="url">Link to save</label>
+    <input
+      id="url"
+      name="url"
+      type="url"
+      inputmode="url"
+      autocomplete="off"
+      spellcheck="false"
+      placeholder="https://example.com"
+      required
+    />
+  </div>
+  <button type="submit">Add bookmark</button>
 </form>
 
-<ul id="bookmark-list" aria-live="polite">
+<p class="hint">Paste a URL and select <strong>Add bookmark</strong> to generate its short slug.</p>
+
+<p id="empty-state" class="empty">No bookmarks yet — add your first link above.</p>
+
+<ul id="bookmark-list" aria-label="Saved bookmarks" aria-live="polite">
   <!-- Bookmarks render here in the browser. -->
 </ul>
 
@@ -22,10 +38,14 @@
   // CLIENT-SIDE BOUNDARY — runs in the browser only.
   //
   // TODO (Step 3): implement the bookmarks feature here.
-  //   1. On form submit, read the original URL.
+  //   1. On form submit, read and validate the original URL.
   //   2. Generate a short slug (for example, base62 of a counter or hash).
   //   3. Save the original URL and its slug, then persist them in the browser.
-  //   4. Render each saved bookmark as: <original URL> — <slug>.
+  //   4. Render each saved bookmark into #bookmark-list as a row (li.bookmark) with:
+  //        - the original URL as a link (.url) that opens in a new tab,
+  //        - its short slug shown as a badge (.slug), and
+  //        - a "Copy" button (.copy) that copies the slug.
+  //   5. Hide #empty-state once at least one bookmark exists.
   //
   // Because this code lives in a client <script>, browser storage APIs are
   // safe to use here without breaking the static build.
