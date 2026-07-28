@@ -32,9 +32,9 @@ files use `<!-- image: ... -->` HTML-comment placeholders so issue comments stil
 | `step3-agent-merge.png` | 3 · Act 1 | Agent merge shipping the bookmarks pull request |
 | `step3-merged-pr.png` | 3 · Act 2 | Merged pull request in the app |
 | `step3-issue-closed.png` | 3 · Act 2 | Linked app issue automatically closed |
-| `step4-canvas-preview.png` | 4 · Theory | Browser canvas previewing the running app |
-| `step4-terminal-dev.png` | 4 · Act 1 | `npm run dev` running in the session Terminal |
-| `step4-canvas-bookmark.png` | 4 · Act 1 | Canvas showing the running app with a bookmark and its short slug |
+| `step4-terminal-dev.png` | 4 · Theory & Act 1 | Dev server running in a Terminal canvas |
+| `step4-playwright-capture.png` | 4 · Act 1 | Playwright MCP driving the app and capturing the screenshot |
+| `step4-proof-bookmark.png` | 4 · Act 1 | Captured proof: running app with a bookmark and its short slug |
 
 When you add a capture, replace the matching `<!-- image: ... -->` comment in the step file
 with `<img width="NN%" alt="..." src="../images/<name>.png" />` and move its row up to
