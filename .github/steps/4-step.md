@@ -30,7 +30,13 @@ Add the Playwright MCP server to your Copilot MCP configuration so Copilot can d
 }
 ```
 
-Then confirm Copilot lists a **`playwright`** server with browser tools available before you start Activity 1.
+Then verify the server is connected before you start Activity 1 — ask Copilot:
+
+```text
+List your connected MCP servers and confirm the Playwright browser tools are available.
+```
+
+Copilot should report a **`playwright`** server with browser tools (for example, navigate, click, type, and screenshot). If it isn't listed, restart the app after saving the config above.
 
 #### References
 
@@ -39,6 +45,14 @@ Then confirm Copilot lists a **`playwright`** server with browser tools availabl
 - [Model Context Protocol](https://modelcontextprotocol.io)
 
 ### ⌨️ Activity 1: Run, verify with Playwright MCP, and submit (graded)
+
+1. Confirm the Playwright MCP server is connected before you start. Ask Copilot:
+
+   ```text
+   List your connected MCP servers and confirm the Playwright browser tools are available.
+   ```
+
+   You should see a **`playwright`** server with browser tools. If not, re-check the MCP config in the Theory and restart the app.
 
 1. In a **Terminal canvas** on your repository, install dependencies (first run only) and start the dev server. Leave it running and note the local URL (for example, `http://localhost:4321`):
 
