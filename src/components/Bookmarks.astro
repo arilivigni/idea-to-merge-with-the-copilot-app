@@ -30,6 +30,11 @@
 
 <p id="empty-state" class="empty">No bookmarks yet — add your first link above.</p>
 
+<div id="list-header" hidden>
+  <h2 class="list-title">Saved bookmarks</h2>
+  <button id="clear-all" type="button" class="clear">Clear all</button>
+</div>
+
 <ul id="bookmark-list" aria-label="Saved bookmarks" aria-live="polite">
   <!-- Bookmarks render here in the browser. -->
 </ul>
@@ -45,7 +50,11 @@
   //        - the original URL as a link (.url) that opens in a new tab,
   //        - its short slug shown as a badge (.slug), and
   //        - a "Copy" button (.copy) that copies the slug.
-  //   5. Hide #empty-state once at least one bookmark exists.
+  //   5. Toggle empty vs. saved state: hide #empty-state and show #list-header
+  //      (the "Saved bookmarks" heading + "Clear all" button) once at least one
+  //      bookmark exists; reverse it when the list is empty.
+  //   6. Wire the #clear-all button to remove every saved bookmark (clear the
+  //      list, clear browser storage) after a quick confirm.
   //
   // Because this code lives in a client <script>, browser storage APIs are
   // safe to use here without breaking the static build.
