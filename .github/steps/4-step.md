@@ -29,10 +29,12 @@ You'll run the app from a **Terminal canvas**, watch it live in a **browser canv
 
 1. In a **Terminal canvas** on your repository, install dependencies (first run only) and start the dev server. Leave it running and note the local URL (for example, `http://localhost:4321`):
 
-   ```bash
-   npm install
-   npm run dev
-   ```
+   > ![Static Badge](https://img.shields.io/badge/Terminal-text?logo=gnometerminal&labelColor=0969da&color=ddf4ff)
+   >
+   > ```bash
+   > npm install
+   > npm run dev
+   > ```
 
    <!-- image: dev server running in a Terminal canvas -->
 
