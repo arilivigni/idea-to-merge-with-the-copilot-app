@@ -51,14 +51,16 @@ You'll run the app from a **Terminal canvas**, watch it live in a **browser canv
    ```text
    Using the Playwright MCP server, open http://localhost:4321, add the bookmark
    https://github.com/features/copilot, and confirm the page shows both the original
-   URL and a generated short slug. Then save a full-page screenshot to
-   submission/demo-proof.png.
+   URL and a generated short slug. Save a full-page screenshot to
+   submission/demo-proof.png, then commit and push that file directly to the
+   main branch.
    ```
 
    <!-- image: Playwright MCP driving the app and capturing the screenshot -->
 
-1. Confirm `submission/demo-proof.png` shows at least one bookmark **and** its short slug.
-1. **Commit and push the screenshot directly to `main`.**
+1. Confirm the proof landed — all from inside the app:
+   - Preview `submission/demo-proof.png` from the session's **Files** tab and check it shows at least one bookmark **and** its short slug.
+   - Watch the commit reach **`main`** in the session's **Changes** tab (or the **app commits** view). This is a **light commit** — no pull request needed.
 
 <!-- image: captured proof — running app with a bookmark and its short slug -->
 

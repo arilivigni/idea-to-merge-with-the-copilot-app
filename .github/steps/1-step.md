@@ -23,7 +23,7 @@ You'll complete every step **inside the app**, using three surfaces:
 
 Three shipping patterns keep ceremony proportional to the change:
 
-- **Light edit → `main`** (Step 4): a single-file change made in the editor canvas and committed straight to the default branch.
+- **Light commit → `main`** (Step 4): a single file — your proof screenshot — committed straight to the default branch, no pull request.
 - **Agent merge** (Step 2): a light edit made in a session, then shipped through a pull request the app opens and merges for you automatically.
 - **Feature work → issue-driven session → PR** (Step 3): the real build, delivered on its own branch and merged in Step 3.
 
@@ -48,7 +48,7 @@ Three shipping patterns keep ceremony proportional to the change:
 
 To use the GitHub Copilot app, the first step — as you might imagine — is to install it. Versions are available for Windows, macOS, and Linux. Let's install the app, authenticate, and add your exercise repository to the app.
 
-1. In a browser, open the landing page for the GitHub Copilot app: **https://github.com/features/ai/github-app**.
+1. In a browser, open the landing page for the GitHub Copilot app: **https://github.com/features/ai/github-app**. *(This download page is the only step outside the app — everything after install happens inside the Copilot App.)*
 
    <img width="70%" alt="GitHub Copilot app download page with platform options" src="../images/step1-app-download-page.png" />
 
