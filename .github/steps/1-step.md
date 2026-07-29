@@ -15,7 +15,8 @@ You'll complete every step **inside the app**, using three surfaces:
 | Surface | What it's for |
 | --- | --- |
 | **Sessions** | Drive the work — start a **New session** on your checked-out repository, and use an **issue-driven session** (which runs on its own branch) for the build in Step 3. |
-| **Browser canvas** | The right side panel renders **live GitHub pages** — the README, your issue, the pull request, and the running app — with clickable links and buttons. Just ask the agent, for example: `open the main readme of this repository in a browser canvas`. |
+| **Browser canvas** | The right side panel renders **live pages** — the README, your issue, the pull request, and the running app — with clickable links and buttons. Just ask the agent, for example: `open the main readme of this repository in a browser canvas`. |
+| **Terminal canvas** | Runs commands you can watch, like the dev server in Step 4 (`npm run dev`). |
 | **Files & Changes tabs + editor canvas** | Every session has built-in **Files** and **Changes** tabs for the working tree and diff. For the light hand-edits, open a file in a **lightweight editor canvas** and save it. |
 
 <!-- image: the app's three surfaces — a session, a browser canvas, and the Files/Changes tabs -->
