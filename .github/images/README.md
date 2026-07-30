@@ -12,6 +12,10 @@ files use `<!-- image: ... -->` HTML-comment placeholders so issue comments stil
 | `step1-app-download.gif` | 1 | Downloading and installing the GitHub Copilot app |
 | `step1-add-repo-url.png` | 1 | Add-project menu with **Repository URL…** highlighted |
 | `step1-clone-repo-url.png` | 1 | Clone repository dialog with the exercise URL entered |
+| `step1-open-issue-side-panel.png` | 1 · Act 1 | Exercise issue #1 open in the app's side panel (Relevant from session) |
+| `step1-open-issue-reference.png` | 1 · Act 1 | Typing `#` shows the exercise issue in the reference picker |
+| `step1-open-issue-prompt.png` | 1 · Act 1 | Prompt with the exercise issue as a #1 chip |
+| `step1-exit-plan-mode.png` | 1 · Act 1 | Plan summary with 'Exit plan mode and I will prompt myself' selected |
 | `step2-add-panel-menu.png` | 2 | Session add-panel (**+**) menu: Files, Markdown editor, and other surfaces |
 | `step2-agent-merge-dropdown.png` | 2 | Session action dropdown with **Agent merge** selected |
 
@@ -19,10 +23,9 @@ files use `<!-- image: ... -->` HTML-comment placeholders so issue comments stil
 
 | Suggested file | Step · Activity | Shows |
 | --- | --- | --- |
-| `step1-three-surfaces.png` | 1 · Theory | The app's three surfaces: a session, a browser canvas, and the Files/Changes tabs |
-| `step1-readme-browser-canvas.png` | 1 · Act 1 | Exercise README open in a browser canvas |
+| `step1-three-surfaces.png` | 1 · Theory | The app surfaces: a session, the issue side panel, a browser canvas, and the Files/Changes tabs |
 | `step1-issue-created.png` | 1 · Act 2 | Created work-item issue with the bookmarks title |
-| `step1-issue-browser-canvas.png` | 1 · Act 2 | Created issue open in a browser canvas |
+| `step1-issue-side-panel.png` | 1 · Act 2 | Created app issue open in the side panel |
 | `step2-instructions-diff.png` | 2 · Act 1 | Diff of the committed `copilot-instructions.md` |
 | `step3-bookmarks-ui.png` | 3 · Theory | Bookmarks UI: an original URL and its short slug |
 | `step3-pr-opened.png` | 3 · Theory | Pull request opened from the session |

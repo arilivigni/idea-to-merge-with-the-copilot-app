@@ -10,16 +10,17 @@ The app you'll build stores each bookmark as two things: the **original URL** an
 
 ### Running this exercise in the Copilot App
 
-You'll complete every step **inside the app**, using three surfaces:
+You'll complete every step **inside the app**, using these surfaces:
 
 | Surface | What it's for |
 | --- | --- |
 | **Sessions** | Drive the work — start a **New session** on your checked-out repository, and use an **issue-driven session** (which runs on its own branch) for the build in Step 3. |
-| **Browser canvas** | The right side panel renders **live pages** — the README, your issue, the pull request, and the running app — with clickable links and buttons. Just ask the agent, for example: `open the main readme of this repository in a browser canvas`. |
+| **Issue side panel** | Opens a repository **issue** — this walkthrough (**#1**) and the app issue you'll create — pinned beside your session so instructions and graded feedback stay in view. Ask the agent to `open issue #1 in the side panel`. |
+| **Browser canvas** | The right side panel renders **live pages** — the README, the pull request, and the running app — with clickable links and buttons. Ask the agent, for example: `open the main readme of this repository in a browser canvas`. |
 | **Terminal canvas** | Runs commands you can watch, like the dev server in Step 4 (`npm run dev`). |
 | **Files & Changes tabs + editor canvas** | Every session has built-in **Files** and **Changes** tabs for the working tree and diff. For the light hand-edits, open a file in a **lightweight editor canvas** and save it. |
 
-<!-- image: the app's three surfaces — a session, a browser canvas, and the Files/Changes tabs -->
+<!-- image: the app's surfaces — a session, the issue side panel, a browser canvas, and the Files/Changes tabs -->
 
 Three shipping patterns keep ceremony proportional to the change:
 
@@ -66,22 +67,37 @@ To use the GitHub Copilot app, the first step — as you might imagine — is to
 
    <img width="55%" alt="Clone repository dialog with the exercise repository URL entered" src="../images/step1-clone-repo-url.png" />
 
-1. Start a **New session** on your checked-out repository, then prompt the agent to sign in and bring this exercise up in the right side panel — in one shot:
+1. Start a **New session** on your checked-out repository. Reference the exercise issue with `#`, then prompt the agent to open it in the side panel and wait for you:
 
    > ![Static Badge](https://img.shields.io/badge/Prompt-text?style=for-the-badge&logo=github-copilot&logoColor=white&labelColor=purple&color=purple)
    >
    > ```prompt
-   > - Open a browser canvas and go to https://github.com/login
-   > - Sign me in to GitHub, then open the exercise issue #1 of this repository
-   > - Keep it open in the right side panel so I can read and click through it
+   > Open up issue #1 in the side panel and stop
+   > Don't plan or use autopilot wait for further instructions from the user
    > ```
 
-   The browser canvas has its own sign-in, so signing in here keeps the
-   exercise issue (and later your work item and pull request) rendered as
-   **live, logged-in pages** you can read and click through without leaving
-   the app.
+   The exercise issue (**#1**) opens in the app's **issue side panel**, so the
+   step instructions and graded feedback stay pinned next to your session as
+   you work — no separate sign-in needed.
 
-   <!-- image: exercise walkthrough issue open in a browser canvas -->
+   <img width="520" alt="Exercise issue #1 opened in the app's side panel, listed under 'Relevant from session' in the session panel menu" src="../images/step1-open-issue-side-panel.png" />
+
+   <details>
+   <summary>How to reference the issue and keep the agent waiting 👀</summary><br/>
+
+   Type <code>#</code> in the prompt to reference the exercise issue by name:
+
+   <img width="360" alt="Typing # in the prompt shows the exercise issue in the reference picker" src="../images/step1-open-issue-reference.png" />
+
+   Your prompt then shows the issue as a chip:
+
+   <img width="440" alt="The prompt with the exercise issue referenced as a #1 chip" src="../images/step1-open-issue-prompt.png" />
+
+   If the agent offers a plan, choose **Exit plan mode and I will prompt myself** so it stops and waits for your next instruction instead of running ahead:
+
+   <img width="420" alt="Plan summary with 'Exit plan mode and I will prompt myself' selected" src="../images/step1-exit-plan-mode.png" />
+
+   </details>
 
 1. In the session, confirm Copilot can see the repository context (for example, ask it to summarize the README).
 
@@ -99,15 +115,15 @@ To use the GitHub Copilot app, the first step — as you might imagine — is to
    >   - a locally generated short slug
    > - Bookmarks are persisted in the browser
    >
-   > Open a new browser canvas with this new issue once created and keep it
-   > open in the right side panel so I can read and click through it
+   > Once created, open this new issue in the side panel so I can read and
+   > click through it
    > ```
 
 1. Make sure the created issue:
    - has a **title that mentions bookmarks** (for example, `Build the bookmarks app`), and
    - has a **body that names both** the **original URL** and the **short slug**.
 
-   <!-- image: created issue open in a browser canvas -->
+   <!-- image: created app issue open in the side panel -->
 
 > [!TIP]
 > If the session can't see repository context, re-check that **your copy** of the exercise repository is connected before drafting the issue.
