@@ -116,7 +116,8 @@ To use the GitHub Copilot app, the first step — as you might imagine — is to
    > - Bookmarks are persisted in the browser
    >
    > Once created, open this new issue in the side panel so I can read and
-   > click through it
+   > click through it. Do not plan or implement or work on this issue at
+   > this time.
    > ```
 
 1. Make sure the created issue:
