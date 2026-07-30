@@ -18,6 +18,7 @@ files use `<!-- image: ... -->` HTML-comment placeholders so issue comments stil
 | `step1-exit-plan-mode.png` | 1 · Act 1 | Plan summary with 'Exit plan mode and I will prompt myself' selected |
 | `step2-add-panel-menu.png` | 2 | Session with the walkthrough issue #1 open in the side panel and the "Build the bookmarks app" work item (no work started) |
 | `step2-agent-merge-dropdown.png` | 2 | Session action dropdown with **Agent merge** selected |
+| `step2-agent-merge-change.png` | 2 · Act 1 | Changes tab showing the TODO replaced by the localStorage + client:load rules, with the Agent merge dropdown |
 
 ## Still to capture (one per remaining `<!-- image: -->` placeholder)
 

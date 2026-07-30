@@ -44,7 +44,14 @@ Even a light, single-file change is a chance to try **agent merge** — the app'
 
    <img width="60%" alt="Session action dropdown with Agent merge selected to automate the pull request lifecycle" src="../images/step2-agent-merge-dropdown.png" />
 
-<!-- image: diff showing the committed copilot-instructions.md -->
+   <details>
+   <summary>See the change agent merge ships 👀</summary><br/>
+
+   The pull request replaces the seeded `TODO` block with the two project rules — persistence via `localStorage` and the `client:load` boundary — before merging to `main`.
+
+   <img width="520" alt="Session Changes tab showing copilot-instructions.md with the TODO block removed and the localStorage and client:load rules added, alongside the Agent merge dropdown" src="../images/step2-agent-merge-change.png" />
+
+   </details>
 
 > [!TIP]
 > Be specific to this project (Astro + TypeScript + `localStorage` behind `client:load`). The client-boundary rule is exactly what keeps the Step 3 build from crashing at SSR.
