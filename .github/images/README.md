@@ -17,6 +17,7 @@ files use `<!-- image: ... -->` HTML-comment placeholders so issue comments stil
 | `step1-reopen-issue.png` | 1·2·3·4 · Act 1 tip | Session panel menu listing the repo and the Exercise: Idea to Merge issue to reopen it |
 | `step1-new-session-panel.png` | 1 · Act 1 | **New session** button with its dropdown in the top-right of the issue side panel |
 | `step2-new-session.png` | 2 · Act 1 | Session panel with the **New session** button highlighted next to the repo name |
+| `step2-plan-mode.png` | 2 · Act 1 | Session mode dropdown with **Plan** selected (Plan first, execute when ready) |
 | `step2-agent-merge-dropdown.png` | 2 | Session action dropdown with **Agent merge** selected |
 | `step2-agent-merge-change.png` | 2 · Act 1 | Changes tab showing the TODO replaced by the localStorage + client:load rules, with the Agent merge dropdown |
 | `step3-nested-session.png` | 3 · Act 1 | Session menu showing the nested **Build the bookmarks app** session under the exercise issue |

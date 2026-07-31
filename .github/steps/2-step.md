@@ -31,9 +31,15 @@ Even a light, single-file change is a chance to try **agent merge** — the app'
 > [!NOTE]
 > This is a **light, single-file edit** made in a session — you'll prompt the agent to update the file, then use **agent merge** to open and merge the pull request to `main` for you.
 
-1. Start a **New session** on your repository, then **prompt the agent to update `.github/copilot-instructions.md`** — replace the seeded `TODO` placeholder with the two project rules:
+1. Open a **New session** on your repository — click **New session** in the top-right of the session panel, next to the repository name.
 
-   <img width="420" alt="Session panel with the New session button highlighted next to the repository name" src="../images/step2-new-session.png" />
+   <img width="420" alt="The New session button highlighted in the top-right of the session panel, next to the repository name" src="../images/step2-new-session.png" />
+
+1. Switch the session to **Plan** mode from the mode dropdown below the prompt field, so the agent drafts its edit for you to approve before it runs.
+
+   <img width="480" alt="The session mode dropdown with Plan selected — 'Plan first, execute when ready'" src="../images/step2-plan-mode.png" />
+
+1. **Prompt the agent to update `.github/copilot-instructions.md`** — replace the seeded `TODO` placeholder with the two project rules:
 
    > ![Static Badge](https://img.shields.io/badge/Prompt-text?style=for-the-badge&logo=github-copilot&logoColor=white&labelColor=purple&color=purple)
    >
@@ -43,7 +49,7 @@ Even a light, single-file change is a chance to try **agent merge** — the app'
    > - browser code runs behind a client:load boundary so SSR never touches localStorage.
    > ```
 
-1. **Confirm agent merge lands the change.** Your prompt asks the agent to ship the edit with **Agent merge** — approve it when prompted, or trigger it yourself from the session's action dropdown (top of the session). The app opens a pull request for your edit and **merges it to `main` automatically**.
+1. **Confirm agent merge lands the change.** Review the plan and approve it, then ship the edit with **Agent merge** from the session's action dropdown (top of the session). The app opens a pull request for your edit and **merges it to `main` automatically**.
 
    <img width="380" alt="Session action dropdown with Agent merge selected to automate the pull request lifecycle" src="../images/step2-agent-merge-dropdown.png" />
 
