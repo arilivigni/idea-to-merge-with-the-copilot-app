@@ -1,10 +1,10 @@
 ## Step 3: Build, open, and merge the pull request
 
-The rules are set. 🛠️ Now deliver the feature the way a team really does: build it in a dedicated, issue-driven session, open a pull request, review it, and ship it with **agent merge** — all in one native flow in the app.
+The rules are set. 🛠️ Now deliver the feature the way a team really does: build it in a dedicated session, open a pull request, review it, and ship it with **agent merge** — all in one native flow in the app.
 
-### 📖 Theory: the issue-driven session
+### 📖 Theory: build in a dedicated session
 
-This is where the extra ceremony pays off. Launching a session **from the app issue** lets the agent implement the feature on its **own branch** and open a pull request — unlike the light `main` edits in Steps 2 and 4.
+This is where the extra ceremony pays off. A dedicated **session** lets the agent implement the feature on its **own branch** and open a pull request — unlike the light `main` edits in Steps 2 and 4. You don't need to open the app issue first; the build prompt links it with a closing keyword.
 
 - The session branches **from `main`**, so it inherits your Step 2 custom instructions.
 - Before it starts, you set three controls from the dropdowns below the prompt: **where it runs** (a new working tree, your local repository, or a cloud sandbox), the **session mode**, and the **model** and reasoning effort (**Auto** lets the app pick).
@@ -19,7 +19,7 @@ This is where the extra ceremony pays off. Launching a session **from the app is
 - Because the PR body uses a closing keyword, merging automatically **closes the linked app issue**.
 
 > [!NOTE]
-> **Why a fresh issue-driven session — not the Step 2 one?** Starting from the app issue cuts a branch from the **current `main`** (which now has your Step 2 instructions), loads the issue context so `Closes #<n>` wires up naturally, and gives you a clean working tree. Reusing the Step 2 session risks a branch that's **behind `main`** — so it may miss the client-boundary rule and fail the build gate — and mixes a docs edit with a feature build. Keep it **one session per work item**. (A **nested session** is for breaking a big task into sub-tasks; this single feature doesn't need one.)
+> **Why a fresh session — not the Step 2 one?** A new session cuts a branch from the **current `main`** (which now has your Step 2 instructions) and gives you a clean working tree; the build prompt links the app issue with `Closes …/issues/2`, so no closing keyword is left to chance. Reusing the Step 2 session risks a branch that's **behind `main`** — so it may miss the client-boundary rule and fail the build gate — and mixes a docs edit with a feature build. Keep it **one session per work item**. (A **nested session** is for breaking a big task into sub-tasks; this single feature doesn't need one.)
 
 <!-- image: bookmarks UI showing an original URL and its short slug -->
 
@@ -47,7 +47,7 @@ This is where the extra ceremony pays off. Launching a session **from the app is
 
    Follow the work in the conversation, and use the session's **Files** and **Changes** tabs — or a **lightweight editor canvas** — to inspect or adjust files on the session branch.
 
-   <!-- image: issue-driven session running with the Files and Changes tabs -->
+   <!-- image: session running with the Files and Changes tabs -->
 1. In one prompt, have the agent build the feature, **open the pull request**, walk you through the changes, and **ship it with agent merge** — the native Copilot App flow. The prompt already links your **Build the bookmarks app** issue (issue **#2**):
 
    > ![Static Badge](https://img.shields.io/badge/Prompt-text?style=for-the-badge&logo=github-copilot&logoColor=white&labelColor=purple&color=purple)
