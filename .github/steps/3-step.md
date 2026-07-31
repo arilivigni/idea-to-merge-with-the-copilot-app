@@ -36,6 +36,8 @@ This is where the extra ceremony pays off. Launching a session **from the app is
 ### ⌨️ Activity 1: Build the feature and ship it with agent merge (graded)
 
 1. From the **app issue** you created in Step 1, **launch an issue-driven session**: open the issue in **My work**, then click **New session** so the issue context loads automatically.
+
+   <img width="420" alt="Session panel with the New session button highlighted next to the repository name" src="../images/step3-new-session.png" />
 1. Set the session controls from the dropdowns below the prompt field:
    - **Run location:** choose **a new working tree** (or your local repository) so the work lands on its own branch.
    - **Session mode:** pick **Plan** to review the agent's approach first, or **Interactive** to work step by step. Avoid **Autopilot** for this exercise so you can see each change.
