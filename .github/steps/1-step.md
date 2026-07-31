@@ -67,13 +67,16 @@ To use the GitHub Copilot app, the first step — as you might imagine — is to
 
    <img width="420" alt="Clone repository dialog with the exercise repository URL entered" src="../images/step1-clone-repo-url.png" />
 
-1. Start a **New session** on your checked-out repository. Reference the exercise issue with `#`, then prompt the agent to open it in the side panel and wait for you:
+1. Start a **New session** on your checked-out repository. Before you send anything, set the **Session mode** dropdown (below the prompt field) to **Interactive** — *not* **Plan** or **Autopilot** — so the agent waits for you between actions instead of planning and building on its own.
+
+   **The mode dropdown — not the prompt wording — decides how much the agent runs on its own.** If it's left on **Autopilot** (or **Plan** with auto-run), the agent keeps going even when your prompt says "stop," so set it to **Interactive** first.
+
+1. Reference the exercise issue with `#`, then send this read-only prompt so the agent just opens the issue and waits:
 
    > ![Static Badge](https://img.shields.io/badge/Prompt-text?style=for-the-badge&logo=github-copilot&logoColor=white&labelColor=purple&color=purple)
    >
    > ```prompt
    > Open up issue #1 in the side panel and stop
-   > Stay in interactive mode don't use plan or autopilot mode
    > ```
 
    The exercise issue (**#1**) opens in the app's **issue side panel**, so the
@@ -82,18 +85,13 @@ To use the GitHub Copilot app, the first step — as you might imagine — is to
 
    <img width="360" alt="Typing # in the prompt shows the exercise issue in the reference picker" src="../images/step1-open-issue-reference.png" />
 
-   <details>
-   <summary>How to reference the issue and keep the agent waiting 👀</summary><br/>
-
    Your prompt then shows the issue as a chip:
 
    <img width="440" alt="The prompt with the exercise issue referenced as a #1 chip" src="../images/step1-open-issue-prompt.png" />
 
-   If the agent offers a plan, choose **Exit plan mode and I will prompt myself** so it stops and waits for your next instruction instead of running ahead:
+   If the agent ever offers a plan anyway, choose **Exit plan mode and I will prompt myself** so it stops and waits for your next instruction instead of running ahead:
 
    <img width="420" alt="Plan summary with 'Exit plan mode and I will prompt myself' selected" src="../images/step1-exit-plan-mode.png" />
-
-   </details>
 
 1. In the session, confirm Copilot can see the repository context (for example, ask it to summarize the README).
 
@@ -113,7 +111,6 @@ To use the GitHub Copilot app, the first step — as you might imagine — is to
    >
    > Once created, open this new issue in the side panel so I can read and
    > click through it.
-   > Stay in interactive mode don't use plan or autopilot mode
    > ```
 
 1. Make sure the created issue:
