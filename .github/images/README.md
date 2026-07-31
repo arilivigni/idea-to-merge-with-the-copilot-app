@@ -12,12 +12,11 @@ files use `<!-- image: ... -->` HTML-comment placeholders so issue comments stil
 | `step1-app-download.gif` | 1 | Downloading and installing the GitHub Copilot app |
 | `step1-add-repo-url.png` | 1 | Add-project menu with **Repository URL…** highlighted |
 | `step1-clone-repo-url.png` | 1 | Clone repository dialog with the exercise URL entered |
-| `step1-open-issue-side-panel.png` | 1 · Act 1 | Exercise issue #1 open in the app's side panel (Relevant from session) |
-| `step1-open-issue-reference.png` | 1 · Act 1 | Typing `#` shows the exercise issue in the reference picker |
-| `step1-open-issue-prompt.png` | 1 · Act 1 | Prompt with the exercise issue as a #1 chip |
-| `step1-exit-plan-mode.png` | 1 · Act 1 | Plan summary with 'Exit plan mode and I will prompt myself' selected |
+| `step1-new-session.png` | 1 · Act 1 | New session button in the top-right of the session panel, next to the repo name |
+| `step1-open-issue.png` | 1 · Act 1 | Exercise issue #1 above the prompt field with a 'Click to open' callout |
+| `step1-issue-session-menu.png` | 1 · Act 1 | Session panel menu listing the repo and the Exercise: Idea to Merge issue |
 | `step2-new-session.png` | 2 · Act 1 | Session panel with the **New session** button highlighted next to the repo name |
-| `exercise-issue-reference.png` | 2·3·4 · Act 1 tip | Session menu listing the **Exercise: Idea to Merge…** issue (#1) to reopen the walkthrough |
+| `exercise-issue-reference.png` | 1·2·3·4 · Act 1 tip | Session menu listing the **Exercise: Idea to Merge…** issue (#1) to reopen the walkthrough |
 | `step2-agent-merge-dropdown.png` | 2 | Session action dropdown with **Agent merge** selected |
 | `step2-agent-merge-change.png` | 2 · Act 1 | Changes tab showing the TODO replaced by the localStorage + client:load rules, with the Agent merge dropdown |
 | `step3-nested-session.png` | 1 · Act 2 · 3 · Act 1 | Session menu showing the nested **Build the bookmarks app** session under the exercise issue |

@@ -67,29 +67,32 @@ To use the GitHub Copilot app, the first step — as you might imagine — is to
 
    <img width="420" alt="Clone repository dialog with the exercise repository URL entered" src="../images/step1-clone-repo-url.png" />
 
-1. Start a **New session** on your checked-out repository. Before you send anything, set the **Session mode** dropdown (below the prompt field) to **Interactive** — *not* **Plan** or **Autopilot** — so the agent waits for you between actions instead of planning and building on its own.
+1. Start a **New session** on your checked-out repository — click **New session** in the top-right of the session panel, next to the repository name.
 
-   **The mode dropdown — not the prompt wording — decides how much the agent runs on its own.** If it's left on **Autopilot** (or **Plan** with auto-run), the agent keeps going even when your prompt says "stop," so set it to **Interactive** first.
+   <img width="420" alt="The New session button highlighted in the top-right of the session panel, next to the repository name" src="../images/step1-new-session.png" />
 
-1. Reference the exercise issue with `#`, then send this read-only prompt so the agent just opens the issue and waits:
+1. **Open the walkthrough issue as a reference — don't build it.** The exercise issue (**#1**) appears above the prompt field; click it (**Click to open**) to open it in the **side panel** for reading. This only *displays* the issue — nothing runs, so the session won't start planning or building.
 
-   > ![Static Badge](https://img.shields.io/badge/Prompt-text?style=for-the-badge&logo=github-copilot&logoColor=white&labelColor=purple&color=purple)
-   >
-   > ```prompt
-   > Open up issue #1 in the side panel and stop
-   > ```
+   **Don't use _Create session from issue_ on #1.** That tells the app to *build* the issue — which is why it jumps straight into Plan mode and starts working. Issue **#1** is your **guide to read**; you'll use create-from-issue later in **Step 3** on the app issue you create (**#2**), which *is* meant to be built.
 
-   The exercise issue (**#1**) opens in the app's **issue side panel**, so the
-   step instructions and graded feedback stay pinned next to your session as
-   you work — no separate sign-in needed.
+   <img width="460" alt="The exercise issue #1 shown above the prompt field with a 'Click to open' callout" src="../images/step1-open-issue.png" />
 
-   <img width="360" alt="Typing # in the prompt shows the exercise issue in the reference picker" src="../images/step1-open-issue-reference.png" />
+1. With issue **#1** open in the side panel, click **New session** in the panel's top-right to get a fresh session for the work in Activity 2.
 
+<<<<<<< Updated upstream
    If the agent ever offers a plan anyway, choose **Exit plan mode and I will prompt myself** so it stops and waits for your next instruction instead of running ahead:
 
    <img width="420" alt="Plan summary with 'Exit plan mode and I will prompt myself' selected" src="../images/step1-exit-plan-mode.png" />
+=======
+   <img width="380" alt="The session panel menu listing the repository and the Exercise: Idea to Merge with the Copilot App issue" src="../images/step1-issue-session-menu.png" />
+>>>>>>> Stashed changes
 
 1. In the session, confirm Copilot can see the repository context (for example, ask it to summarize the README).
+
+> [!TIP]
+> Need these instructions again later? Open the session panel menu and select **Exercise: Idea to Merge with the Copilot App** to reopen issue **#1** in the side panel anytime.
+
+<img width="360" alt="Session panel menu with the Exercise: Idea to Merge with the Copilot App issue selected to reopen the walkthrough" src="../images/exercise-issue-reference.png" />
 
 ### ⌨️ Activity 2: Create the app issue from a session
 
