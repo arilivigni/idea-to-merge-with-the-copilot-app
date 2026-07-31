@@ -71,9 +71,8 @@ This is where the extra ceremony pays off. A dedicated **session** lets the agen
    >   "Closes https://github.com/{{full_repo_name}}/issues/2"
    > - Walk me through the diff so I can review the changes
    >
-   > Don't just merge the pull request
-   > Make sure the pull request state is correct
-   > Use agent merge to merge the pull request into main and provide helpful tips
+   > Don't automatically create a pull request
+   > Provide helpful tips about agent merge
    > ```
 
 1. **Review the diff, then let agent merge land it.** Watch the changes in the session's **Changes** tab (or a browser canvas on the PR), then confirm **Agent merge** from the session's action dropdown so the app merges the pull request into `main`. Because the PR body uses a closing keyword, merging **closes the linked app issue** automatically.
