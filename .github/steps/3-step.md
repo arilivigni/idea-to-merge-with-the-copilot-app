@@ -101,15 +101,15 @@ This is where the extra ceremony pays off. Build in the **nested session you par
 
 ### ⌨️ Activity 2: Confirm the merge landed
 
-Agent merge handled the merge in Activity 1 — now confirm it landed. You'll see **two result tables** post to this issue: the **build** check when the PR opened, and the **merge** check once agent merge completed. The merge check also **re-builds `main`**, so the exercise only advances when the shipped app still builds.
+Agent merge handled the merge in Activity 1 — now confirm it landed. Watch this issue for **two result tables**: the **build** check when the pull request opened, and the **merge** check once agent merge completed. The merge check also **re-builds `main`**, so the exercise only advances when the shipped app still builds.
 
 1. Confirm the pull request is **merged into `main`** (open the PR in a browser canvas, or check the **app PR** view).
 
-   <!-- image: merged pull request in the app -->
+   <!-- image: merged bookmarks pull request in the app's pull request view -->
 
 1. Confirm the linked **app issue** is now **closed** — the closing keyword did this automatically.
 
-   <!-- image: linked app issue automatically closed -->
+   <!-- image: linked app issue (Build the bookmarks app) automatically closed -->
 
 <details>
 <summary>Having trouble? 🤷</summary><br/>

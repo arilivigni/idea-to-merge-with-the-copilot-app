@@ -67,7 +67,27 @@ Even a light, single-file change is a chance to try **agent merge** — the app'
 
 - The file must contain the exact tokens **`localStorage`** and **`client:load`**.
 - Remove the seeded **`TODO`** marker entirely — the check fails while any TODO remains.
-- Agent merge lands the change on **`main`** for you — if the check didn't run, confirm the agent-merge pull request actually **merged** (not left open).
+- Still stuck on the app itself? See [Getting started with the Copilot App](https://docs.github.com/en/copilot/how-tos/github-copilot-app/getting-started).
+
+</details>
+
+### ⌨️ Activity 2: Confirm the merge landed
+
+Agent merge handled the merge in Activity 1 — now confirm it landed. When your edit reaches `main`, a **result table** posts to this issue: it checks that `.github/copilot-instructions.md` now names **both** rules — **`localStorage`** and **`client:load`** — and that the seeded **`TODO`** is gone. That table is what advances the exercise, so watch this issue for it.
+
+1. Confirm the pull request agent merge opened is **merged into `main`** — nothing should be left open. Open it in a browser canvas or the app's **pull request** view.
+
+   <!-- image: merged copilot-instructions pull request in the app -->
+
+1. Confirm `.github/copilot-instructions.md` on `main` now holds the two project rules with **no `TODO`** remaining.
+
+   <!-- image: copilot-instructions.md on main showing the localStorage and client:load rules, no TODO -->
+
+<details>
+<summary>Having trouble? 🤷</summary><br/>
+
+- If the result table hasn't posted, make sure agent merge actually **merged** the pull request to `main` (not just opened it) — the check runs on the merge to `main`.
+- The table stays red until the file contains **both** `localStorage` and `client:load` and the seeded `TODO` is removed.
 - Still stuck on the app itself? See [Getting started with the Copilot App](https://docs.github.com/en/copilot/how-tos/github-copilot-app/getting-started).
 
 </details>

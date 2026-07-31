@@ -20,6 +20,8 @@ files use `<!-- image: ... -->` HTML-comment placeholders so issue comments stil
 | `exercise-issue-reference.png` | 2·3·4 · Act 1 tip | Session menu listing the **Exercise: Idea to Merge…** issue (#1) to reopen the walkthrough |
 | `step2-agent-merge-dropdown.png` | 2 | Session action dropdown with **Agent merge** selected |
 | `step2-agent-merge-change.png` | 2 · Act 1 | Changes tab showing the TODO replaced by the localStorage + client:load rules, with the Agent merge dropdown |
+| `step3-nested-session.png` | 1 · Act 2 · 3 · Act 1 | Session menu showing the nested **Build the bookmarks app** session under the exercise issue |
+| `step3-agent-merge-dropdown.png` | 3 · Act 1 | Session action dropdown with **Agent merge** selected to automate the pull request lifecycle |
 
 ## Still to capture (one per remaining `<!-- image: -->` placeholder)
 
@@ -29,14 +31,13 @@ files use `<!-- image: ... -->` HTML-comment placeholders so issue comments stil
 | `step1-issue-created.png` | 1 · Act 2 | Created work-item issue with the bookmarks title |
 | `step1-issue-side-panel.png` | 1 · Act 2 | Created app issue open in the side panel |
 | `step2-instructions-diff.png` | 2 · Act 1 | Diff of the committed `copilot-instructions.md` |
+| `step2-merged-pr.png` | 2 · Act 2 | Merged `copilot-instructions.md` pull request in the app |
+| `step2-instructions-on-main.png` | 2 · Act 2 | `copilot-instructions.md` on `main` with the two rules and no TODO |
 | `step3-bookmarks-ui.png` | 3 · Theory | Bookmarks UI: an original URL and its short slug |
 | `step3-pr-opened.png` | 3 · Theory | Pull request opened from the session |
-| `step3-agent-merge-dropdown.png` | 3 · Act 1 | Session action dropdown with **Agent merge** selected to automate the pull request lifecycle |
-| `step3-nested-session.png` | 1 · Act 2 · 3 · Act 1 | Session menu showing the nested **Build the bookmarks app** session under the exercise issue |
 | `step3-session-controls.png` | 3 · Act 1 | Session mode, model, and run-location dropdowns below the prompt |
 | `step3-session-files-changes.png` | 3 · Act 1 | Issue-driven session running with the Files and Changes tabs |
 | `step3-pr-references-issue.png` | 3 · Act 1 | Opened pull request referencing the app issue |
-| `step3-agent-merge.png` | 3 · Act 1 | Agent merge shipping the bookmarks pull request |
 | `step3-merged-pr.png` | 3 · Act 2 | Merged pull request in the app |
 | `step3-issue-closed.png` | 3 · Act 2 | Linked app issue automatically closed |
 | `step4-terminal-dev.png` | 4 · Act 1 | Dev server running in a Terminal canvas |
