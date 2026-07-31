@@ -18,6 +18,9 @@ This is where the extra ceremony pays off. Launching a session **from the app is
 - This exercise uses an **unprotected** branch, so the merge isn't blocked by required checks or reviews. (Required-check gating comes in a follow-on exercise.)
 - Because the PR body uses a closing keyword, merging automatically **closes the linked app issue**.
 
+> [!NOTE]
+> **Why a fresh issue-driven session — not the Step 2 one?** Starting from the app issue cuts a branch from the **current `main`** (which now has your Step 2 instructions), loads the issue context so `Closes #<n>` wires up naturally, and gives you a clean working tree. Reusing the Step 2 session risks a branch that's **behind `main`** — so it may miss the client-boundary rule and fail the build gate — and mixes a docs edit with a feature build. Keep it **one session per work item**. (A **nested session** is for breaking a big task into sub-tasks; this single feature doesn't need one.)
+
 <!-- image: bookmarks UI showing an original URL and its short slug -->
 
 <!-- image: pull request opened from the session -->
