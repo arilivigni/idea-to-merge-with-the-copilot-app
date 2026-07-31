@@ -28,7 +28,7 @@ Even a light, single-file change is a chance to try **agent merge** — the app'
 
 1. In a session on your repository, open `.github/copilot-instructions.md` in a **lightweight editor canvas**. Open the session's **+** menu and choose **Files** (or **Markdown editor**), or just ask the agent to open the file.
 
-   <img width="560" alt="Copilot App session showing the exercise walkthrough issue #1 open in the side panel with the &quot;Build the bookmarks app&quot; work item, and no planning or implementation started" src="../images/step2-add-panel-menu.png" />
+   <img width="480" alt="Copilot App session showing the exercise walkthrough issue #1 open in the side panel with the &quot;Build the bookmarks app&quot; work item, and no planning or implementation started" src="../images/step2-add-panel-menu.png" />
 
 1. **Prompt the agent to update `.github/copilot-instructions.md`** — replace the seeded `TODO` placeholder with the two project rules:
 
@@ -38,18 +38,19 @@ Even a light, single-file change is a chance to try **agent merge** — the app'
    > Update .github/copilot-instructions.md: replace the TODO placeholder with the two project rules:
    > - persistence uses browser localStorage, and
    > - browser code runs behind a client:load boundary so SSR never touches localStorage.
+   > Use agent merge to merge the PR and provide helpful tips
    > ```
 
-1. **Ship the change with agent merge.** Open the session's action dropdown (top of the session), choose **Agent merge**, and confirm. The app opens a pull request for your edit and **merges it to `main` automatically**.
+1. **Confirm agent merge lands the change.** Your prompt asks the agent to ship the edit with **Agent merge** — approve it when prompted, or trigger it yourself from the session's action dropdown (top of the session). The app opens a pull request for your edit and **merges it to `main` automatically**.
 
-   <img width="60%" alt="Session action dropdown with Agent merge selected to automate the pull request lifecycle" src="../images/step2-agent-merge-dropdown.png" />
+   <img width="380" alt="Session action dropdown with Agent merge selected to automate the pull request lifecycle" src="../images/step2-agent-merge-dropdown.png" />
 
    <details>
    <summary>See the change agent merge ships 👀</summary><br/>
 
    The pull request replaces the seeded `TODO` block with the two project rules — persistence via `localStorage` and the `client:load` boundary — before merging to `main`.
 
-   <img width="520" alt="Session Changes tab showing copilot-instructions.md with the TODO block removed and the localStorage and client:load rules added, alongside the Agent merge dropdown" src="../images/step2-agent-merge-change.png" />
+   <img width="440" alt="Session Changes tab showing copilot-instructions.md with the TODO block removed and the localStorage and client:load rules added, alongside the Agent merge dropdown" src="../images/step2-agent-merge-change.png" />
 
    </details>
 
