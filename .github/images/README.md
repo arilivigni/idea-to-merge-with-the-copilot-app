@@ -14,7 +14,7 @@ files use `<!-- image: ... -->` HTML-comment placeholders so issue comments stil
 | `step1-clone-repo-url.png` | 1 | Clone repository dialog with the exercise URL entered |
 | `step1-new-session.png` | 1 · Act 1 | New session button in the top-right of the session panel, next to the repo name |
 | `step1-open-issue.png` | 1 · Act 1 | Exercise issue #1 above the prompt field with a 'Click to open' callout |
-| `step1-issue-session-menu.png` | 1 · Act 1 | Session panel menu listing the repo and the Exercise: Idea to Merge issue |
+| `step1-new-session-panel.png` | 1 · Act 1 | **New session** button with its dropdown in the top-right of the issue side panel |
 | `step2-new-session.png` | 2 · Act 1 | Session panel with the **New session** button highlighted next to the repo name |
 | `exercise-issue-reference.png` | 1·2·3·4 · Act 1 tip | Session menu listing the **Exercise: Idea to Merge…** issue (#1) to reopen the walkthrough |
 | `step2-agent-merge-dropdown.png` | 2 | Session action dropdown with **Agent merge** selected |

@@ -79,7 +79,7 @@ To use the GitHub Copilot app, the first step — as you might imagine — is to
 
 1. With issue **#1** open in the side panel, click **New session** in the panel's top-right to get a fresh session for the work in Activity 2.
 
-   <img width="380" alt="The session panel menu listing the repository and the Exercise: Idea to Merge with the Copilot App issue" src="../images/step1-issue-session-menu.png" />
+   <img width="180" alt="The New session button with its dropdown in the top-right of the issue side panel" src="../images/step1-new-session-panel.png" />
 
 1. In the session, confirm Copilot can see the repository context (for example, ask it to summarize the README).
 
