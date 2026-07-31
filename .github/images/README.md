@@ -11,7 +11,6 @@ files use `<!-- image: ... -->` HTML-comment placeholders so issue comments stil
 | `step1-app-download-page.png` | 1 | GitHub Copilot app download page with platform options |
 | `step1-app-download.gif` | 1 | Downloading and installing the GitHub Copilot app |
 | `step1-add-repo-url.png` | 1 | Add-project menu with **Repository URL…** highlighted |
-| `step1-new-session.png` | 1 · Act 1 | Session panel with the **New session** button highlighted next to the repo name |
 | `step1-clone-repo-url.png` | 1 | Clone repository dialog with the exercise URL entered |
 | `step1-open-issue-side-panel.png` | 1 · Act 1 | Exercise issue #1 open in the app's side panel (Relevant from session) |
 | `step1-open-issue-reference.png` | 1 · Act 1 | Typing `#` shows the exercise issue in the reference picker |

@@ -49,9 +49,11 @@ Three shipping patterns keep ceremony proportional to the change:
 
 To use the GitHub Copilot app, the first step — as you might imagine — is to install it. Versions are available for Windows, macOS, and Linux. Let's install the app, authenticate, and add your exercise repository to the app.
 
-1. Download the app for your platform and install it following the instructions provided on the landing page: **https://github.com/features/ai/github-app**. *(This download page is the only step outside the app — everything after install happens inside the Copilot App.)*
+1. In a browser, open the landing page for the GitHub Copilot app: **https://github.com/features/ai/github-app**. *(This download page is the only step outside the app — everything after install happens inside the Copilot App.)*
 
    <img width="70%" alt="GitHub Copilot app download page with platform options" src="../images/step1-app-download-page.png" />
+
+1. Download the app for your platform and install it following the instructions provided on the landing page.
 
    <img width="60%" alt="Downloading and installing the GitHub Copilot app" src="../images/step1-app-download.gif" />
 
@@ -66,8 +68,6 @@ To use the GitHub Copilot app, the first step — as you might imagine — is to
    <img width="55%" alt="Clone repository dialog with the exercise repository URL entered" src="../images/step1-clone-repo-url.png" />
 
 1. Start a **New session** on your checked-out repository. Reference the exercise issue with `#`, then prompt the agent to open it in the side panel and wait for you:
-
-   <img width="420" alt="Session panel with the New session button highlighted next to the repository name" src="../images/step1-new-session.png" />
 
    > ![Static Badge](https://img.shields.io/badge/Prompt-text?style=for-the-badge&logo=github-copilot&logoColor=white&labelColor=purple&color=purple)
    >
