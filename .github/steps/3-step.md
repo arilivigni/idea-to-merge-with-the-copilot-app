@@ -79,7 +79,7 @@ This is where the extra ceremony pays off. Build in the **nested session you par
 
    <!-- image: opened pull request referencing the app issue -->
 
-   <!-- image: agent merge shipping the bookmarks pull request -->
+   <img width="380" alt="Session action dropdown with Agent merge selected to automate the pull request lifecycle" src="../images/step3-agent-merge-dropdown.png" />
 
 > [!TIP]
 > Point `Closes #<n>` at the **app issue** (not this walkthrough issue) so the merge closes the right one automatically.
