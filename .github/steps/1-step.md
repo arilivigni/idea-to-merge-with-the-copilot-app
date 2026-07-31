@@ -63,7 +63,7 @@ To use the GitHub Copilot app, the first step — as you might imagine — is to
 
    <img width="320" alt="Add project menu in the Copilot App with Repository URL highlighted" src="../images/step1-add-repo-url.png" />
 
-1. Paste the clone URL for the (`{{full_repo_name}}`) repo you just created, pick your GitHub account, and select **Clone**.
+1. Paste the clone URL for the (`https://github.com/{{full_repo_name}}`) repo you just created, pick your GitHub account, and select **Clone**.
 
    <img width="420" alt="Clone repository dialog with the exercise repository URL entered" src="../images/step1-clone-repo-url.png" />
 
