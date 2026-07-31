@@ -23,6 +23,11 @@ Even a light, single-file change is a chance to try **agent merge** — the app'
 
 ### ⌨️ Activity 1: Set the rules and ship them with agent merge (graded)
 
+> [!TIP]
+> You can reopen these step instructions anytime: in your session, reference the **Exercise: Idea to Merge with the Copilot App** issue (that's the walkthrough issue **#1** from your first session) to bring it back into the side panel.
+>
+> <img width="360" alt="Session panel menu listing the Exercise: Idea to Merge with the Copilot App issue to reopen it" src="../images/exercise-issue-reference.png" />
+
 > [!NOTE]
 > This is a **light, single-file edit** made in a session — you'll prompt the agent to update the file, then use **agent merge** to open and merge the pull request to `main` for you.
 

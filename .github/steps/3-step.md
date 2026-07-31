@@ -35,6 +35,11 @@ This is where the extra ceremony pays off. A dedicated **session** lets the agen
 
 ### ⌨️ Activity 1: Build the feature and ship it with agent merge (graded)
 
+> [!TIP]
+> You can reopen these step instructions anytime: in your session, reference the **Exercise: Idea to Merge with the Copilot App** issue (that's the walkthrough issue **#1** from your first session) to bring it back into the side panel.
+>
+> <img width="360" alt="Session panel menu listing the Exercise: Idea to Merge with the Copilot App issue to reopen it" src="../images/exercise-issue-reference.png" />
+
 1. Start a **New session** on your repository. You don't need to open the app issue first — the prompt below already links it with a closing keyword.
 
    <img width="420" alt="Session panel with the New session button highlighted next to the repository name" src="../images/step3-new-session.png" />
