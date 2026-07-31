@@ -80,14 +80,10 @@ To use the GitHub Copilot app, the first step — as you might imagine — is to
    step instructions and graded feedback stay pinned next to your session as
    you work — no separate sign-in needed.
 
-   <img width="520" alt="Exercise issue #1 opened in the app's side panel, listed under 'Relevant from session' in the session panel menu" src="../images/step1-open-issue-side-panel.png" />
+   <img width="360" alt="Typing # in the prompt shows the exercise issue in the reference picker" src="../images/step1-open-issue-reference.png" />
 
    <details>
    <summary>How to reference the issue and keep the agent waiting 👀</summary><br/>
-
-   Type <code>#</code> in the prompt to reference the exercise issue by name:
-
-   <img width="360" alt="Typing # in the prompt shows the exercise issue in the reference picker" src="../images/step1-open-issue-reference.png" />
 
    Your prompt then shows the issue as a chip:
 
