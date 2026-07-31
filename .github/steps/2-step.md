@@ -37,7 +37,8 @@ Even a light, single-file change is a chance to try **agent merge** — the app'
    > - persistence uses browser localStorage, and
    > - browser code runs behind a client:load boundary so SSR never touches localStorage.
    >
-   > Don't just merge the PR
+   > Don't just merge the pull request
+   > Make sure the pull request state is correct
    > Use agent merge to merge the pull request into main and provide helpful tips
    > ```
 
