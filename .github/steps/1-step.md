@@ -73,7 +73,8 @@ To use the GitHub Copilot app, the first step — as you might imagine — is to
    >
    > ```prompt
    > Open up issue #1 in the side panel and stop
-   > Don't plan or use autopilot wait for further instructions from the user
+   > Don't create a plan or implement any code or use autopilot. 
+   > Just stop once the issue has been opened.
    > ```
 
    The exercise issue (**#1**) opens in the app's **issue side panel**, so the
@@ -112,8 +113,8 @@ To use the GitHub Copilot app, the first step — as you might imagine — is to
    > - Bookmarks are persisted in the browser
    >
    > Once created, open this new issue in the side panel so I can read and
-   > click through it. Do not plan or implement or work on this issue at
-   > this time.
+   > click through it. Do not create a plan or implement any code at
+   > this time. Just stop once the issue is opened.
    > ```
 
 1. Make sure the created issue:
