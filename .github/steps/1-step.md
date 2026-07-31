@@ -85,10 +85,6 @@ To use the GitHub Copilot app, the first step — as you might imagine — is to
 
    <img width="360" alt="Typing # in the prompt shows the exercise issue in the reference picker" src="../images/step1-open-issue-reference.png" />
 
-   Your prompt then shows the issue as a chip:
-
-   <img width="440" alt="The prompt with the exercise issue referenced as a #1 chip" src="../images/step1-open-issue-prompt.png" />
-
    If the agent ever offers a plan anyway, choose **Exit plan mode and I will prompt myself** so it stops and waits for your next instruction instead of running ahead:
 
    <img width="420" alt="Plan summary with 'Exit plan mode and I will prompt myself' selected" src="../images/step1-exit-plan-mode.png" />
