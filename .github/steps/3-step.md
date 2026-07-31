@@ -4,7 +4,7 @@ The rules are set. 🛠️ Now deliver the feature the way a team really does: b
 
 ### 📖 Theory: build in a dedicated session
 
-This is where the extra ceremony pays off. A dedicated **session** lets the agent implement the feature on its **own branch** and open a pull request — unlike the light `main` edits in Steps 2 and 4. You don't need to open the app issue first; the build prompt links it with a closing keyword.
+This is where the extra ceremony pays off. Build in the **nested session you parked in Step 1** — it already hangs off the **app issue** and branches from `main`, so it carries your Step 2 instructions. Just reopen it and prompt. The session implements the feature on its **own branch** and opens a pull request — unlike the light `main` edits in Steps 2 and 4.
 
 - The session branches **from `main`**, so it inherits your Step 2 custom instructions.
 - Before it starts, you set three controls from the dropdowns below the prompt: **where it runs** (a new working tree, your local repository, or a cloud sandbox), the **session mode**, and the **model** and reasoning effort (**Auto** lets the app pick).
@@ -19,7 +19,7 @@ This is where the extra ceremony pays off. A dedicated **session** lets the agen
 - Because the PR body uses a closing keyword, merging automatically **closes the linked app issue**.
 
 > [!NOTE]
-> **Why a fresh session — not the Step 2 one?** A new session cuts a branch from the **current `main`** (which now has your Step 2 instructions) and gives you a clean working tree; the build prompt links the app issue with `Closes …/issues/2`, so no closing keyword is left to chance. Reusing the Step 2 session risks a branch that's **behind `main`** — so it may miss the client-boundary rule and fail the build gate — and mixes a docs edit with a feature build. Keep it **one session per work item**. (A **nested session** is for breaking a big task into sub-tasks; this single feature doesn't need one.)
+> **Why the nested session — not the Step 2 one?** The nested session you started in Step 1 hangs off the **app issue** and branches from the **current `main`** (which now has your Step 2 instructions), so it's already linked to the right work item with a clean tree. The build prompt still links the app issue with `Closes …/issues/2`, so no closing keyword is left to chance. Reusing the Step 2 session risks a branch that's **behind `main`** — so it may miss the client-boundary rule and fail the build gate — and mixes a docs edit with a feature build. Keep it **one session per work item**.
 
 <!-- image: bookmarks UI showing an original URL and its short slug -->
 
