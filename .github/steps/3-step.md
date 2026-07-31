@@ -40,9 +40,9 @@ This is where the extra ceremony pays off. A dedicated **session** lets the agen
 >
 > <img width="360" alt="Session panel menu listing the Exercise: Idea to Merge with the Copilot App issue to reopen it" src="../images/exercise-issue-reference.png" />
 
-1. Start a **New session** on your repository. You don't need to open the app issue first — the prompt below already links it with a closing keyword.
+1. Go to the nested session created in Step 1.
 
-   <img width="420" alt="Session panel with the New session button highlighted next to the repository name" src="../images/step3-new-session.png" />
+   <img width="360" alt="Session menu showing the nested Build the bookmarks app session under the exercise issue" src="../images/step3-nested-session.png" />
 1. Set the session controls from the dropdowns below the prompt field:
    - **Run location:** choose **a new working tree** (or your local repository) so the work lands on its own branch.
    - **Session mode:** pick **Plan** to review the agent's approach first, or **Interactive** to work step by step. Avoid **Autopilot** for this exercise so you can see each change.

@@ -31,7 +31,7 @@ files use `<!-- image: ... -->` HTML-comment placeholders so issue comments stil
 | `step2-instructions-diff.png` | 2 · Act 1 | Diff of the committed `copilot-instructions.md` |
 | `step3-bookmarks-ui.png` | 3 · Theory | Bookmarks UI: an original URL and its short slug |
 | `step3-pr-opened.png` | 3 · Theory | Pull request opened from the session |
-| `step3-new-session.png` | 3 · Act 1 | Session panel with the **New session** button highlighted next to the repo name |
+| `step3-nested-session.png` | 3 · Act 1 | Session menu showing the nested **Build the bookmarks app** session under the exercise issue |
 | `step3-session-controls.png` | 3 · Act 1 | Session mode, model, and run-location dropdowns below the prompt |
 | `step3-session-files-changes.png` | 3 · Act 1 | Issue-driven session running with the Files and Changes tabs |
 | `step3-pr-references-issue.png` | 3 · Act 1 | Opened pull request referencing the app issue |
