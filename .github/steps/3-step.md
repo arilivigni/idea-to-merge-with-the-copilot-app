@@ -38,7 +38,7 @@ This is where the extra ceremony pays off. Build in the **nested session you par
 > [!TIP]
 > You can reopen these step instructions anytime: in your session, reference the **Exercise: Idea to Merge with the Copilot App** issue (that's the walkthrough issue **#1** from your first session) to bring it back into the side panel.
 >
-> <img width="360" alt="Session panel menu listing the Exercise: Idea to Merge with the Copilot App issue to reopen it" src="../images/exercise-issue-reference.png" />
+> <img width="360" alt="Session panel menu listing the Exercise: Idea to Merge with the Copilot App issue to reopen it" src="../images/step1-reopen-issue.png" />
 
 1. Go to the nested session created in Step 1.
 
