@@ -79,13 +79,7 @@ To use the GitHub Copilot app, the first step — as you might imagine — is to
 
 1. With issue **#1** open in the side panel, click **New session** in the panel's top-right to get a fresh session for the work in Activity 2.
 
-<<<<<<< Updated upstream
-   If the agent ever offers a plan anyway, choose **Exit plan mode and I will prompt myself** so it stops and waits for your next instruction instead of running ahead:
-
-   <img width="420" alt="Plan summary with 'Exit plan mode and I will prompt myself' selected" src="../images/step1-exit-plan-mode.png" />
-=======
    <img width="380" alt="The session panel menu listing the repository and the Exercise: Idea to Merge with the Copilot App issue" src="../images/step1-issue-session-menu.png" />
->>>>>>> Stashed changes
 
 1. In the session, confirm Copilot can see the repository context (for example, ask it to summarize the README).
 
