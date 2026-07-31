@@ -46,7 +46,8 @@ You'll run the app from a **Terminal canvas**, watch it live in a **browser canv
 1. Open a **browser canvas** on that URL to see the app running, then add a bookmark and confirm both the **original URL** and its **short slug** display. For example, ask Copilot:
 
    ```text
-   Open a browser canvas on http://localhost:4321 and keep it in the right side panel.
+   Open a browser canvas on http://localhost:4321 
+   and keep it in the right side panel.
    ```
 
    <!-- image: bookmarks app running live in a browser canvas -->
