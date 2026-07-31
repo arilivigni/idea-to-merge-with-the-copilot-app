@@ -51,21 +51,21 @@ To use the GitHub Copilot app, the first step — as you might imagine — is to
 
 1. In a browser, open the landing page for the GitHub Copilot app: **https://github.com/features/ai/github-app**. *(This download page is the only step outside the app — everything after install happens inside the Copilot App.)*
 
-   <img width="70%" alt="GitHub Copilot app download page with platform options" src="../images/step1-app-download-page.png" />
+   <img width="520" alt="GitHub Copilot app download page with platform options" src="../images/step1-app-download-page.png" />
 
 1. Download the app for your platform and install it following the instructions provided on the landing page.
 
-   <img width="60%" alt="Downloading and installing the GitHub Copilot app" src="../images/step1-app-download.gif" />
+   <img width="480" alt="Downloading and installing the GitHub Copilot app" src="../images/step1-app-download.gif" />
 
 1. Open the app once it's installed.
 1. Select **Sign in to GitHub** and follow the prompts to authenticate.
 1. After authenticating, add your exercise repository. Click the **+** next to **Sessions**, then choose **Repository URL…**.
 
-   <img width="40%" alt="Add project menu in the Copilot App with Repository URL highlighted" src="../images/step1-add-repo-url.png" />
+   <img width="320" alt="Add project menu in the Copilot App with Repository URL highlighted" src="../images/step1-add-repo-url.png" />
 
 1. Paste the clone URL for the (`{{full_repo_name}}`) repo you just created, pick your GitHub account, and select **Clone**.
 
-   <img width="55%" alt="Clone repository dialog with the exercise repository URL entered" src="../images/step1-clone-repo-url.png" />
+   <img width="420" alt="Clone repository dialog with the exercise repository URL entered" src="../images/step1-clone-repo-url.png" />
 
 1. Start a **New session** on your checked-out repository. Reference the exercise issue with `#`, then prompt the agent to open it in the side panel and wait for you:
 
