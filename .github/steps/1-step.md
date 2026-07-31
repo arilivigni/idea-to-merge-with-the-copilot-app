@@ -109,12 +109,6 @@ To use the GitHub Copilot app, the first step — as you might imagine — is to
 
    <!-- image: created app issue open in the side panel -->
 
-1. With the **app issue** open in the side panel, start a **nested session** from it — this is the session you'll return to in Step 3 to build the feature. Name it so it's easy to find later, for example **Build the bookmarks app**.
-
-   <img width="360" alt="Session menu showing the nested Build the bookmarks app session under the exercise issue" src="../images/step3-nested-session.png" />
-
-   A **nested session** hangs off the app issue and branches from `main`, so leaving it parked here means Step 3 is just "reopen it and prompt" — no new setup.
-
 > [!TIP]
 > If the session can't see repository context, re-check that **your copy** of the exercise repository is connected before drafting the issue.
 

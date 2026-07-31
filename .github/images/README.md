@@ -20,7 +20,7 @@ files use `<!-- image: ... -->` HTML-comment placeholders so issue comments stil
 | `exercise-issue-reference.png` | 2·3·4 · Act 1 tip | Session menu listing the **Exercise: Idea to Merge…** issue (#1) to reopen the walkthrough |
 | `step2-agent-merge-dropdown.png` | 2 | Session action dropdown with **Agent merge** selected |
 | `step2-agent-merge-change.png` | 2 · Act 1 | Changes tab showing the TODO replaced by the localStorage + client:load rules, with the Agent merge dropdown |
-| `step3-nested-session.png` | 1 · Act 2 · 3 · Act 1 | Session menu showing the nested **Build the bookmarks app** session under the exercise issue |
+| `step3-nested-session.png` | 3 · Act 1 | Session menu showing the nested **Build the bookmarks app** session under the exercise issue |
 | `step3-agent-merge-dropdown.png` | 3 · Act 1 | Session action dropdown with **Agent merge** selected to automate the pull request lifecycle |
 
 ## Still to capture (one per remaining `<!-- image: -->` placeholder)
