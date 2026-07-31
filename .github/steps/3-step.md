@@ -4,7 +4,7 @@ The rules are set. 🛠️ Now deliver the feature the way a team really does: b
 
 ### 📖 Theory: build in a dedicated session
 
-This is where the extra ceremony pays off. Build in the **nested session you parked in Step 1** — it already hangs off the **app issue** and branches from `main`, so it carries your Step 2 instructions. Just reopen it and prompt. The session implements the feature on its **own branch** and opens a pull request — unlike the light `main` edits in Steps 2 and 4.
+This is where the extra ceremony pays off. Build the feature in a **dedicated session for the app issue** — start a session, reference issue **#2** (type `#2` and press **Tab**) so the work is linked to the right item, then prompt. The session branches from `main`, so it carries your Step 2 instructions, implements the feature on its **own branch**, and opens a pull request — unlike the light `main` edits in Steps 2 and 4.
 
 - The session branches **from `main`**, so it inherits your Step 2 custom instructions.
 - Before it starts, you set three controls from the dropdowns below the prompt: **where it runs** (a new working tree, your local repository, or a cloud sandbox), the **session mode**, and the **model** and reasoning effort (**Auto** lets the app pick).
@@ -19,7 +19,7 @@ This is where the extra ceremony pays off. Build in the **nested session you par
 - Because the PR body uses a closing keyword, merging automatically **closes the linked app issue**.
 
 > [!NOTE]
-> **Why the nested session — not the Step 2 one?** The nested session you started in Step 1 hangs off the **app issue** and branches from the **current `main`** (which now has your Step 2 instructions), so it's already linked to the right work item with a clean tree. The build prompt still links the app issue with `Closes …/issues/2`, so no closing keyword is left to chance. Reusing the Step 2 session risks a branch that's **behind `main`** — so it may miss the client-boundary rule and fail the build gate — and mixes a docs edit with a feature build. Keep it **one session per work item**.
+> **Why a dedicated session — not the Step 2 one?** Start a fresh session for the app issue: it branches from the **current `main`** (which now has your Step 2 instructions), and once you reference issue **#2** it's linked to the right work item with a clean tree. The build prompt still links the app issue with `Closes …/issues/2`, so no closing keyword is left to chance. Reusing the Step 2 session risks a branch that's **behind `main`** — so it may miss the client-boundary rule and fail the build gate — and mixes a docs edit with a feature build. Keep it **one session per work item**.
 
 <!-- image: bookmarks UI showing an original URL and its short slug -->
 
@@ -40,20 +40,10 @@ This is where the extra ceremony pays off. Build in the **nested session you par
 >
 > <img width="360" alt="Session panel menu listing the Exercise: Idea to Merge with the Copilot App issue to reopen it" src="../images/step1-reopen-issue.png" />
 
-1. Go to the nested session created in Step 1.
+1. In your session, open your **Build the bookmarks app** issue: type `#2` in the prompt field and press **Tab** to attach it as context for the build.
 
-   <img width="360" alt="Session menu showing the nested Build the bookmarks app session under the exercise issue" src="../images/step3-nested-session.png" />
-1. Set the session controls from the dropdowns below the prompt field:
-   - **Run location:** choose **a new working tree** (or your local repository) so the work lands on its own branch.
-   - **Session mode:** pick **Plan** to review the agent's approach first, or **Interactive** to work step by step. Avoid **Autopilot** for this exercise so you can see each change.
-   - **Model:** leave it on **Auto** unless you have a preference.
-
-   <!-- image: session mode, model, and run-location dropdowns below the prompt -->
-
-   Follow the work in the conversation, and use the session's **Files** and **Changes** tabs — or a **lightweight editor canvas** — to inspect or adjust files on the session branch.
-
-   <!-- image: session running with the Files and Changes tabs -->
-1. In one prompt, have the agent build the feature, **open the pull request**, walk you through the changes, and **ship it with agent merge** — the native Copilot App flow. The prompt already links your **Build the bookmarks app** issue (issue **#2**):
+   <img width="460" alt="The Build the bookmarks app issue #2 shown above the prompt field with a 'Click to open' callout" src="../images/step3-open-issue.png" />
+1. Send the build prompt below. It implements the feature, opens a pull request that links issue **#2** with a closing keyword, and walks you through the diff:
 
    > ![Static Badge](https://img.shields.io/badge/Prompt-text?style=for-the-badge&logo=github-copilot&logoColor=white&labelColor=purple&color=purple)
    >
@@ -70,16 +60,19 @@ This is where the extra ceremony pays off. Build in the **nested session you par
    > - Open a pull request with a body that includes
    >   "Closes https://github.com/{{full_repo_name}}/issues/2"
    > - Walk me through the diff so I can review the changes
-   >
-   > Don't automatically create a pull request
-   > Provide helpful tips about agent merge
    > ```
 
+   <img width="360" alt="The build prompt in the session with the Build the bookmarks app issue #2 referenced as a chip" src="../images/step3-issue-prompt.png" />
 1. **Review the diff, then let agent merge land it.** Watch the changes in the session's **Changes** tab (or a browser canvas on the PR), then confirm **Agent merge** from the session's action dropdown so the app merges the pull request into `main`. Because the PR body uses a closing keyword, merging **closes the linked app issue** automatically.
 
    <!-- image: opened pull request referencing the app issue -->
 
    <img width="380" alt="Session action dropdown with Agent merge selected to automate the pull request lifecycle" src="../images/step3-agent-merge-dropdown.png" />
+
+> [!TIP]
+> Need to get back to your **Build the bookmarks app** issue (**#2**)? Open the session panel menu and select it to reopen it in the side panel anytime.
+
+<img width="360" alt="Session panel menu with the Build the bookmarks app issue selected to reopen it in the side panel" src="../images/step3-reopen-issue.png" />
 
 > [!TIP]
 > Point `Closes #<n>` at the **app issue** (not this walkthrough issue) so the merge closes the right one automatically.
