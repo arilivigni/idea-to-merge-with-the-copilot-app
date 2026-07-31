@@ -16,7 +16,7 @@ files use `<!-- image: ... -->` HTML-comment placeholders so issue comments stil
 | `step1-open-issue-reference.png` | 1 · Act 1 | Typing `#` shows the exercise issue in the reference picker |
 | `step1-open-issue-prompt.png` | 1 · Act 1 | Prompt with the exercise issue as a #1 chip |
 | `step1-exit-plan-mode.png` | 1 · Act 1 | Plan summary with 'Exit plan mode and I will prompt myself' selected |
-| `step2-add-panel-menu.png` | 2 | Session with the walkthrough issue #1 open in the side panel and the "Build the bookmarks app" work item (no work started) |
+| `step2-new-session.png` | 2 · Act 1 | Session panel with the **New session** button highlighted next to the repo name |
 | `step2-agent-merge-dropdown.png` | 2 | Session action dropdown with **Agent merge** selected |
 | `step2-agent-merge-change.png` | 2 · Act 1 | Changes tab showing the TODO replaced by the localStorage + client:load rules, with the Agent merge dropdown |
 

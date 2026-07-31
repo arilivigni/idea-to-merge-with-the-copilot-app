@@ -24,13 +24,11 @@ Even a light, single-file change is a chance to try **agent merge** — the app'
 ### ⌨️ Activity 1: Set the rules and ship them with agent merge (graded)
 
 > [!NOTE]
-> This is a **light, single-file edit** made in a session — you'll open the file in a **lightweight editor canvas**, then use **agent merge** to open and merge the pull request to `main` for you.
+> This is a **light, single-file edit** made in a session — you'll prompt the agent to update the file, then use **agent merge** to open and merge the pull request to `main` for you.
 
-1. In a session on your repository, open `.github/copilot-instructions.md` in a **lightweight editor canvas**. Open the session's **+** menu and choose **Files** (or **Markdown editor**), or just ask the agent to open the file.
+1. Start a **New session** on your repository, then **prompt the agent to update `.github/copilot-instructions.md`** — replace the seeded `TODO` placeholder with the two project rules:
 
-   <img width="480" alt="Copilot App session showing the exercise walkthrough issue #1 open in the side panel with the &quot;Build the bookmarks app&quot; work item, and no planning or implementation started" src="../images/step2-add-panel-menu.png" />
-
-1. **Prompt the agent to update `.github/copilot-instructions.md`** — replace the seeded `TODO` placeholder with the two project rules:
+   <img width="420" alt="Session panel with the New session button highlighted next to the repository name" src="../images/step2-new-session.png" />
 
    > ![Static Badge](https://img.shields.io/badge/Prompt-text?style=for-the-badge&logo=github-copilot&logoColor=white&labelColor=purple&color=purple)
    >
