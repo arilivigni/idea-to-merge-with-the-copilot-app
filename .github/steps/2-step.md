@@ -41,9 +41,6 @@ Even a light, single-file change is a chance to try **agent merge** — the app'
    > Update .github/copilot-instructions.md: replace the TODO placeholder with the two project rules:
    > - persistence uses browser localStorage, and
    > - browser code runs behind a client:load boundary so SSR never touches localStorage.
-   >
-   > Don't automatically create a pull request
-   > Provide helpful tips about agent merge
    > ```
 
 1. **Confirm agent merge lands the change.** Your prompt asks the agent to ship the edit with **Agent merge** — approve it when prompted, or trigger it yourself from the session's action dropdown (top of the session). The app opens a pull request for your edit and **merges it to `main` automatically**.
