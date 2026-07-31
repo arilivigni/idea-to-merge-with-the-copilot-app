@@ -95,7 +95,7 @@ This is where the extra ceremony pays off. Launching a session **from the app is
 </details>
 
 
-### ⌨️ Activity 2: Confirm the merge landed (graded)
+### ⌨️ Activity 2: Confirm the merge landed
 
 Agent merge handled the merge in Activity 1 — now confirm it landed. You'll see **two result tables** post to this issue: the **build** check when the PR opened, and the **merge** check once agent merge completed. The merge check also **re-builds `main`**, so the exercise only advances when the shipped app still builds.
 
