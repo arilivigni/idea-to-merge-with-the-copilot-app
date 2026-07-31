@@ -79,7 +79,7 @@ jobs:
         env:
           PR_BODY: ${{ github.event.pull_request.body }}
         run: |
-          if echo "$PR_BODY" | grep -Eiq '(clos|fix|resolv)[a-z]*[[:space:]]+#[0-9]+'; then
+          if echo "$PR_BODY" | grep -Eiq '(clos|fix|resolv)[a-z]*[[:space:]]+(#[0-9]+|[^[:space:]]*/issues/[0-9]+)'; then
             echo "Pull request links an issue"
             exit 0
           else

@@ -46,7 +46,7 @@ This is where the extra ceremony pays off. Launching a session **from the app is
    Follow the work in the conversation, and use the session's **Files** and **Changes** tabs — or a **lightweight editor canvas** — to inspect or adjust files on the session branch.
 
    <!-- image: issue-driven session running with the Files and Changes tabs -->
-1. In one prompt, have the agent build the feature, **open the pull request**, walk you through the changes, and **ship it with agent merge** — the native Copilot App flow. Replace `<app-issue-number>` with your **Build the bookmarks app** issue number:
+1. In one prompt, have the agent build the feature, **open the pull request**, walk you through the changes, and **ship it with agent merge** — the native Copilot App flow. The prompt already links your **Build the bookmarks app** issue (issue **#2**):
 
    > ![Static Badge](https://img.shields.io/badge/Prompt-text?style=for-the-badge&logo=github-copilot&logoColor=white&labelColor=purple&color=purple)
    >
@@ -61,7 +61,7 @@ This is where the extra ceremony pays off. Launching a session **from the app is
    >
    > Then ship it the native way:
    > - Open a pull request with a body that includes
-   >   "Closes #<app-issue-number>"
+   >   "Closes https://github.com/{{full_repo_name}}/issues/2"
    > - Walk me through the diff so I can review the changes
    > - Use agent merge to merge the pull request into main
    > ```
@@ -107,7 +107,7 @@ Agent merge handled the merge in Activity 1 — now confirm it landed. You'll se
 
 - If the merge check hasn't posted, make sure agent merge actually **merged** the PR (not just opened it).
 - The exercise won't advance if the merged app fails to build. If the build row is red, fix the code on `main` (usually a `localStorage` call outside the `client:load` / `<script>` boundary) and push the fix.
-- If the app issue stays open, confirm the PR body used `Closes #<app-issue-number>` pointing at your bookmarks issue, then close the issue manually.
+- If the app issue stays open, confirm the PR body used `Closes https://github.com/{{full_repo_name}}/issues/2` (your **Build the bookmarks app** issue) — not the walkthrough issue — then close it manually if needed.
 - Still stuck on the app itself? See [Getting started with the Copilot App](https://docs.github.com/en/copilot/how-tos/github-copilot-app/getting-started).
 
 </details>
