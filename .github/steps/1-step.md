@@ -86,7 +86,7 @@ To use the GitHub Copilot app, the first step — as you might imagine — is to
 > [!TIP]
 > Need these instructions again later? Open the session panel menu and select **Exercise: Idea to Merge with the Copilot App** to reopen issue **#1** in the side panel anytime.
 
-<img width="360" alt="Session panel menu with the Exercise: Idea to Merge with the Copilot App issue selected to reopen the walkthrough" src="../images/exercise-issue-reference.png" />
+<img width="360" alt="Session panel menu listing the repository and the Exercise: Idea to Merge with the Copilot App issue to reopen it" src="../images/step1-reopen-issue.png" />
 
 ### ⌨️ Activity 2: Create the app issue from a session
 
@@ -101,9 +101,6 @@ To use the GitHub Copilot app, the first step — as you might imagine — is to
    >   - its original URL, and
    >   - a locally generated short slug
    > - Bookmarks are persisted in the browser
-   >
-   > Once created, open this new issue in the side panel so I can read and
-   > click through it.
    > ```
 
 1. Make sure the created issue:
