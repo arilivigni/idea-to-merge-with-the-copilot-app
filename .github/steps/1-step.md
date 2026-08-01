@@ -14,11 +14,11 @@ You'll complete every step **inside the app**, using these surfaces:
 
 | Surface | What it's for |
 | --- | --- |
-| **Sessions** | Drive the work — start a **New session** on your checked-out repository, and use an **issue-driven session** (which runs on its own branch) for the build in Step 3. |
+| **Sessions** | Drive the work — start a **New session** on your checked-out repository. For the build in Step 3, you'll start a **dedicated session** that references your app issue and runs the feature on its own branch. |
 | **Issue side panel** | Opens a repository **issue** — this walkthrough (**#1**) and the app issue you'll create — pinned beside your session so instructions and graded feedback stay in view. Ask the agent to `open issue #1 in the side panel`. |
 | **Browser canvas** | The right side panel renders **live pages** — the README, the pull request, and the running app — with clickable links and buttons. Ask the agent, for example: `open the main readme of this repository in a browser canvas`. |
 | **Terminal canvas** | Runs commands you can watch, like the dev server in Step 4 (`npm run dev`). |
-| **Files & Changes tabs + editor canvas** | Every session has built-in **Files** and **Changes** tabs for the working tree and diff. For the light hand-edits, open a file in a **lightweight editor canvas** and save it. |
+| **Files & Changes tabs + editor canvas** | Every session has built-in **Files** and **Changes** tabs for the working tree and diff. You can also open any file in a **lightweight editor canvas** to read or tweak it directly. |
 
 <!-- image: the app's surfaces — a session, the issue side panel, a browser canvas, and the Files/Changes tabs -->
 
@@ -26,7 +26,7 @@ Three shipping patterns keep ceremony proportional to the change:
 
 - **Light commit → `main`** (Step 4): a single file — your proof screenshot — committed straight to the default branch, no pull request.
 - **Agent merge** (Step 2): a light edit made in a session, then shipped through a pull request the app opens and merges for you automatically.
-- **Feature work → issue-driven session → PR** (Step 3): the real build, delivered on its own branch and merged in Step 3.
+- **Feature work → dedicated session → PR** (Step 3): the real build, referenced to your app issue, delivered on its own branch and merged in Step 3.
 
 > [!IMPORTANT]
 > Do **Step 2 before starting the Step 3 session.** The build session branches from `main` and inherits the custom instructions, so the client-boundary rule must already be there.
@@ -73,7 +73,7 @@ To use the GitHub Copilot app, the first step — as you might imagine — is to
 
 1. **Open the walkthrough issue as a reference — don't build it.** The exercise issue (**#1**) appears above the prompt field; click it (**Click to open**) to open it in the **side panel** for reading. This only *displays* the issue — nothing runs, so the session won't start planning or building.
 
-   **Don't use _Create session from issue_ on #1.** That tells the app to *build* the issue — which is why it jumps straight into Plan mode and starts working. Issue **#1** is your **guide to read**; you'll use create-from-issue later in **Step 3** on the app issue you create (**#2**), which *is* meant to be built.
+   **Don't use _Create session from issue_ on #1.** That tells the app to *build* the issue — which is why it jumps straight into Plan mode and starts working. Issue **#1** is your **guide to read**. In **Step 3** you'll build the app issue (**#2**) — there you'll reference it in a dedicated session (type `#2` and press **Tab**) so the agent has it as context without auto-running.
 
    <img width="460" alt="The exercise issue #1 shown above the prompt field with a 'Click to open' callout" src="../images/step1-open-issue.png" />
 

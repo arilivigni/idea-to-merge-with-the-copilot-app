@@ -8,7 +8,7 @@ Here's what you accomplished:
 
 - ✅ Created a work item **issue from a session** in the Copilot App
 - ✅ Set project rules in **`.github/copilot-instructions.md`** on `main`
-- ✅ Built the bookmarks app in an **issue-driven session** and opened a PR
+- ✅ Built the bookmarks app in a **dedicated session** and opened a PR
 - ✅ **Reviewed and merged** the PR, auto-closing the linked issue
 - ✅ Previewed the running app in a **browser canvas** and submitted your proof
 

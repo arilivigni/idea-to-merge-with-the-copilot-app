@@ -25,12 +25,17 @@ You'll run the app from a **Terminal canvas**, watch it live in a **browser canv
 - [Configuring MCP servers in the Copilot App](https://docs.github.com/en/copilot/how-tos/github-copilot-app/customize-github-copilot-app)
 - [Playwright MCP server](https://github.com/microsoft/playwright-mcp)
 
-### ⌨️ Activity 1: Run, preview, verify with Playwright MCP, and submit (graded)
+### ⌨️ Activity 1: Preview your app in a browser canvas
+
+See the finished bookmarks app running live — right inside the Copilot App — before you capture your proof.
 
 > [!TIP]
 > You can reopen these step instructions anytime: in your session, reference the **Exercise: Idea to Merge with the Copilot App** issue (that's the walkthrough issue **#1** from your first session) to bring it back into the side panel.
 >
 > <img width="360" alt="Session panel menu listing the Exercise: Idea to Merge with the Copilot App issue to reopen it" src="../images/step1-reopen-issue.png" />
+
+> [!NOTE]
+> This preview is **app-only** and isn't graded — it stands up the running app you'll capture and submit in Activity 2. Leave the dev server running so both the browser canvas and Playwright can reach it.
 
 1. In a **Terminal canvas** on your repository, install dependencies (first run only) and start the dev server. Leave it running and note the local URL (for example, `http://localhost:4321`):
 
@@ -43,7 +48,7 @@ You'll run the app from a **Terminal canvas**, watch it live in a **browser canv
 
    <!-- image: dev server running in a Terminal canvas -->
 
-1. Open a **browser canvas** on that URL to see the app running, then add a bookmark and confirm both the **original URL** and its **short slug** display. For example, ask Copilot:
+1. Open a **browser canvas** on that URL to see the app running in the right side panel. For example, ask Copilot:
 
    ```text
    Open a browser canvas on http://localhost:4321 
@@ -51,6 +56,17 @@ You'll run the app from a **Terminal canvas**, watch it live in a **browser canv
    ```
 
    <!-- image: bookmarks app running live in a browser canvas -->
+
+1. In the browser canvas, **add a bookmark** — paste a link (for example, `https://github.com/features/copilot`) and select **Add bookmark**. Confirm both the **original URL** and its generated **short slug** appear in the saved list. That's the app you took from idea to merge, running live.
+
+   <!-- image: a saved bookmark showing its original URL and short slug in the browser canvas -->
+
+### ⌨️ Activity 2: Capture proof with Playwright MCP and submit (graded)
+
+Now let Copilot drive the running app through the **Playwright MCP server**, capture the screenshot, and commit it to `main` as your proof of completion.
+
+> [!NOTE]
+> Keep the dev server from Activity 1 **running** in its Terminal canvas — Playwright opens the same local URL.
 
 1. Ask Copilot to verify the app with the Playwright MCP server and capture your proof. The Playwright server is already registered (see the Theory), so this works with no setup:
 
