@@ -46,7 +46,7 @@ This is where the extra ceremony pays off. Build the feature in a **dedicated se
 1. In the new session, open your **Build the bookmarks app** issue: type `#2` in the prompt field and press **Tab** to attach it as context for the build.
 
    <img width="460" alt="The Build the bookmarks app issue #2 shown above the prompt field with a 'Click to open' callout" src="../images/step3-open-issue.png" />
-1. Send the build prompt below. It implements the feature, opens a pull request that links issue **#2** with a closing keyword, and walks you through the diff:
+1. Send the build prompt below. It implements the feature and opens a pull request that links issue **#2** with a closing keyword, then walks you through the diff and **stops — leaving the merge to you**:
 
    > ![Static Badge](https://img.shields.io/badge/Prompt-text?style=for-the-badge&logo=github-copilot&logoColor=white&labelColor=purple&color=purple)
    >
@@ -59,10 +59,12 @@ This is where the extra ceremony pays off. Build the feature in a **dedicated se
    >   (or the inline <script>) so the static Astro build never
    >   touches browser APIs
    >
-   > Then ship it the native way:
-   > - Open a pull request with a body that includes
-   >   "Closes https://github.com/{{full_repo_name}}/issues/2"
+   > Then open a pull request — but don't merge it:
+   > - Include "Closes https://github.com/{{full_repo_name}}/issues/2"
+   >   in the pull request body
    > - Walk me through the diff so I can review the changes
+   > - Stop after opening the pull request; I'll merge it myself
+   >   with Agent merge
    > ```
 
    <img width="360" alt="The build prompt in the session with the Build the bookmarks app issue #2 referenced as a chip" src="../images/step3-issue-prompt.png" />
