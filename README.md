@@ -9,7 +9,7 @@ _Take an idea from a session to a merged pull request — entirely in the GitHub
 - **What you'll build**: A tiny **Astro** bookmarks app that saves each URL with a locally generated **short slug**, persisted in the browser with `localStorage`.
 - **Prerequisites**:
   - A GitHub Copilot subscription (Free, Pro, Pro+, Business, or Enterprise) — you'll install and sign in to the **GitHub Copilot App** in Step 1
-  - **Node.js 22 and npm** installed locally (to run the app in Step 4; the build check also uses Node 22)
+  - **Node.js 22.12+ and npm** installed locally (Astro 7 requires Node >=22.12.0; needed to run the app in Step 4, and the build check also uses Node 22)
   - Basic familiarity with GitHub issues and pull requests
 - **How long**: This exercise takes roughly **45 minutes** to complete. The Step 3 build-and-ship work is the long pole, so allow a little more on your first run.
 
