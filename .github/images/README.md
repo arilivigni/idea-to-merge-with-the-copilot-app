@@ -44,8 +44,10 @@ files use `<!-- image: ... -->` HTML-comment placeholders so issue comments stil
 | `step4-terminal-dev.png` | 4 · Act 1 | Dev server running in a Terminal canvas |
 | `step4-browser-canvas-preview.png` | 4 · Theory & Act 1 | Bookmarks app running live in a browser canvas |
 | `step4-bookmark-in-canvas.png` | 4 · Act 1 | A saved bookmark showing its original URL and short slug in the browser canvas |
-| `step4-playwright-capture.png` | 4 · Act 2 | Playwright MCP driving the app and capturing the screenshot |
+| `step4-playwright-trust.png` | 4 · Act 2 | One-time prompt to trust the Playwright MCP server |
+| `step4-playwright-capture.png` | 4 · Act 2 | The Playwright browser window opening to drive the app and capture the screenshot |
 | `step4-proof-bookmark.png` | 4 · Act 2 | Captured proof: running app with a bookmark and its short slug |
+| `step4-proof-files-tab.png` | 4 · Act 2 | demo-proof.png previewed in the session Files tab |
 
 When you add a capture, replace the matching `<!-- image: ... -->` comment in the step file
 with `<img width="NN%" alt="..." src="../images/<name>.png" />` and move its row up to

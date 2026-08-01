@@ -68,7 +68,19 @@ Now let Copilot drive the running app through the **Playwright MCP server**, cap
 > [!NOTE]
 > Keep the dev server from Activity 1 **running** in its Terminal canvas — Playwright opens the same local URL.
 
-1. Ask Copilot to verify the app with the Playwright MCP server and capture your proof. The Playwright server is already registered (see the Theory), so this works with no setup:
+> [!NOTE]
+> **A browser window may open on its own.** By default the Playwright MCP server launches a **headed** (visible) browser, so a separate window appears, navigates to your app, adds the bookmark, and takes the screenshot — then closes itself. That pop-up is expected; let it finish.
+
+> [!TIP]
+> **Prefer no pop-up window?** Run Playwright **headless** so nothing appears on screen (it still captures the screenshot). Add the `--headless` flag to the server args in `.github/mcp.json`, then start a new session so the change is picked up:
+>
+> ```json
+> "args": ["@playwright/mcp@latest", "--headless"]
+> ```
+
+1. Ask Copilot to verify the app with the Playwright MCP server and capture your proof. The Playwright server is already registered (see the Theory), so this works with no setup. The **first time** you use it, approve the one-time prompt to **trust the server**:
+
+   <!-- image: one-time prompt to trust the Playwright MCP server -->
 
    ```text
    Using the Playwright MCP server, open http://localhost:4321, add the bookmark
@@ -78,11 +90,13 @@ Now let Copilot drive the running app through the **Playwright MCP server**, cap
    main branch.
    ```
 
-   <!-- image: Playwright MCP driving the app and capturing the screenshot -->
+   <!-- image: the Playwright browser window opening to drive the app and capture the screenshot -->
 
 1. Confirm the proof landed — all from inside the app:
    - Preview `submission/demo-proof.png` from the session's **Files** tab and check it shows at least one bookmark **and** its short slug.
    - Watch the commit reach **`main`** in the session's **Changes** tab (or the **app commits** view). This is a **light commit** — no pull request needed.
+
+<!-- image: demo-proof.png previewed in the session Files tab -->
 
 <!-- image: captured proof — running app with a bookmark and its short slug -->
 
