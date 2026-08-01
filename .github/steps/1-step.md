@@ -22,15 +22,6 @@ You'll complete every step **inside the app**, using these surfaces:
 
 <!-- image: the app's surfaces — a session, the issue side panel, a browser canvas, and the Files/Changes tabs -->
 
-Three shipping patterns keep ceremony proportional to the change:
-
-- **Light commit → `main`** (Step 4): a single file — your proof screenshot — committed straight to the default branch, no pull request.
-- **Agent merge** (Step 2): a light edit made in a session, then shipped through a pull request the app opens and merges for you automatically.
-- **Feature work → dedicated session → PR** (Step 3): the real build, referenced to your app issue, delivered on its own branch and merged in Step 3.
-
-> [!IMPORTANT]
-> Do **Step 2 before starting the Step 3 session.** The build session branches from `main` and inherits the custom instructions, so the client-boundary rule must already be there.
-
 ### Resetting or retrying
 
 - Each check re-runs automatically when you re-trigger it (edit the issue, push the file again, or reopen/update the PR).
@@ -53,7 +44,7 @@ To use the GitHub Copilot app, the first step — as you might imagine — is to
 
    <img width="520" alt="GitHub Copilot app download page with platform options" src="../images/step1-app-download-page.png" />
 
-1. Download the app for your platform and install it following the instructions provided on the landing page.
+1. Download the app for your platform and install it, following the steps in [Getting started with the Copilot App](https://docs.github.com/en/copilot/how-tos/github-copilot-app/getting-started) — the source of truth for installing and signing in.
 
    <img width="480" alt="Downloading and installing the GitHub Copilot app" src="../images/step1-app-download.gif" />
 
