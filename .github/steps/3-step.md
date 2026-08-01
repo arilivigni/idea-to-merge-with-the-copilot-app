@@ -40,7 +40,10 @@ This is where the extra ceremony pays off. Build the feature in a **dedicated se
 >
 > <img width="360" alt="Session panel menu listing the Exercise: Idea to Merge with the Copilot App issue to reopen it" src="../images/step1-reopen-issue.png" />
 
-1. In your session, open your **Build the bookmarks app** issue: type `#2` in the prompt field and press **Tab** to attach it as context for the build.
+1. Start a **new session** for this feature. Click **New session** in the top-right of the session panel, next to the repository name — a fresh session branches from the current `main`, so it carries your Step 2 instructions.
+
+   <img width="420" alt="The New session button highlighted in the top-right of the session panel, next to the repository name" src="../images/step3-new-session.png" />
+1. In the new session, open your **Build the bookmarks app** issue: type `#2` in the prompt field and press **Tab** to attach it as context for the build.
 
    <img width="460" alt="The Build the bookmarks app issue #2 shown above the prompt field with a 'Click to open' callout" src="../images/step3-open-issue.png" />
 1. Send the build prompt below. It implements the feature, opens a pull request that links issue **#2** with a closing keyword, and walks you through the diff:

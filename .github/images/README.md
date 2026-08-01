@@ -20,6 +20,7 @@ files use `<!-- image: ... -->` HTML-comment placeholders so issue comments stil
 | `step2-plan-mode.png` | 2 · Act 1 | Session mode dropdown with **Plan** selected (Plan first, execute when ready) |
 | `step2-agent-merge-dropdown.png` | 2 | Session action dropdown with **Agent merge** selected |
 | `step2-agent-merge-change.png` | 2 · Act 1 | Changes tab showing the TODO replaced by the localStorage + client:load rules, with the Agent merge dropdown |
+| `step3-new-session.png` | 3 · Act 1 | The **New session** button in the top-right of the session panel, next to the repository name |
 | `step3-open-issue.png` | 3 · Act 1 | The **Build the bookmarks app** issue #2 above the prompt field with a 'Click to open' callout |
 | `step3-issue-prompt.png` | 3 · Act 1 | The build prompt in the session with issue **#2** referenced as a chip |
 | `step3-reopen-issue.png` | 3 · Act 1 tip | Session panel menu with the **Build the bookmarks app** issue to reopen it in the side panel |
