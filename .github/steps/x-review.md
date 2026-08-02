@@ -22,6 +22,7 @@ Here's what you accomplished:
 ### What's next?
 
 - [GitHub Copilot documentation](https://docs.github.com/en/copilot) — explore every Copilot surface
+- [GitHub Copilot App documentation](https://docs.github.com/en/copilot/how-tos/github-copilot-app/getting-started) — set up and get the most out of the desktop app you used here
 - [Astro documentation](https://docs.astro.build) — go deeper on islands and client directives
 - [More GitHub Skills exercises](https://skills.github.com) — keep the momentum going
 - Try the same idea-to-merge loop on one of your own repositories!
