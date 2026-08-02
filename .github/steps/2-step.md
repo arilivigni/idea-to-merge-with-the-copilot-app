@@ -49,16 +49,22 @@ Even a light, single-file change is a chance to try **agent merge** — the app'
    > - browser code runs behind a client:load boundary so SSR never touches localStorage.
    > ```
 
-1. **Open the pull request with agent merge.** Review the plan and approve it, then select **Agent merge** from the session's action dropdown (top of the session). The app opens a pull request for your edit — you'll review it and merge it in **Activity 2**.
+1. **Approve the plan and let autopilot make the changes.** When the plan summary appears, select **Approve and implement with autopilot (recommended)**. Autopilot applies the single-file edit and uses **agent merge** to open a pull request for you — no manual dropdown needed. You'll review it and merge it in **Activity 2**.
 
-   <img width="380" alt="Session action dropdown with Agent merge selected to automate the pull request lifecycle" src="../images/step2-agent-merge-dropdown.png" />
+   <img width="520" alt="Plan summary in Plan mode with 'Approve and implement with autopilot (recommended)' highlighted as the first option" src="../images/ghcp-app-autopilot.png" />
+
+   <img width="460" alt="Autopilot result: a pull request created via agent merge, showing the branch into main, a +2 -7 change, PR #3, and Plan complete" src="../images/ghcp-app-autopilot-result.png" />
 
    <details>
-   <summary>See the change agent merge ships 👀</summary><br/>
+   <summary>Explore what autopilot produced 👀</summary><br/>
 
-   The pull request replaces the seeded `TODO` block with the two project rules — persistence via `localStorage` and the `client:load` boundary — ready for you to review and merge in Activity 2.
+   Autopilot leaves the session open with tabs you can explore: the **Plan** it followed, the **Changes** diff, and the resulting **pull request**.
 
-   <img width="440" alt="Session Changes tab showing copilot-instructions.md with the TODO block removed and the localStorage and client:load rules added, alongside the Agent merge dropdown" src="../images/step2-agent-merge-change.png" />
+   <img width="460" alt="Session Plan tab: 'Update copilot-instructions.md persistence rules' with the problem, approach, and a todo item" src="../images/ghcp-app-plan.png" />
+
+   <img width="460" alt="Session Changes tab: copilot-instructions.md diff with the TODO block removed and the localStorage and client:load rules added (+2 -7)" src="../images/ghcp-app-changes.png" />
+
+   <img width="460" alt="Session PR #3 tab: open pull request 'docs: add persistence and hydration rules to copilot instructions' targeting main" src="../images/ghcp-app-pr.png" />
 
    </details>
 

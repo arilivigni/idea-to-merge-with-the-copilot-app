@@ -18,8 +18,11 @@ files use `<!-- image: ... -->` HTML-comment placeholders so issue comments stil
 | `step1-new-session-panel.png` | 1 · Act 1 | **New session** button with its dropdown in the top-right of the issue side panel |
 | `step2-new-session.png` | 2 · Act 1 | Session panel with the **New session** button highlighted next to the repo name |
 | `step2-plan-mode.png` | 2 · Act 1 | Session mode dropdown with **Plan** selected (Plan first, execute when ready) |
-| `step2-agent-merge-dropdown.png` | 2 | Session action dropdown with **Agent merge** selected |
-| `step2-agent-merge-change.png` | 2 · Act 1 | Changes tab showing the TODO replaced by the localStorage + client:load rules, with the Agent merge dropdown |
+| `ghcp-app-autopilot.png` | 2 · Act 1 | Plan summary with **Approve and implement with autopilot (recommended)** highlighted |
+| `ghcp-app-autopilot-result.png` | 2 · Act 1 | Autopilot result: pull request created via agent merge (+2 -7, PR #3, Plan complete) |
+| `ghcp-app-plan.png` | 2 · Act 1 details | Session **Plan** tab for the copilot-instructions update |
+| `ghcp-app-changes.png` | 2 · Act 1 details | Session **Changes** tab: copilot-instructions.md diff (TODO removed, rules added) |
+| `ghcp-app-pr.png` | 2 · Act 1 details | Session **PR #3** tab: open pull request targeting `main` |
 | `step3-new-session.png` | 3 · Act 1 | The **New session** button in the top-right of the session panel, next to the repository name |
 | `step3-open-issue.png` | 3 · Act 1 | The **Build the bookmarks app** issue #2 above the prompt field with a 'Click to open' callout |
 | `step3-issue-prompt.png` | 3 · Act 1 | The build prompt in the session with issue **#2** referenced as a chip |
