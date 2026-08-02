@@ -55,8 +55,7 @@ See the finished bookmarks app running live — right inside the Copilot App —
    Prefer a prompt? You can also ask Copilot:
 
    ```text
-   Open a browser canvas on http://localhost:4321 
-   and keep it in the right side panel.
+   Open a browser canvas on http://localhost:4321
    ```
 
    <!-- image: bookmarks app running live in a browser canvas -->
