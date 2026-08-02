@@ -11,7 +11,7 @@ Two rules matter for this app:
 - **Persistence:** bookmarks are stored in the browser using **`localStorage`**.
 - **Hydration:** browser-only code must run behind a **client-side boundary** so Astro's static build never touches `localStorage` during SSR. In Astro, that's the **`client:load`** directive (or an inline `<script>`).
 
-Even a light, single-file change is a chance to try **agent merge** — the app's action that **automates the whole pull request lifecycle**. Instead of committing straight to `main`, you make the edit in a session and let agent merge open a pull request and merge it to `main` for you. It's a gentle warm-up for the manual review-and-merge you'll do in Step 3.
+Even a light, single-file change is a chance to try **agent merge** — the app's action that **automates the pull request lifecycle**. Instead of committing straight to `main`, you make the edit in a session and let agent merge **open a pull request** for you; you then **review and merge it yourself** in Activity 2. It's the same open-then-merge flow you'll use for the bigger build in Step 3.
 
 > [!IMPORTANT]
 > The custom instructions must be on `main` **before** you start the Step 3 build session, because that session branches from `main` and inherits these rules.
@@ -21,7 +21,7 @@ Even a light, single-file change is a chance to try **agent merge** — the app'
 - [Customizing Copilot with repository instructions](https://docs.github.com/en/copilot/how-tos/configure-custom-instructions)
 - [Astro client directives](https://docs.astro.build/en/reference/directives-reference/#client-directives)
 
-### ⌨️ Activity 1: Set the rules and ship them with agent merge (graded)
+### ⌨️ Activity 1: Set the rules and open a pull request with agent merge (graded)
 
 > [!TIP]
 > You can reopen these step instructions anytime: in your session, reference the **Exercise: Idea to Merge with the Copilot App** issue (that's the walkthrough issue **#1** from your first session) to bring it back into the side panel.
