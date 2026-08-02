@@ -53,7 +53,8 @@ This is where the extra ceremony pays off. Build the feature in a **dedicated se
    > ```prompt
    > Implement the bookmarks feature in src/components/Bookmarks.astro:
    > - Add a bookmark by its original URL
-   > - Generate a short base62 slug for each bookmark
+   > - Generate a short base62 slug with a "mona-" prefix
+   >   (for example, mona-7fk2) for each bookmark
    > - Save both the URL and the slug to localStorage
    > - Keep all localStorage access behind a client:load boundary
    >   (or the inline <script>) so the static Astro build never

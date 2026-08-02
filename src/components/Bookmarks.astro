@@ -26,7 +26,7 @@
   <button type="submit">Add bookmark</button>
 </form>
 
-<p class="hint">Paste a URL and select <strong>Add bookmark</strong> to generate its short slug.</p>
+<p class="hint">Paste a URL and select <strong>Add bookmark</strong> to generate its short <code>mona-</code> slug.</p>
 
 <p id="empty-state" class="empty">No bookmarks yet — add your first link above.</p>
 
@@ -44,7 +44,8 @@
   //
   // TODO (Step 3): implement the bookmarks feature here.
   //   1. On form submit, read and validate the original URL.
-  //   2. Generate a short slug (for example, base62 of a counter or hash).
+  //   2. Generate a short slug with a "mona-" prefix (for example, base62
+  //      of a counter or hash → "mona-7fk2").
   //   3. Save the original URL and its slug, then persist them in the browser.
   //   4. Render each saved bookmark into #bookmark-list as a row (li.bookmark) with:
   //        - the original URL as a link (.url) that opens in a new tab,

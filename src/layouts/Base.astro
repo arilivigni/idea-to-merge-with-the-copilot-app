@@ -1,5 +1,5 @@
 ---
-const { title = 'Bookmarks' } = Astro.props;
+const { title = "Mona's Bookmark Manager App" } = Astro.props;
 ---
 <!doctype html>
 <html lang="en">
@@ -8,23 +8,63 @@ const { title = 'Bookmarks' } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <style>
+      /* Monaspace webfonts (GitHub Next) via the Fontsource CDN.
+         Neon carries body text; Xenon gives headings a touch of contrast.
+         If the CDN is unreachable, the ui-monospace fallback keeps the app usable. */
+      @font-face {
+        font-family: 'Monaspace Neon';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url('https://cdn.jsdelivr.net/npm/@fontsource/monaspace-neon/files/monaspace-neon-latin-400-normal.woff2') format('woff2');
+      }
+      @font-face {
+        font-family: 'Monaspace Neon';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url('https://cdn.jsdelivr.net/npm/@fontsource/monaspace-neon/files/monaspace-neon-latin-600-normal.woff2') format('woff2');
+      }
+      @font-face {
+        font-family: 'Monaspace Neon';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url('https://cdn.jsdelivr.net/npm/@fontsource/monaspace-neon/files/monaspace-neon-latin-700-normal.woff2') format('woff2');
+      }
+      @font-face {
+        font-family: 'Monaspace Xenon';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url('https://cdn.jsdelivr.net/npm/@fontsource/monaspace-xenon/files/monaspace-xenon-latin-600-normal.woff2') format('woff2');
+      }
+      @font-face {
+        font-family: 'Monaspace Xenon';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url('https://cdn.jsdelivr.net/npm/@fontsource/monaspace-xenon/files/monaspace-xenon-latin-700-normal.woff2') format('woff2');
+      }
       :root {
         color-scheme: light dark;
         --accent: #3b82f6;
         --border: #8883;
         --muted: color-mix(in srgb, currentColor 60%, transparent);
         --radius: 0.6rem;
+        --font-body: 'Monaspace Neon', ui-monospace, 'SF Mono', 'Cascadia Code', monospace;
+        --font-head: 'Monaspace Xenon', 'Monaspace Neon', ui-monospace, monospace;
       }
       * { box-sizing: border-box; }
       body {
-        font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+        font-family: var(--font-body);
         line-height: 1.5;
         max-width: 40rem;
         margin: 0 auto;
         padding: 2.5rem 1.25rem 4rem;
       }
       header { margin-bottom: 1.5rem; }
-      h1 { margin: 0 0 0.25rem; font-size: 1.75rem; }
+      h1 { margin: 0 0 0.25rem; font-size: 1.75rem; font-family: var(--font-head); letter-spacing: -0.01em; }
       .tagline { margin: 0; color: var(--muted); }
 
       form {
@@ -66,7 +106,7 @@ const { title = 'Bookmarks' } = Astro.props;
         gap: 0.75rem;
         margin: 0.5rem 0;
       }
-      .list-title { margin: 0; font-size: 1rem; }
+      .list-title { margin: 0; font-size: 1rem; font-family: var(--font-head); }
       .clear {
         background: transparent;
         color: inherit;

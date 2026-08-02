@@ -6,7 +6,7 @@ _Take an idea from a session to a merged pull request — entirely in the GitHub
 
 - **Who is this for**: Developers who want to run the full GitHub workflow — issue, session, pull request, merge, preview — without leaving the GitHub Copilot App.
 - **What you'll learn**: How to turn an idea into a tracked issue, set repository custom instructions, build a feature in an issue-driven session, review and merge the pull request, and preview the running app in a canvas.
-- **What you'll build**: A tiny **Astro** bookmarks app that saves each URL with a locally generated **short slug**, persisted in the browser with `localStorage`.
+- **What you'll build**: **Mona's Bookmark Manager App** — a tiny **Astro** bookmarks app that saves each URL with a locally generated **short slug** (a `mona-` prefixed alias like `mona-7fk2`), persisted in the browser with `localStorage`.
 - **Prerequisites**:
   - A GitHub Copilot subscription (Free, Pro, Pro+, Business, or Enterprise) — you'll install and sign in to the **GitHub Copilot App** in Step 1
   - **Node.js 22.12+ and npm** installed locally (Astro 7 requires Node >=22.12.0; needed to run the app in Step 4, and the build check also uses Node 22)
