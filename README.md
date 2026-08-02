@@ -4,14 +4,14 @@ _Take an idea from a session to a merged pull request — entirely in the GitHub
 
 ## Welcome
 
-- **Who is this for**: Developers who want to run the full GitHub workflow — issue, session, pull request, merge, preview — without leaving the GitHub Copilot App.
-- **What you'll learn**: How to turn an idea into a tracked issue, set repository custom instructions, build a feature in a dedicated session, review and merge the pull request, and preview the running app in a canvas.
-- **What you'll build**: **Mona's Bookmark Manager App** — a tiny **Astro** bookmarks app that saves each URL with a locally generated **short slug** (a `mona-` prefixed alias like `mona-7fk2`), persisted in the browser with `localStorage`.
+- **Who is this for**: Developers who want to run a complete GitHub workflow without leaving the GitHub Copilot App.
+- **What you'll learn**: Custom instructions, agent sessions, agent merge, and canvas previews — the core moves of the Copilot App.
+- **What you'll build**: **Mona's Bookmark Manager App** — a tiny **Astro** app that saves each URL with a generated short slug (like `mona-7fk2`), persisted in the browser with `localStorage`.
 - **Prerequisites**:
   - A GitHub Copilot subscription (Free, Pro, Pro+, Business, or Enterprise) — you'll install and sign in to the **GitHub Copilot App** in Step 1
-  - **Node.js 22.12+ and npm** installed locally (Astro 7 requires Node >=22.12.0; needed to run the app in Step 4, and the build check also uses Node 22)
+  - **Node.js 22.12+ and npm** installed locally (required by Astro 7; used to run the app in Step 4)
   - Basic familiarity with GitHub issues and pull requests
-- **How long**: This exercise takes roughly **45 minutes** to complete. The Step 3 build-and-ship work is the long pole, so allow a little more on your first run.
+- **How long**: Roughly **45 minutes**; allow a little extra on your first run.
 
 In this exercise, you will:
 
