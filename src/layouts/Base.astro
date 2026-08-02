@@ -8,43 +8,44 @@ const { title = "Mona's Bookmark Manager App" } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <style>
-      /* Monaspace webfonts (GitHub Next) via the Fontsource CDN.
+      /* Monaspace webfonts (GitHub Next, SIL OFL 1.1) self-hosted from /public/fonts.
          Neon carries body text; Xenon gives headings a touch of contrast.
-         If the CDN is unreachable, the ui-monospace fallback keeps the app usable. */
+         Self-hosting keeps the app fully offline-capable — no runtime CDN needed;
+         the ui-monospace fallback still covers any load failure. */
       @font-face {
         font-family: 'Monaspace Neon';
         font-style: normal;
         font-weight: 400;
         font-display: swap;
-        src: url('https://cdn.jsdelivr.net/npm/@fontsource/monaspace-neon/files/monaspace-neon-latin-400-normal.woff2') format('woff2');
+        src: url('/fonts/MonaspaceNeon-400.woff2') format('woff2');
       }
       @font-face {
         font-family: 'Monaspace Neon';
         font-style: normal;
         font-weight: 600;
         font-display: swap;
-        src: url('https://cdn.jsdelivr.net/npm/@fontsource/monaspace-neon/files/monaspace-neon-latin-600-normal.woff2') format('woff2');
+        src: url('/fonts/MonaspaceNeon-600.woff2') format('woff2');
       }
       @font-face {
         font-family: 'Monaspace Neon';
         font-style: normal;
         font-weight: 700;
         font-display: swap;
-        src: url('https://cdn.jsdelivr.net/npm/@fontsource/monaspace-neon/files/monaspace-neon-latin-700-normal.woff2') format('woff2');
+        src: url('/fonts/MonaspaceNeon-700.woff2') format('woff2');
       }
       @font-face {
         font-family: 'Monaspace Xenon';
         font-style: normal;
         font-weight: 600;
         font-display: swap;
-        src: url('https://cdn.jsdelivr.net/npm/@fontsource/monaspace-xenon/files/monaspace-xenon-latin-600-normal.woff2') format('woff2');
+        src: url('/fonts/MonaspaceXenon-600.woff2') format('woff2');
       }
       @font-face {
         font-family: 'Monaspace Xenon';
         font-style: normal;
         font-weight: 700;
         font-display: swap;
-        src: url('https://cdn.jsdelivr.net/npm/@fontsource/monaspace-xenon/files/monaspace-xenon-latin-700-normal.woff2') format('woff2');
+        src: url('/fonts/MonaspaceXenon-700.woff2') format('woff2');
       }
       :root {
         color-scheme: light dark;
