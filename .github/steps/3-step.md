@@ -68,7 +68,7 @@ This is where the extra ceremony pays off. Build the feature in a **dedicated se
    > ```
 
    <img width="360" alt="The build prompt in the session with the Build the bookmarks app issue #2 referenced as a chip" src="../images/step3-issue-prompt.png" />
-1. **Review the diff, then let agent merge land it.** Watch the changes in the session's **Changes** tab (or a browser canvas on the PR), then confirm **Agent merge** from the session's action dropdown so the app merges the pull request into `main`. Because the PR body uses a closing keyword, merging **closes the linked app issue** automatically.
+1. **Open the pull request with agent merge, then review the diff.** Select **Agent merge** from the session's action dropdown so the app opens the pull request for the build. Watch the changes in the session's **Changes** tab (or a browser canvas on the PR) — you'll merge it in **Activity 2** once you're satisfied.
 
    <!-- image: opened pull request referencing the app issue -->
 
@@ -97,9 +97,19 @@ This is where the extra ceremony pays off. Build the feature in a **dedicated se
 </details>
 
 
-### ⌨️ Activity 2: Confirm the merge landed
+### ⌨️ Activity 2: Review and merge the change
 
-Agent merge handled the merge in Activity 1 — now confirm it landed. Watch this issue for **two result tables**: the **build** check when the pull request opened, and the **merge** check once agent merge completed. The merge check also **re-builds `main`**, so the exercise only advances when the shipped app still builds.
+Review the diff agent merge staged, then merge it. Watch this issue for **two result tables**: the **build** check when the pull request opened, and the **merge** check once agent merge completes. The merge check also **re-builds `main`**, so the exercise only advances when the shipped app still builds.
+
+1. Once you're **satisfied with the changes agent merge made**, merge the pull request from the session — prompt the agent to complete the merge:
+
+   > ![Static Badge](https://img.shields.io/badge/Prompt-text?style=for-the-badge&logo=github-copilot&logoColor=white&labelColor=purple&color=purple)
+   >
+   > ```prompt
+   > merge pr
+   > ```
+
+   Because the pull request body uses a closing keyword, merging **closes the linked app issue** automatically.
 
 1. Confirm the pull request is **merged into `main`** (open the PR in a browser canvas, or check the **app PR** view).
 

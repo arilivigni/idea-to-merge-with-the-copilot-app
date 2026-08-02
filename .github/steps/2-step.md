@@ -29,7 +29,7 @@ Even a light, single-file change is a chance to try **agent merge** — the app'
 > <img width="360" alt="Session panel menu listing the Exercise: Idea to Merge with the Copilot App issue to reopen it" src="../images/step1-reopen-issue.png" />
 
 > [!NOTE]
-> This is a **light, single-file edit** made in a session — you'll prompt the agent to update the file, then use **agent merge** to open and merge the pull request to `main` for you.
+> This is a **light, single-file edit** made in a session — you'll prompt the agent to update the file, then use **agent merge** to open a pull request. You'll review it and merge it in **Activity 2**.
 
 1. Open a **New session** on your repository — click **New session** in the top-right of the session panel, next to the repository name.
 
@@ -49,14 +49,14 @@ Even a light, single-file change is a chance to try **agent merge** — the app'
    > - browser code runs behind a client:load boundary so SSR never touches localStorage.
    > ```
 
-1. **Confirm agent merge lands the change.** Review the plan and approve it, then ship the edit with **Agent merge** from the session's action dropdown (top of the session). The app opens a pull request for your edit and **merges it to `main` automatically**.
+1. **Open the pull request with agent merge.** Review the plan and approve it, then select **Agent merge** from the session's action dropdown (top of the session). The app opens a pull request for your edit — you'll review it and merge it in **Activity 2**.
 
    <img width="380" alt="Session action dropdown with Agent merge selected to automate the pull request lifecycle" src="../images/step2-agent-merge-dropdown.png" />
 
    <details>
    <summary>See the change agent merge ships 👀</summary><br/>
 
-   The pull request replaces the seeded `TODO` block with the two project rules — persistence via `localStorage` and the `client:load` boundary — before merging to `main`.
+   The pull request replaces the seeded `TODO` block with the two project rules — persistence via `localStorage` and the `client:load` boundary — ready for you to review and merge in Activity 2.
 
    <img width="440" alt="Session Changes tab showing copilot-instructions.md with the TODO block removed and the localStorage and client:load rules added, alongside the Agent merge dropdown" src="../images/step2-agent-merge-change.png" />
 
@@ -74,9 +74,17 @@ Even a light, single-file change is a chance to try **agent merge** — the app'
 
 </details>
 
-### ⌨️ Activity 2: Confirm the merge landed
+### ⌨️ Activity 2: Review and merge the change
 
-Agent merge handled the merge in Activity 1 — now confirm it landed. When your edit reaches `main`, a **result table** posts to this issue: it checks that `.github/copilot-instructions.md` now names **both** rules — **`localStorage`** and **`client:load`** — and that the seeded **`TODO`** is gone. That table is what advances the exercise, so watch this issue for it.
+Review the change agent merge staged, then merge it. When your edit reaches `main`, a **result table** posts to this issue: it checks that `.github/copilot-instructions.md` now names **both** rules — **`localStorage`** and **`client:load`** — and that the seeded **`TODO`** is gone. That table is what advances the exercise, so watch this issue for it.
+
+1. Once you're **satisfied with the changes agent merge made**, merge the pull request from the session — prompt the agent to complete the merge:
+
+   > ![Static Badge](https://img.shields.io/badge/Prompt-text?style=for-the-badge&logo=github-copilot&logoColor=white&labelColor=purple&color=purple)
+   >
+   > ```prompt
+   > merge pr
+   > ```
 
 1. Confirm the pull request agent merge opened is **merged into `main`** — nothing should be left open. Open it in a browser canvas or the app's **pull request** view.
 
