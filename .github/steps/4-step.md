@@ -48,7 +48,11 @@ See the finished bookmarks app running live — right inside the Copilot App —
 
    <!-- image: dev server running in a Terminal canvas -->
 
-1. Open a **browser canvas** on that URL to see the app running in the right side panel. For example, ask Copilot:
+1. Open a **browser canvas** on that URL to see the app running in the right side panel. The quickest way: in the **Terminal canvas**, **⌘+Click** (macOS) or **Ctrl+Click** (Windows/Linux) the local URL to open it directly in a browser canvas.
+
+   <img width="480" alt="Terminal canvas with the dev server running; a callout on the local URL reads 'macOS: CMD+Click, Windows/Linux: CTRL+Click' to open it in a browser canvas" src="../images/ghcp-app-terminal-running-app.png" />
+
+   Prefer a prompt? You can also ask Copilot:
 
    ```text
    Open a browser canvas on http://localhost:4321 
