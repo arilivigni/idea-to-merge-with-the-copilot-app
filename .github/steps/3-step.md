@@ -79,11 +79,10 @@ A few things to know about the build:
    >   and it survives a reload.
    > - A pre-seeded, corrupted "mona-bookmarks" value doesn't break
    >   Add — the app recovers instead of throwing.
-   > - Manually type a URL in the browser UI, click the "Add bookmark"
-   >   button, and confirm the new row appears immediately without a
-   >   page reload.
-   > - Confirm the rendered row visibly includes the exact " :: "
-   >   separator between the URL text and the slug.
+   > - Adding a bookmark renders a new row immediately, without a
+   >   full page reload.
+   > - The rendered row includes the exact " :: " separator between
+   >   the URL text and the slug.
    >
    > Then open a pull request — but don't merge it:
    > - Include "Closes https://github.com/{{full_repo_name}}/issues/2"
@@ -94,7 +93,7 @@ A few things to know about the build:
    > ```
 
    <img width="360" alt="The build prompt in the session with the Build the bookmarks app issue #2 referenced as a chip" src="../images/step3-issue-prompt.png" />
-1. **Watch the agent test the implementation.** Building the feature includes verifying it — Copilot runs the app and the unit tests you asked for, adding a URL with and without `https://`, confirming bookmarks survive a reload, and checking that a corrupted `mona-bookmarks` value doesn't break **Add**. A browser window may pop up while it exercises the app; that's expected (see the notes below).
+1. **Watch the agent test the implementation.** Building the feature includes verifying it — Copilot runs the **unit tests** you asked for and builds the app, confirming a URL with and without `https://` is stored, that bookmarks survive a reload, and that a corrupted `mona-bookmarks` value doesn't break **Add**. You'll preview the app live and drive it with Playwright in **Step 4** — here the tests and build are enough to trust the diff before you merge.
 1. **Review the diff before you merge.** Agent merge opens the pull request that links issue **#2** for you — review the changes in the session's **Changes** tab (or a browser canvas on the PR). You'll merge it in **Activity 2** once you're satisfied.
 
    <img width="440" alt="Session review of the base62 nextSlug helper (mona- prefixed slugs), persistence and event-wiring notes, with Changes +107 -21 and PR #4 buttons at the bottom" src="../images/ghcp-app-step3.png" />
@@ -118,16 +117,6 @@ A few things to know about the build:
 > Need to get back to your **Build the bookmarks app** issue (**#2**)? Open the session panel menu and select it to reopen it in the side panel anytime.
 
 <img width="360" alt="Session panel menu with the Build the bookmarks app issue selected to reopen it in the side panel" src="../images/step3-reopen-issue.png" />
-
-> [!NOTE]
-> **A browser window may open on its own.** By default the Playwright MCP server launches a **headed** (visible) browser, so a separate window appears while Copilot tests your implementation — navigating to your app, adding the bookmark, and confirming it behaves as expected — then closes itself. That pop-up is expected; let it finish.
-
-> [!TIP]
-> **Prefer no pop-up window?** Run Playwright **headless** so nothing appears on screen (it still runs the same tests). Add the `--headless` flag to the server args in `.github/mcp.json`, then start a new session so the change is picked up:
->
-> ```json
-> "args": ["@playwright/mcp@latest", "--headless"]
-> ```
 
 <details>
 <summary>Having trouble? 🤷</summary><br/>
