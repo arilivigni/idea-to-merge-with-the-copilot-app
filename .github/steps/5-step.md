@@ -50,7 +50,7 @@ Let Copilot draft the next-release plan in an editor canvas, then commit it to `
 
 1. Review the draft in the canvas — add, remove, or reword items so it reflects what *you* would build next. It's your plan, not just the model's.
 
-1. When you're happy with it, **commit `ROADMAP.md` to `main`**. When it lands, a **result table** posts to this issue: it checks that `ROADMAP.md` exists and lists **at least three** items. Watch this issue for it.
+1. When you're happy with it, **commit `ROADMAP.md` to `main`**. When it lands, an **Activity 1** result table posts to this issue confirming `ROADMAP.md` exists and lists **at least three** items — then finish Step 5 in **Activity 2**.
 
 <details>
 <summary>Having trouble? 🤷</summary><br/>
@@ -64,7 +64,7 @@ Let Copilot draft the next-release plan in an editor canvas, then commit it to `
 
 ### ⌨️ Activity 2: Turn the top items into issues
 
-Close the loop: promote your best roadmap items into tracked work — the same **issue from a session** move you learned in Step 1.
+Close the loop: promote your best roadmap items into tracked work — the same **issue from a session** move you learned in Step 1. This activity **completes Step 5**: once your roadmap is on `main` and you've opened **at least two issues** from it, the final result table posts and the review unlocks.
 
 1. Ask Copilot to open a couple of issues from the roadmap's top items:
 
@@ -78,9 +78,10 @@ Close the loop: promote your best roadmap items into tracked work — the same *
    <!-- image: a GitHub issue created from a roadmap item -->
 
 1. Open the **Issues** tab and confirm your new issues are there, ready for a future idea-to-merge loop.
+1. When your **second** issue is open, the final Step 5 result table posts to this issue: it confirms your `ROADMAP.md` is on `main` and that **at least two issues** were opened from it. That completes Step 5 and unlocks the review. Watch this issue for it.
 
 > [!TIP]
-> This activity is **not graded** — Step 5 is complete once the result table for your `ROADMAP.md` is green. It's here so you leave with real, tracked next steps.
+> Step 5 completes when **both** are true: your `ROADMAP.md` is on `main` **and** you've opened **at least two issues** from it. Each new issue needs a short description — an empty issue won't count.
 
 <details>
 <summary>Stretch: draft release notes too ✍️</summary><br/>
