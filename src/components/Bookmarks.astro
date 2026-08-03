@@ -43,7 +43,8 @@
   // CLIENT-SIDE BOUNDARY — runs in the browser only.
   //
   // TODO (Step 3): implement the bookmarks feature here.
-  //   1. On form submit, read and validate the original URL.
+  //   1. On form submit, call event.preventDefault() FIRST so the page
+  //      never reloads, then read and validate the original URL.
   //   2. Generate a short slug with a "mona-" prefix (for example, base62
   //      of a counter or hash → "mona-7fk2").
   //   3. Save the original URL and its slug, then persist them in the browser.
@@ -56,12 +57,14 @@
   //      bookmark exists; reverse it when the list is empty.
   //   6. Wire the #clear-all button to remove every saved bookmark (clear the
   //      list, clear browser storage) after a quick confirm.
+  //   7. On page load, read the saved bookmarks from storage and render
+  //      them so the list persists across reloads.
   //
   // Because this code lives in a client <script>, browser storage APIs are
   // safe to use here without breaking the static build.
   const form = document.getElementById('add-bookmark');
   form?.addEventListener('submit', (event) => {
-    event.preventDefault();
+    event.preventDefault(); // keep this — stops the page from reloading
     // Implement in Step 3.
   });
 </script>

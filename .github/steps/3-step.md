@@ -44,9 +44,13 @@ A few things to know about the build:
    > ```prompt
    > Implement the bookmarks feature in src/components/Bookmarks.astro:
    > - Add a bookmark by its original URL
+   > - On submit, call event.preventDefault() so the page never
+   >   reloads and the entry isn't lost
    > - Generate a short base62 slug with a "mona-" prefix
    >   (for example, mona-7fk2) for each bookmark
-   > - Save both the URL and the slug to localStorage
+   > - Save both the URL and the slug to localStorage, and re-render
+   >   the saved list from localStorage on page load so bookmarks
+   >   persist across reloads
    > - Keep all localStorage access behind a client:load boundary
    >   (or the inline <script>) so the static Astro build never
    >   touches browser APIs
@@ -86,6 +90,7 @@ A few things to know about the build:
 - The PR body must contain a closing keyword and an issue number, e.g. `Closes #2`.
 - `src/components/Bookmarks.astro` must reference **`localStorage`**.
 - The app must build. If the build fails, make sure `localStorage` runs inside the client `<script>` / `client:load` boundary, never at the top of the component frontmatter.
+- If adding a bookmark reloads the page or the new entry disappears, make sure the submit handler calls `event.preventDefault()` and that saved bookmarks are re-rendered from `localStorage` on page load.
 - If the pull request wasn't opened, make sure the session used **agent merge** — autopilot uses it automatically, or you can select **Agent merge** from the session's action dropdown.
 - Still stuck on the app itself? See [Getting started with the Copilot App](https://docs.github.com/en/copilot/how-tos/github-copilot-app/getting-started).
 
