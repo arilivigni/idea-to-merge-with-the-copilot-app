@@ -27,7 +27,7 @@ files use `<!-- image: ... -->` HTML-comment placeholders so issue comments stil
 | `ghcp-app-pr.png` | 2 · Act 1 details | Session **PR #3** tab: open pull request targeting `main` |
 | `step3-open-issue.png` | 3 · Act 1 | The **Build the bookmarks app** issue #2 highlighted above the prompt field, ready to reference in the session |
 | `step3-issue-prompt.png` | 3 · Act 1 | The build prompt in the session with issue **#2** referenced as a chip |
-| `step3-reopen-issue.png` | 3 · Act 1 tip | Session panel menu with the **Build the bookmarks app** issue to reopen it in the side panel |
+| `step3-reopen-issue.png` | 3 · Act 1 tip; 4 · Act 1 step 1 | Session panel menu with the **Build the bookmarks app** issue to reopen it in the side panel |
 | `ghcp-app-step3-pr.png` | 3 · Act 1 details | Session **PR #4** tab: open pull request 'Implement bookmarks feature with base62 mona- slugs' that Closes #2 (+107 -21 into `main`) |
 | `ghcp-app-step3-changes.png` | 3 · Act 1 details | Session **Changes** tab: Bookmarks.astro diff replacing the TODO scaffold with the mona- slug logic (+107 -21) |
 | `ghcp-app-step3.png` | 3 · Act 1 | Session review of the base62 `nextSlug` helper and event wiring, with **Changes** and **PR #4** buttons |

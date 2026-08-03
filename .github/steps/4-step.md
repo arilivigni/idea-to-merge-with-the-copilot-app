@@ -37,7 +37,11 @@ See the finished bookmarks app running live — right inside the Copilot App —
 > [!NOTE]
 > This preview is **app-only** and isn't graded — it stands up the running app you'll capture and submit in Activity 2. Leave the dev server running so both the browser canvas and Playwright can reach it.
 
-1. In a **Terminal canvas** on your repository, install dependencies (first run only) and start the dev server. Leave it running and note the local URL (for example, `http://localhost:4321`):
+1. Go back to your **Build the bookmarks app** session from Step 3 — the one that shipped the feature. Open its session panel menu and select **Build the bookmarks app** to bring it back into the side panel:
+
+   <img width="360" alt="Session panel menu with the Build the bookmarks app issue selected to reopen the session that built the feature" src="../images/step3-reopen-issue.png" />
+
+   In that session, open a **Terminal canvas**, install dependencies (first run only), and start the dev server. Leave it running and note the local URL (for example, `http://localhost:4321`):
 
    > ![Static Badge](https://img.shields.io/badge/Terminal-text?logo=gnometerminal&labelColor=0969da&color=ddf4ff)
    >
