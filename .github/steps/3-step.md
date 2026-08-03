@@ -50,6 +50,10 @@ A few things to know about the build:
    >   example, mona-7fk2) for each bookmark.
    > - Render each saved bookmark as "url :: slug", for example
    >   https://www.example.com :: mona-7fk2.
+   > - Make Mona's Bookmark Manager App look aesthetically pleasing,
+   >   and use the Monaspace fonts already wired up in the repo (the
+   >   --font-body / --font-head variables in src/layouts/Base.astro)
+   >   rather than adding new fonts.
    > - Persist bookmarks under a "mona-bookmarks" key in localStorage
    >   and re-render the saved list on page load so they survive a
    >   reload. Keep all localStorage access behind a client:load
