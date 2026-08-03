@@ -60,7 +60,7 @@ See the finished bookmarks app running live — right inside the Copilot App —
 
 1. In the browser canvas, **add a bookmark** — paste a link (for example, `https://github.com/features/copilot`) and select **Add bookmark**. Confirm both the **original URL** and its generated **short slug** appear in the saved list. That's the app you took from idea to merge, running live.
 
-   <!-- image: a saved bookmark showing its original URL and short slug in the browser canvas -->
+   <img width="460" alt="Browser canvas at localhost:4322 showing Mona's Bookmark Manager App with a saved bookmark rendered as https://learn.github.com/skills :: mona-1 and a Copy button" src="../images/ghcp-app-mona-bookmark-mngr-app.png" />
 
 ### ⌨️ Activity 2: Capture proof with Playwright MCP and submit
 

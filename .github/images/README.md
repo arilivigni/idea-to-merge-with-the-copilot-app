@@ -32,6 +32,7 @@ files use `<!-- image: ... -->` HTML-comment placeholders so issue comments stil
 | `ghcp-app-step3-changes.png` | 3 · Act 1 details | Session **Changes** tab: Bookmarks.astro diff replacing the TODO scaffold with the mona- slug logic (+107 -21) |
 | `ghcp-app-step3.png` | 3 · Act 1 | Session review of the base62 `nextSlug` helper and event wiring, with **Changes** and **PR #4** buttons |
 | `ghcp-app-terminal-running-app.png` | 4 · Act 1 | Terminal canvas with the dev server running and the ⌘+Click / Ctrl+Click callout to open the local URL in a browser canvas |
+| `ghcp-app-mona-bookmark-mngr-app.png` | 4 · Act 1 | Browser canvas showing Mona's Bookmark Manager App with a saved bookmark rendered as `url :: mona-` slug and a Copy button |
 
 ## Still to capture (one per remaining `<!-- image: -->` placeholder)
 
