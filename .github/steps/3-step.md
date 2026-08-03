@@ -36,7 +36,7 @@ A few things to know about the build:
    <img width="420" alt="The New session button highlighted in the top-right of the session panel, next to the repository name" src="../images/new-session.png" />
 1. In the new session, open your **Build the bookmarks app** issue: type `#2` in the prompt field and press **Tab** to attach it as context for the build.
 
-   <img width="460" alt="The Build the bookmarks app issue #2 shown above the prompt field with a 'Click to open' callout" src="../images/step3-open-issue.png" />
+   <img width="460" alt="The Build the bookmarks app issue #2 highlighted above the prompt field, ready to reference in the session" src="../images/step3-open-issue.png" />
 1. Send the build prompt below. It implements the feature and opens a pull request that links issue **#2** with a closing keyword, then walks you through the diff and **stops — leaving the merge to you**:
 
    > ![Static Badge](https://img.shields.io/badge/Prompt-text?style=for-the-badge&logo=github-copilot&logoColor=white&labelColor=purple&color=purple)
