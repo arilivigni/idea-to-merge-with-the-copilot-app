@@ -48,7 +48,8 @@ A few things to know about the build:
    >   JavaScript before saving.
    > - Generate a short base62 slug with a "mona-" prefix (for
    >   example, mona-7fk2) for each bookmark.
-   > - Render each saved bookmark as "url :: slug", for example
+   > - Render each saved bookmark with the exact visible separator
+   >   " :: " between the URL and slug, for example
    >   https://www.example.com :: mona-7fk2.
    > - Make Mona's Bookmark Manager App look aesthetically pleasing,
    >   and use the Monaspace fonts already wired up in the repo (the
@@ -78,6 +79,11 @@ A few things to know about the build:
    >   and it survives a reload.
    > - A pre-seeded, corrupted "mona-bookmarks" value doesn't break
    >   Add — the app recovers instead of throwing.
+   > - Manually type a URL in the browser UI, click the "Add bookmark"
+   >   button, and confirm the new row appears immediately without a
+   >   page reload.
+   > - Confirm the rendered row visibly includes the exact " :: "
+   >   separator between the URL text and the slug.
    >
    > Then open a pull request — but don't merge it:
    > - Include "Closes https://github.com/{{full_repo_name}}/issues/2"
