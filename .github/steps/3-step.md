@@ -10,7 +10,7 @@ A few things to know about the build:
 
 - Before it runs, you set three controls below the prompt: **where it runs** (a new working tree, your local repository, or a cloud sandbox), the **session mode** (**Interactive**, **Plan**, or **Autopilot**), and the **model** (**Auto** lets the app pick).
 - Each bookmark stores its **original URL** and a locally generated **short slug** (a `mona-` prefixed base62 alias like `mona-7fk2`) — there's **no shortener service or backend**. Bookmarks persist with **`localStorage`**, accessed **only** behind a **`client:load`** boundary so the static build doesn't fail.
-- When the diff looks good, **agent merge opens the pull request** for you; you review it and **merge it yourself in Activity 2** — the same open-then-merge flow as Step 2, now on a real feature branch. Because the PR body uses a closing keyword, merging **closes the linked app issue** automatically.
+- When the diff looks good, **agent merge opens the pull request** for you; you review it and **merge it yourself in Activity 2** — the same open-then-merge flow as Step 2, now on a real feature branch. When you merge, the exercise **closes the linked app issue**, closing the loop back to where you started.
 
 <!-- image: bookmarks UI showing an original URL and its short slug -->
 
@@ -144,13 +144,13 @@ Review the diff agent merge staged, then merge it. Watch this issue for **two re
    > merge pr
    > ```
 
-   Because the pull request body uses a closing keyword, merging **closes the linked app issue** automatically.
+   The pull request body references your **Build the bookmarks app** issue, and merging **closes that linked app issue** for you.
 
 1. Confirm the pull request is **merged into `main`** (open the PR in a browser canvas, or check the **app PR** view).
 
    <!-- image: merged bookmarks pull request in the app's pull request view -->
 
-1. Confirm the linked **app issue** is now **closed** — the closing keyword did this automatically.
+1. Confirm the linked **app issue** is now **closed** — merging the pull request wrapped it up.
 
    <!-- image: linked app issue (Build the bookmarks app) automatically closed -->
 

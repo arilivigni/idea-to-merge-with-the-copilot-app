@@ -182,7 +182,7 @@ jobs:
             exit 1
           fi
 
-      - name: Check the merged pull request closed its linked work item issue
+      - name: Close and confirm the merged pull request's linked work item issue
         id: check-issue-closed
         continue-on-error: true
         env:
@@ -197,15 +197,19 @@ jobs:
             exit 0
           fi
 
-          # Gather every issue this PR intends to resolve, from two sources:
-          #   1. GitHub's own closing references — populated only when the body
-          #      uses a plain-text closing keyword like "Closes #2".
-          #   2. Issue numbers embedded in the PR body — including the Copilot
-          #      App's <copilot-ref ... target-id=".../issues/N"> chips, which
-          #      GitHub does NOT parse as closing keywords. Without this the
-          #      check false-fails when the learner referenced the issue
-          #      correctly but the app encoded it as a rich reference.
+          # This job only runs once the pull request is MERGED, so reaching here
+          # means the work shipped. Now make sure the linked work item issue is
+          # resolved.
+          #
+          # We cannot rely on GitHub's native "Closes #N" auto-close: the Copilot
+          # App rewrites the closing keyword in the PR body as a
+          # <copilot-ref ... target-id=".../issues/N"> chip, which GitHub does
+          # NOT parse as a closing keyword — so closingIssuesReferences stays
+          # empty and merging never auto-closes the issue. We therefore discover
+          # the referenced issue(s) ourselves and close them on merge, which is
+          # both reliable and idempotent (a no-op if already closed).
           collect_candidates() {
+            # Source 1: GitHub's own closing refs (present only for plain-text keywords).
             gh api graphql \
               -f query='query($owner:String!,$repo:String!,$pr:Int!){
                 repository(owner:$owner,name:$repo){
@@ -220,39 +224,40 @@ jobs:
               --jq '.data.repository.pullRequest.closingIssuesReferences.nodes[].number' \
               2>/dev/null || true
 
+            # Source 2: issue numbers in the PR body — bare #N and .../issues/N,
+            # which also covers the app's <copilot-ref target-id=".../issues/N"> chip.
             gh api "repos/$OWNER/$REPO_NAME/pulls/$PR_NUMBER" --jq '.body // ""' 2>/dev/null \
               | grep -oiE '(#[0-9]+|/issues/[0-9]+)' \
               | grep -oE '[0-9]+' || true
           }
 
-          # Merging closes the linked issue asynchronously, so poll a few times
-          # to avoid a false failure from reading the state too early.
-          CLOSED_LINKED=0
-          for attempt in 1 2 3 4 5; do
-            CLOSED_LINKED=0
-            for num in $(collect_candidates | sort -un); do
-              if [ "$num" = "$WALKTHROUGH_ISSUE_NUMBER" ]; then
-                continue
-              fi
-              STATE=$(gh api "repos/$OWNER/$REPO_NAME/issues/$num" --jq '.state' 2>/dev/null || echo "")
-              if [ "$STATE" = "closed" ]; then
-                echo "Referenced work item issue #$num is closed."
-                CLOSED_LINKED=1
-              fi
-            done
+          CANDIDATES=$(collect_candidates | sort -un | grep -vx "$WALKTHROUGH_ISSUE_NUMBER" || true)
 
-            echo "Attempt $attempt: linked (non-walkthrough) work item issues closed by this PR: $CLOSED_LINKED"
-            if [ "$CLOSED_LINKED" -ge 1 ]; then
-              break
+          if [ -z "$CANDIDATES" ]; then
+            echo "The merged pull request does not reference a work item issue. In the pull request body, reference your bookmarks issue with a closing keyword (e.g. 'Closes #<app-issue-number>') pointing at that issue, not the walkthrough issue."
+            exit 1
+          fi
+
+          # Close every referenced (non-walkthrough) issue, then confirm.
+          CLOSED_LINKED=0
+          for num in $CANDIDATES; do
+            STATE=$(gh api "repos/$OWNER/$REPO_NAME/issues/$num" --jq '.state' 2>/dev/null || echo "")
+            if [ "$STATE" = "open" ]; then
+              echo "Closing linked work item issue #$num (the app's issue chip prevents GitHub auto-close on merge)."
+              gh api -X PATCH "repos/$OWNER/$REPO_NAME/issues/$num" -f state=closed -f state_reason=completed >/dev/null 2>&1 || true
+              STATE=$(gh api "repos/$OWNER/$REPO_NAME/issues/$num" --jq '.state' 2>/dev/null || echo "")
             fi
-            sleep 3
+            if [ "$STATE" = "closed" ]; then
+              echo "Linked work item issue #$num is closed."
+              CLOSED_LINKED=1
+            fi
           done
 
           if [ "$CLOSED_LINKED" -ge 1 ]; then
-            echo "The merged pull request resolved its linked work item issue."
+            echo "The merged pull request's linked work item issue is closed."
             exit 0
           else
-            echo "No linked work item issue was closed. In the pull request body, reference your bookmarks issue with a closing keyword (e.g. 'Closes #<app-issue-number>') pointing at that issue, not the walkthrough issue, and make sure the issue is closed."
+            echo "Could not close the linked work item issue. Confirm the PR body references your bookmarks issue and try closing it manually."
             exit 1
           fi
 
