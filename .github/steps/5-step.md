@@ -38,12 +38,26 @@ Let Copilot draft the next-release plan in an editor canvas, then use **agent me
    >
    > ```prompt
    > Create ROADMAP.md for Mona's Bookmark Manager App and open it in an
-   > editor canvas. Include two sections as Markdown bullet lists:
-   > - Planned features (for example: search/filter bookmarks, edit a
-   >   bookmark, tags or folders, import/export)
-   > - Known bugs and risks (for example: duplicate slugs, empty-URL
-   >   validation, losing bookmarks when localStorage is cleared)
-   > Keep each item to one line so it can become a GitHub issue later.
+   > editor canvas. Make it visually engaging while keeping it valid
+   > GitHub Markdown:
+   > - Give it a short title and a one-line intro.
+   > - Add a summary table near the top with the columns
+   >   | Area | Item | Type | Priority | — one row per roadmap item,
+   >   using 🚀 for features and 🐞 for bugs/risks in the Type column.
+   >   This is an overview; keep the full bullet lists below it.
+   > - Use two emoji section headers: "## 🚀 Planned features" and
+   >   "## 🐞 Known bugs & risks".
+   > - Under each header, use a Markdown bullet list where every item
+   >   is ONE line that starts with "- ", then a leading emoji, a short
+   >   title, an em dash, and a one-line tag — for example:
+   >     - 🔖 Search & filter bookmarks — priority: high
+   >     - 🐞 Duplicate slugs on re-add — priority: medium
+   > - Planned features to consider: search/filter bookmarks, edit a
+   >   bookmark, tags or folders, import/export.
+   > - Known bugs and risks to consider: duplicate slugs, empty-URL
+   >   validation, losing bookmarks when localStorage is cleared.
+   > Keep each bullet on a single line (no wrapping, no sub-bullets) so
+   > it can become a GitHub issue later.
    > ```
 
    <!-- image: editor canvas showing the drafted ROADMAP.md -->
