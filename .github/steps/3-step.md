@@ -33,7 +33,7 @@ A few things to know about the build:
 
 1. Start a **new session** for this feature. Click **New session** in the top-right of the session panel, next to the repository name — a fresh session branches from the current `main`, so it carries your Step 2 instructions.
 
-   <img width="420" alt="The New session button highlighted in the top-right of the session panel, next to the repository name" src="../images/step3-new-session.png" />
+   <img width="420" alt="The New session button highlighted in the top-right of the session panel, next to the repository name" src="../images/new-session.png" />
 1. In the new session, open your **Build the bookmarks app** issue: type `#2` in the prompt field and press **Tab** to attach it as context for the build.
 
    <img width="460" alt="The Build the bookmarks app issue #2 shown above the prompt field with a 'Click to open' callout" src="../images/step3-open-issue.png" />

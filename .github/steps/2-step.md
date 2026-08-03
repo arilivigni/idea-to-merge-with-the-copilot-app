@@ -33,7 +33,7 @@ Even a light, single-file change is a chance to try **agent merge** — the app'
 
 1. Open a **New session** on your repository — click **New session** in the top-right of the session panel, next to the repository name.
 
-   <img width="420" alt="The New session button highlighted in the top-right of the session panel, next to the repository name" src="../images/step2-new-session.png" />
+   <img width="420" alt="The New session button highlighted in the top-right of the session panel, next to the repository name" src="../images/new-session.png" />
 
 1. Switch the session to **Plan** mode from the mode dropdown below the prompt field, so the agent drafts its edit for you to approve before it runs.
 
