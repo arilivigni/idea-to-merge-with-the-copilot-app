@@ -71,18 +71,21 @@ A few things to know about the build:
    > - Make sure a JavaScript error can never let the form fall back
    >   to a native submit that reloads the page and loses the URL —
    >   keep event.preventDefault() as the first thing on submit.
-   > - Add a small unit test around the load/normalise helper so the
-   >   non-array case is covered.
+   > - Add unit tests (no browser) around the pure helpers that cover:
+   >   - a URL with and without "https://" normalises to the same
+   >     saved value;
+   >   - loading an empty, corrupted, legacy, or non-array
+   >     "mona-bookmarks" value recovers instead of throwing;
+   >   - a saved bookmark formats as "<url> :: <slug>" with the exact
+   >     " :: " separator.
    >
-   > Then run the app and confirm:
-   > - Adding a URL with and without "https://" renders a bookmark
-   >   and it survives a reload.
-   > - A pre-seeded, corrupted "mona-bookmarks" value doesn't break
-   >   Add — the app recovers instead of throwing.
-   > - Adding a bookmark renders a new row immediately, without a
-   >   full page reload.
-   > - The rendered row includes the exact " :: " separator between
-   >   the URL text and the slug.
+   > Verify your work without launching a browser:
+   > - Run the unit tests and make sure they pass.
+   > - Run the production build (npm run build) and make sure it
+   >   succeeds — this proves localStorage stays behind the
+   >   client:load boundary.
+   > Do not open a browser or start the Playwright MCP server in this
+   > step; previewing and driving the running app comes in Step 4.
    >
    > Then open a pull request — but don't merge it:
    > - Include "Closes https://github.com/{{full_repo_name}}/issues/2"
@@ -93,7 +96,7 @@ A few things to know about the build:
    > ```
 
    <img width="360" alt="The build prompt in the session with the Build the bookmarks app issue #2 referenced as a chip" src="../images/step3-issue-prompt.png" />
-1. **Watch the agent test the implementation.** Building the feature includes verifying it — Copilot runs the **unit tests** you asked for and builds the app, confirming a URL with and without `https://` is stored, that bookmarks survive a reload, and that a corrupted `mona-bookmarks` value doesn't break **Add**. You'll preview the app live and drive it with Playwright in **Step 4** — here the tests and build are enough to trust the diff before you merge.
+1. **Watch the agent test the implementation.** Building the feature includes verifying it — Copilot runs the **unit tests** you asked for and the **production build**, all headless: no browser opens and the Playwright MCP server stays idle. The tests cover URL normalisation, corrupted-storage recovery, and the exact `" :: "` formatting, while the build proves `localStorage` stays behind the `client:load` boundary. You'll preview the app live and drive it with Playwright in **Step 4** — here the tests and build are enough to trust the diff before you merge.
 1. **Review the diff before you merge.** Agent merge opens the pull request that links issue **#2** for you — review the changes in the session's **Changes** tab (or a browser canvas on the PR). You'll merge it in **Activity 2** once you're satisfied.
 
    <img width="440" alt="Session review of the base62 nextSlug helper (mona- prefixed slugs), persistence and event-wiring notes, with Changes +107 -21 and PR #4 buttons at the bottom" src="../images/ghcp-app-step3.png" />
