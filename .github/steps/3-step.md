@@ -45,7 +45,9 @@ A few things to know about the build:
    > Implement the bookmarks feature in src/components/Bookmarks.astro:
    > - Add a bookmark by its original URL
    > - On submit, call event.preventDefault() so the page never
-   >   reloads and the entry isn't lost
+   >   reloads and the entry isn't lost. Accept any URL format the
+   >   user types — with or without "https://" — and normalise it
+   >   in JavaScript before saving
    > - Generate a short base62 slug with a "mona-" prefix
    >   (for example, mona-7fk2) for each bookmark
    > - Save both the URL and the slug to localStorage, and re-render
