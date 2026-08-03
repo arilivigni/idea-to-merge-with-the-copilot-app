@@ -62,6 +62,42 @@ Let Copilot draft the next-release plan in an editor canvas, then use **agent me
 
    <!-- image: editor canvas showing the drafted ROADMAP.md -->
 
+   <details>
+   <summary>See an example <code>ROADMAP.md</code> 👀</summary><br/>
+
+   A summary table on top, emoji section headers, and one tagged bullet per item — flashy, but every item is still a single `-` line so it maps cleanly to an issue:
+
+   ````markdown
+   # 🗺️ Mona's Bookmark Manager App — Roadmap
+
+   A living plan for what's next: the features we want to build and the bugs and risks we're tracking.
+
+   | Area | Item | Type | Priority |
+   | --- | --- | --- | --- |
+   | Features | Search & filter bookmarks | 🚀 | High |
+   | Features | Edit a saved bookmark | 🚀 | Medium |
+   | Features | Tags or folders | 🚀 | Medium |
+   | Features | Import / export bookmarks | 🚀 | Low |
+   | Bugs & risks | Duplicate slugs on re-add | 🐞 | High |
+   | Bugs & risks | Empty-URL validation | 🐞 | Medium |
+   | Bugs & risks | Bookmarks lost when localStorage is cleared | 🐞 | Medium |
+
+   ## 🚀 Planned features
+
+   - 🔖 Search & filter bookmarks — priority: high
+   - ✏️ Edit a saved bookmark — priority: medium
+   - 🗂️ Tags or folders — priority: medium
+   - 🔁 Import / export bookmarks — priority: low
+
+   ## 🐞 Known bugs & risks
+
+   - 🧩 Duplicate slugs on re-add — priority: high
+   - 🚫 Empty-URL validation — priority: medium
+   - 💾 Bookmarks lost when localStorage is cleared — priority: medium
+   ````
+
+   </details>
+
 1. Review the draft in the canvas — add, remove, or reword items so it reflects what *you* would build next. It's your plan, not just the model's.
 
 1. When you're happy with it, **use agent merge to land `ROADMAP.md` on `main`**:
