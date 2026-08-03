@@ -53,6 +53,8 @@ Even a light, single-file change is a chance to try **agent merge** — the app'
 
    <img width="520" alt="Plan summary in Plan mode with 'Approve and implement with autopilot (recommended)' highlighted as the first option" src="../images/ghcp-app-autopilot.png" />
 
+   <img width="380" alt="Session action dropdown with Agent merge selected — 'Automate your pull request lifecycle' — above Create PR and Create draft PR" src="../images/ghcp-app-agent-merge.png" />
+
    <img width="460" alt="Autopilot result: a pull request created via agent merge, showing the branch into main, a +2 -7 change, PR #3, and Plan complete" src="../images/ghcp-app-autopilot-result.png" />
 
    <details>
