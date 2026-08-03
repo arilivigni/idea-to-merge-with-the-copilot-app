@@ -49,13 +49,15 @@ Even a light, single-file change is a chance to try **agent merge** — the app'
    > - browser code runs behind a client:load boundary so SSR never touches localStorage.
    > ```
 
-1. **Approve the plan and let autopilot make the changes.** When the plan summary appears, select **Approve and implement with autopilot (recommended)**. Autopilot applies the single-file edit and uses **agent merge** to open a pull request for you — no manual dropdown needed. You'll review it and merge it in **Activity 2**.
+1. **Approve the plan and let autopilot make the changes.** When the plan summary appears, select **Approve and implement with autopilot (recommended)**. Autopilot applies the single-file edit and opens a pull request for you. You'll review it and merge it in **Activity 2**.
 
    <img width="520" alt="Plan summary in Plan mode with 'Approve and implement with autopilot (recommended)' highlighted as the first option" src="../images/ghcp-app-autopilot.png" />
 
-   <img width="380" alt="Session action dropdown with Agent merge selected — 'Automate your pull request lifecycle' — above Create PR and Create draft PR" src="../images/ghcp-app-agent-merge.png" />
-
    <img width="460" alt="Autopilot result: a pull request created via agent merge, showing the branch into main, a +2 -7 change, PR #3, and Plan complete" src="../images/ghcp-app-autopilot-result.png" />
+
+   **Agent merge usually happens automatically.** Autopilot typically opens the pull request for you via **agent merge**, so you may never open the action dropdown — the view below is optional. If no pull request appears (or you'd rather trigger it yourself), open the session's action dropdown and select **Agent merge**:
+
+   <img width="380" alt="Session action dropdown with Agent merge selected — 'Automate your pull request lifecycle' — above Create PR and Create draft PR" src="../images/ghcp-app-agent-merge.png" />
 
    <details>
    <summary>Explore what autopilot produced 👀</summary><br/>
