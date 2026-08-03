@@ -43,26 +43,44 @@ A few things to know about the build:
    >
    > ```prompt
    > Implement the bookmarks feature in src/components/Bookmarks.astro:
-   > - Add a bookmark by its original URL
-   > - On submit, call event.preventDefault() so the page never
-   >   reloads and the entry isn't lost. Accept any URL format the
-   >   user types — with or without "https://" — and normalise it
-   >   in JavaScript before saving
-   > - Generate a short base62 slug with a "mona-" prefix
-   >   (for example, mona-7fk2) for each bookmark
-   > - Save both the URL and the slug to localStorage, and re-render
-   >   the saved list from localStorage on page load so bookmarks
-   >   persist across reloads
-   > - Keep all localStorage access behind a client:load boundary
-   >   (or the inline <script>) so the static Astro build never
-   >   touches browser APIs
+   > - Add a bookmark by its original URL. Accept any URL format the
+   >   user types — with or without "https://" — and normalise it in
+   >   JavaScript before saving.
+   > - Generate a short base62 slug with a "mona-" prefix (for
+   >   example, mona-7fk2) for each bookmark.
+   > - Render each saved bookmark as "url :: slug", for example
+   >   https://www.example.com :: mona-7fk2.
+   > - Persist bookmarks under a "mona-bookmarks" key in localStorage
+   >   and re-render the saved list on page load so they survive a
+   >   reload. Keep all localStorage access behind a client:load
+   >   boundary (or the inline <script>) so the static Astro build
+   >   never touches browser APIs.
+   >
+   > Make the storage layer defensive:
+   > - Treat localStorage as untrusted. When you load it, validate
+   >   that the value is an array of {url, slug} objects and drop
+   >   anything malformed — never let raw JSON.parse output flow
+   >   straight into the render or add paths.
+   > - Handle empty, corrupted, legacy, and non-array stored values
+   >   gracefully, without ever throwing.
+   > - Make sure a JavaScript error can never let the form fall back
+   >   to a native submit that reloads the page and loses the URL —
+   >   keep event.preventDefault() as the first thing on submit.
+   > - Add a small unit test around the load/normalise helper so the
+   >   non-array case is covered.
+   >
+   > Then run the app and confirm:
+   > - Adding a URL with and without "https://" renders a bookmark
+   >   and it survives a reload.
+   > - A pre-seeded, corrupted "mona-bookmarks" value doesn't break
+   >   Add — the app recovers instead of throwing.
    >
    > Then open a pull request — but don't merge it:
    > - Include "Closes https://github.com/{{full_repo_name}}/issues/2"
-   >   in the pull request body
-   > - Walk me through the diff so I can review the changes
-   > - Stop after opening the pull request; I'll merge it myself
-   >   with Agent merge
+   >   in the pull request body.
+   > - Walk me through the diff so I can review the changes.
+   > - Stop after opening the pull request; I'll merge it myself with
+   >   Agent merge.
    > ```
 
    <img width="360" alt="The build prompt in the session with the Build the bookmarks app issue #2 referenced as a chip" src="../images/step3-issue-prompt.png" />
@@ -97,6 +115,7 @@ A few things to know about the build:
 - `src/components/Bookmarks.astro` must reference **`localStorage`**.
 - The app must build. If the build fails, make sure `localStorage` runs inside the client `<script>` / `client:load` boundary, never at the top of the component frontmatter.
 - If adding a bookmark reloads the page or the new entry disappears, make sure the submit handler calls `event.preventDefault()` and that saved bookmarks are re-rendered from `localStorage` on page load.
+- If the app crashes on load or after adding, the stored data may be corrupted or not an array. The loader should validate `localStorage` (an array of `{url, slug}`) and drop anything malformed instead of throwing.
 - If the pull request wasn't opened, make sure the session used **agent merge** — autopilot uses it automatically, or you can select **Agent merge** from the session's action dropdown.
 - Still stuck on the app itself? See [Getting started with the Copilot App](https://docs.github.com/en/copilot/how-tos/github-copilot-app/getting-started).
 
