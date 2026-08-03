@@ -65,6 +65,14 @@ Let Copilot draft the next-release plan in an editor canvas, then use **agent me
 
    <img width="440" alt="Session action dropdown with Agent merge enabled — the toggle on and 'Allow the agent to' listing Address reviews, Fix CI failures, Resolve conflicts, and Merge pull request" src="../images/ghcp-app-allow-agent-merge.png" />
 
+   If the pull request doesn't merge on its own, review the roadmap one last time and, once you're satisfied, ask Copilot to merge it:
+
+   > ![Static Badge](https://img.shields.io/badge/Prompt-text?style=for-the-badge&logo=github-copilot&logoColor=white&labelColor=purple&color=purple)
+   >
+   > ```prompt
+   > Merge the pull request that adds ROADMAP.md into main.
+   > ```
+
    When it lands on `main`, an **Activity 1** result table posts to this issue confirming `ROADMAP.md` exists and lists **at least three** items — then finish Step 5 in **Activity 2**.
 
 <details>
