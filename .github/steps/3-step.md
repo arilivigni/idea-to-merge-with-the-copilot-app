@@ -114,10 +114,10 @@ A few things to know about the build:
 <img width="360" alt="Session panel menu with the Build the bookmarks app issue selected to reopen it in the side panel" src="../images/step3-reopen-issue.png" />
 
 > [!NOTE]
-> **A browser window may open on its own.** By default the Playwright MCP server launches a **headed** (visible) browser, so a separate window appears, navigates to your app, adds the bookmark, and takes the screenshot — then closes itself. That pop-up is expected; let it finish.
+> **A browser window may open on its own.** By default the Playwright MCP server launches a **headed** (visible) browser, so a separate window appears while Copilot tests your implementation — navigating to your app, adding the bookmark, and confirming it behaves as expected — then closes itself. That pop-up is expected; let it finish.
 
 > [!TIP]
-> **Prefer no pop-up window?** Run Playwright **headless** so nothing appears on screen (it still captures the screenshot). Add the `--headless` flag to the server args in `.github/mcp.json`, then start a new session so the change is picked up:
+> **Prefer no pop-up window?** Run Playwright **headless** so nothing appears on screen (it still runs the same tests). Add the `--headless` flag to the server args in `.github/mcp.json`, then start a new session so the change is picked up:
 >
 > ```json
 > "args": ["@playwright/mcp@latest", "--headless"]
