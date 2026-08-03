@@ -11,7 +11,7 @@ So far you've used canvases to **run and preview** the app — a Terminal canvas
 - Once the roadmap exists, its top items become **tracked work** — you'll turn a couple into GitHub issues, closing the loop back to where you started in Step 1.
 
 > [!NOTE]
-> This is a **light commit**: the roadmap goes **directly to `main`** — no session or pull request needed, just like the docs edit in Step 2.
+> This is a **light change**: you'll draft the roadmap in a session, then use **agent merge** to land `ROADMAP.md` on `main` — the same agent merge from Step 2, now for a doc. Agent merge automates the pull request lifecycle, so no manual review is needed for a change this small.
 
 <!-- image: editor canvas open beside the session with a ROADMAP.md draft -->
 
@@ -22,7 +22,7 @@ So far you've used canvases to **run and preview** the app — a Terminal canvas
 
 ### ⌨️ Activity 1: Draft the roadmap in an editor canvas
 
-Let Copilot draft the next-release plan in an editor canvas, then commit it to `main`.
+Let Copilot draft the next-release plan in an editor canvas, then use **agent merge** to land it on `main`.
 
 > [!TIP]
 > You can reopen these step instructions anytime: in your session, reference the **Exercise: Idea to Merge with the Copilot App** issue (that's the walkthrough issue **#1** from your first session) to bring it back into the side panel.
@@ -50,14 +50,23 @@ Let Copilot draft the next-release plan in an editor canvas, then commit it to `
 
 1. Review the draft in the canvas — add, remove, or reword items so it reflects what *you* would build next. It's your plan, not just the model's.
 
-1. When you're happy with it, **commit `ROADMAP.md` to `main`**. When it lands, an **Activity 1** result table posts to this issue confirming `ROADMAP.md` exists and lists **at least three** items — then finish Step 5 in **Activity 2**.
+1. When you're happy with it, **use agent merge to land `ROADMAP.md` on `main`**:
+
+   > ![Static Badge](https://img.shields.io/badge/Prompt-text?style=for-the-badge&logo=github-copilot&logoColor=white&labelColor=purple&color=purple)
+   >
+   > ```prompt
+   > Use Agent merge to add ROADMAP.md to the root of the repository on
+   > the main branch. Keep the filename exactly ROADMAP.md.
+   > ```
+
+   When it lands on `main`, an **Activity 1** result table posts to this issue confirming `ROADMAP.md` exists and lists **at least three** items — then finish Step 5 in **Activity 2**.
 
 <details>
 <summary>Having trouble? 🤷</summary><br/>
 
 - The file must be named exactly `ROADMAP.md` at the repository root.
 - Include **at least three** Markdown list items (lines starting with `-` or `*`) across the two sections.
-- Make sure you committed to **`main`** — this is a light commit, no pull request needed.
+- Make sure `ROADMAP.md` landed on **`main`** — agent merge opens and merges the pull request for you, so nothing to merge by hand.
 - Still stuck on the app itself? See [Getting started with the Copilot App](https://docs.github.com/en/copilot/how-tos/github-copilot-app/getting-started).
 
 </details>
