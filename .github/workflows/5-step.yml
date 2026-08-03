@@ -11,6 +11,13 @@ on:
     types:
       - opened
 
+# Serialize Step 5 runs. Activity 2 opens two roadmap issues in quick succession,
+# which fires two `issues: opened` events. Without this, two runs could complete
+# at once — double-posting the review and racing to disable the workflow.
+concurrency:
+  group: step-5-${{ github.repository }}
+  cancel-in-progress: false
+
 permissions:
   contents: write
   actions: write
@@ -24,6 +31,32 @@ jobs:
     name: Find Exercise Issue
     if: ${{ github.event_name == 'workflow_dispatch' || github.event_name == 'issues' || github.event.created == false }}
     uses: skills/exercise-toolkit/.github/workflows/find-exercise-issue.yml@v0.9.3
+
+  # Guard against duplicate completion. Two roadmap issues can open near-
+  # simultaneously; combined with the concurrency lock above, this lets the
+  # first run disable the workflow and post the review, while any later run
+  # sees the workflow already disabled and skips the terminal check — so the
+  # review and finish steps run exactly once.
+  gate:
+    name: Gate concurrent runs
+    if: ${{ github.event_name == 'issues' || github.event_name == 'workflow_dispatch' }}
+    runs-on: ubuntu-latest
+    outputs:
+      active: ${{ steps.state.outputs.active }}
+    steps:
+      - name: Check whether this workflow is still enabled
+        id: state
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          workflow_id=$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}" --jq '.workflow_id')
+          state=$(gh api "repos/${GITHUB_REPOSITORY}/actions/workflows/${workflow_id}" --jq '.state')
+          echo "Workflow state: $state"
+          if [ "$state" = "active" ]; then
+            echo "active=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "active=false" >> "$GITHUB_OUTPUT"
+          fi
 
   # Activity 1 — roadmap landed on main. Interim feedback only; does not post the review.
   check_roadmap:
@@ -117,9 +150,9 @@ jobs:
   # Activity 2 — issues opened from the roadmap. Terminal check that gates the review.
   check_step_work:
     name: Check step work
-    if: ${{ github.event_name == 'issues' || github.event_name == 'workflow_dispatch' }}
+    needs: [find_exercise, gate]
+    if: ${{ (github.event_name == 'issues' || github.event_name == 'workflow_dispatch') && needs.gate.outputs.active == 'true' }}
     runs-on: ubuntu-latest
-    needs: [find_exercise]
     env:
       ISSUE_REPOSITORY: ${{ github.repository }}
       ISSUE_NUMBER: ${{ needs.find_exercise.outputs.issue-number }}
@@ -261,9 +294,11 @@ jobs:
           file: ${{ env.REVIEW_FILE }}
 
       - name: Disable current workflow
-        run: gh workflow disable "${{github.workflow}}"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          workflow_id=$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}" --jq '.workflow_id')
+          gh api -X PUT "repos/${GITHUB_REPOSITORY}/actions/workflows/${workflow_id}/disable"
 
   finish_exercise:
     name: Finish Exercise
