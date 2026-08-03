@@ -170,7 +170,7 @@ Review the diff agent merge staged, then merge it. Watch this issue for **two re
 
 - If the merge check hasn't posted, make sure agent merge actually **merged** the PR (not just opened it).
 - The exercise won't advance if the merged app fails to build. If the build row is red, fix the code on `main` (usually a `localStorage` call outside the `client:load` / `<script>` boundary) and push the fix.
-- If the app issue stays open, confirm the PR body used `Closes https://github.com/{{full_repo_name}}/issues/2` (your **Build the bookmarks app** issue) — not the walkthrough issue — then close it manually if needed.
+- If the app issue stays open, confirm the PR body used `Closes https://github.com/{{full_repo_name}}/issues/2` (your **Build the bookmarks app** issue) — not the walkthrough issue — then close it manually if needed. The app may render the closing reference as a linked **Issue #2** chip; that's expected — the check accepts it as long as issue **#2** ends up closed.
 - Still stuck on the app itself? See [Getting started with the Copilot App](https://docs.github.com/en/copilot/how-tos/github-copilot-app/getting-started).
 
 </details>

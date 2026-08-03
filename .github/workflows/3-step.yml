@@ -185,32 +185,59 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
           WALKTHROUGH_ISSUE_NUMBER: ${{ needs.find_exercise.outputs.issue-number }}
+          OWNER: ${{ github.repository_owner }}
+          REPO_NAME: ${{ github.event.repository.name }}
         run: |
           if [ -z "$PR_NUMBER" ]; then
             echo "No pull request in context (manual dispatch); skipping linked-issue check."
             exit 0
           fi
 
+          # Gather every issue this PR intends to resolve, from two sources:
+          #   1. GitHub's own closing references — populated only when the body
+          #      uses a plain-text closing keyword like "Closes #2".
+          #   2. Issue numbers embedded in the PR body — including the Copilot
+          #      App's <copilot-ref ... target-id=".../issues/N"> chips, which
+          #      GitHub does NOT parse as closing keywords. Without this the
+          #      check false-fails when the learner referenced the issue
+          #      correctly but the app encoded it as a rich reference.
+          collect_candidates() {
+            gh api graphql \
+              -f query='query($owner:String!,$repo:String!,$pr:Int!){
+                repository(owner:$owner,name:$repo){
+                  pullRequest(number:$pr){
+                    closingIssuesReferences(first:20){ nodes { number } }
+                  }
+                }
+              }' \
+              -f owner="$OWNER" \
+              -f repo="$REPO_NAME" \
+              -F pr="$PR_NUMBER" \
+              --jq '.data.repository.pullRequest.closingIssuesReferences.nodes[].number' \
+              2>/dev/null || true
+
+            gh api "repos/$OWNER/$REPO_NAME/pulls/$PR_NUMBER" --jq '.body // ""' 2>/dev/null \
+              | grep -oiE '(#[0-9]+|/issues/[0-9]+)' \
+              | grep -oE '[0-9]+' || true
+          }
+
           # Merging closes the linked issue asynchronously, so poll a few times
           # to avoid a false failure from reading the state too early.
           CLOSED_LINKED=0
           for attempt in 1 2 3 4 5; do
-            CLOSED_LINKED=$(gh api graphql \
-              -f query='query($owner:String!,$repo:String!,$pr:Int!){
-                repository(owner:$owner,name:$repo){
-                  pullRequest(number:$pr){
-                    closingIssuesReferences(first:20){ nodes { number state } }
-                  }
-                }
-              }' \
-              -f owner="${{ github.repository_owner }}" \
-              -f repo="${{ github.event.repository.name }}" \
-              -F pr="$PR_NUMBER" \
-              --jq "[.data.repository.pullRequest.closingIssuesReferences.nodes[]
-                     | select(.number != ($WALKTHROUGH_ISSUE_NUMBER|tonumber))
-                     | select(.state == \"CLOSED\")] | length")
+            CLOSED_LINKED=0
+            for num in $(collect_candidates | sort -un); do
+              if [ "$num" = "$WALKTHROUGH_ISSUE_NUMBER" ]; then
+                continue
+              fi
+              STATE=$(gh api "repos/$OWNER/$REPO_NAME/issues/$num" --jq '.state' 2>/dev/null || echo "")
+              if [ "$STATE" = "closed" ]; then
+                echo "Referenced work item issue #$num is closed."
+                CLOSED_LINKED=1
+              fi
+            done
 
-            echo "Attempt $attempt: linked work item issues now closed by this PR: $CLOSED_LINKED"
+            echo "Attempt $attempt: linked (non-walkthrough) work item issues closed by this PR: $CLOSED_LINKED"
             if [ "$CLOSED_LINKED" -ge 1 ]; then
               break
             fi
@@ -218,10 +245,10 @@ jobs:
           done
 
           if [ "$CLOSED_LINKED" -ge 1 ]; then
-            echo "The merged pull request closed its linked work item issue."
+            echo "The merged pull request resolved its linked work item issue."
             exit 0
           else
-            echo "No linked work item issue was closed. Ensure the PR body used a closing keyword (e.g. 'Closes #<app-issue-number>') pointing at your bookmarks issue, not the walkthrough issue."
+            echo "No linked work item issue was closed. In the pull request body, reference your bookmarks issue with a closing keyword (e.g. 'Closes #<app-issue-number>') pointing at that issue, not the walkthrough issue, and make sure the issue is closed."
             exit 1
           fi
 
