@@ -125,6 +125,16 @@ A few things to know about the build:
 
 </details>
 
+> [!NOTE]
+> **A browser window may open on its own.** By default the Playwright MCP server launches a **headed** (visible) browser, so a separate window appears, navigates to your app, adds the bookmark, and takes the screenshot — then closes itself. That pop-up is expected; let it finish.
+
+> [!TIP]
+> **Prefer no pop-up window?** Run Playwright **headless** so nothing appears on screen (it still captures the screenshot). Add the `--headless` flag to the server args in `.github/mcp.json`, then start a new session so the change is picked up:
+>
+> ```json
+> "args": ["@playwright/mcp@latest", "--headless"]
+> ```
+
 
 ### ⌨️ Activity 2: Review and merge the change
 
