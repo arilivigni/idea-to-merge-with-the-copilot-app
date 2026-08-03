@@ -29,7 +29,10 @@ Let Copilot draft the next-release plan in an editor canvas, then commit it to `
 >
 > <img width="360" alt="Session panel menu listing the Exercise: Idea to Merge with the Copilot App issue to reopen it" src="../images/step1-reopen-issue.png" />
 
-1. In a session on your repository, ask Copilot to draft the roadmap and open it in an **editor canvas** so you can review it as it writes:
+1. Start a **New session** on your repository — click **New session** in the top-right of the session panel, next to the repository name.
+
+   <img width="420" alt="The New session button highlighted in the top-right of the session panel, next to the repository name" src="../images/new-session.png" />
+1. In the new session, ask Copilot to draft the roadmap and open it in an **editor canvas** so you can review it as it writes:
 
    > ![Static Badge](https://img.shields.io/badge/Prompt-text?style=for-the-badge&logo=github-copilot&logoColor=white&labelColor=purple&color=purple)
    >
