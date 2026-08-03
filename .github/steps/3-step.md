@@ -24,7 +24,7 @@ A few things to know about the build:
 - [Working with agent sessions in the Copilot App](https://docs.github.com/en/copilot/how-tos/github-copilot-app/agent-sessions)
 - [Astro components and client directives](https://docs.astro.build/en/reference/directives-reference/#client-directives)
 
-### ⌨️ Activity 1: Build the feature and open the pull request (graded)
+### ⌨️ Activity 1: Build the feature and open the pull request
 
 > [!TIP]
 > You can reopen these step instructions anytime: in your session, reference the **Exercise: Idea to Merge with the Copilot App** issue (that's the walkthrough issue **#1** from your first session) to bring it back into the side panel.

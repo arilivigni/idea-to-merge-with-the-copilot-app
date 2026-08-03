@@ -21,7 +21,7 @@ Even a light, single-file change is a chance to try **agent merge** — the app'
 - [Customizing Copilot with repository instructions](https://docs.github.com/en/copilot/how-tos/configure-custom-instructions)
 - [Astro client directives](https://docs.astro.build/en/reference/directives-reference/#client-directives)
 
-### ⌨️ Activity 1: Set the rules and open a pull request with agent merge (graded)
+### ⌨️ Activity 1: Set the rules and open a pull request with agent merge
 
 > [!TIP]
 > You can reopen these step instructions anytime: in your session, reference the **Exercise: Idea to Merge with the Copilot App** issue (that's the walkthrough issue **#1** from your first session) to bring it back into the side panel.

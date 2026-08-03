@@ -20,7 +20,7 @@ So far you've used canvases to **run and preview** the app — a Terminal canvas
 - [Getting started with the Copilot App](https://docs.github.com/en/copilot/how-tos/github-copilot-app/getting-started)
 - [About issues](https://docs.github.com/en/issues/tracking-your-work-with-issues/about-issues)
 
-### ⌨️ Activity 1: Draft the roadmap in an editor canvas (graded)
+### ⌨️ Activity 1: Draft the roadmap in an editor canvas
 
 Let Copilot draft the next-release plan in an editor canvas, then commit it to `main`.
 

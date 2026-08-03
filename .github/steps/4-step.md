@@ -62,7 +62,7 @@ See the finished bookmarks app running live — right inside the Copilot App —
 
    <!-- image: a saved bookmark showing its original URL and short slug in the browser canvas -->
 
-### ⌨️ Activity 2: Capture proof with Playwright MCP and submit (graded)
+### ⌨️ Activity 2: Capture proof with Playwright MCP and submit
 
 Now let Copilot drive the running app through the **Playwright MCP server**, capture the screenshot, and commit it to `main` as proof the app runs.
 
