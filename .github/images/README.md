@@ -12,7 +12,7 @@ files use `<!-- image: ... -->` HTML-comment placeholders so issue comments stil
 | `step1-app-download.gif` | 1 | Downloading and installing the GitHub Copilot app |
 | `step1-add-repo-url.png` | 1 | Add-project menu with **Repository URL…** highlighted |
 | `step1-clone-repo-url.png` | 1 | Clone repository dialog with the exercise URL entered |
-| `new-session.png` | 1·2·3·5 · Act 1 | The **New session** button in the top-right of the session panel, next to the repository name (shared across steps 1–3 and 5) |
+| `new-session.png` | 2·3·5 · Act 1 | The **New session** button in the top-right of the session panel, next to the repository name (shared across steps 2, 3, and 5) |
 | `step1-open-issue.png` | 1 · Act 1 | Exercise issue #1 above the prompt field with a 'Click to open' callout |
 | `step1-reopen-issue.png` | 1·2·3·4 · Act 1 tip | Session panel menu listing the repo and the Exercise: Idea to Merge issue to reopen it |
 | `step1-new-session-panel.png` | 1 · Act 1 | **New session** button with its dropdown in the top-right of the issue side panel |

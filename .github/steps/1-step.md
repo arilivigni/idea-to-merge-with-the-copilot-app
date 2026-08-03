@@ -62,10 +62,6 @@ To use the GitHub Copilot app, the first step — as you might imagine — is to
 
    <img width="420" alt="Clone repository dialog with the exercise repository URL entered" src="../images/step1-clone-repo-url.png" />
 
-1. Start a **New session** on your checked-out repository — click **New session** in the top-right of the session panel, next to the repository name.
-
-   <img width="420" alt="The New session button highlighted in the top-right of the session panel, next to the repository name" src="../images/new-session.png" />
-
 1. **Open the walkthrough issue as a reference — don't build it.** The exercise issue (**#1**) appears above the prompt field; click it (**Click to open**) to open it in the **side panel** for reading. This only *displays* the issue — nothing runs, so the session won't start planning or building.
 
    **Don't use _Create session from issue_ on #1.** That tells the app to *build* the issue — which is why it jumps straight into Plan mode and starts working. Issue **#1** is your **guide to read**. In **Step 3** you'll build the app issue (**#2**) — there you'll reference it in a dedicated session (type `#2` and press **Tab**) so the agent has it as context without auto-running.
