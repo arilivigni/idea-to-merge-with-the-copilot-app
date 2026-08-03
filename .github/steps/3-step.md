@@ -66,8 +66,7 @@ A few things to know about the build:
    <img width="360" alt="The build prompt in the session with the Build the bookmarks app issue #2 referenced as a chip" src="../images/step3-issue-prompt.png" />
 1. **Review the diff before you merge.** Agent merge opens the pull request that links issue **#2** — review the changes in the session's **Changes** tab (or a browser canvas on the PR). You'll merge it in **Activity 2** once you're satisfied.
 
-   <img width="380" alt="Session action dropdown with Agent merge selected — 'Automate your pull request lifecycle' — above Create PR and Create draft PR" src="../images/ghcp-app-agent-merge.png" />
-
+   <img width="380" alt="Session action dropdown with Agent merge selected — 'Automate your pull request lifecycle' — above Create PR and Create draft PR" src="../images/ghcp-app-agent-merge.png" /><br/>
    <img width="440" alt="Session review of the base62 nextSlug helper (mona- prefixed slugs), persistence and event-wiring notes, with Changes +107 -21 and PR #4 buttons at the bottom" src="../images/ghcp-app-step3.png" />
 
    <details>
