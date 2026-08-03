@@ -5,13 +5,13 @@ _Take an idea from a session to a merged pull request — entirely in the GitHub
 ## Welcome
 
 - **Who is this for**: Developers who want to run a complete GitHub workflow without leaving the GitHub Copilot App.
-- **What you'll learn**: Custom instructions, agent sessions, agent merge, and canvas previews — the core moves of the Copilot App.
+- **What you'll learn**: Custom instructions, agent sessions, agent merge, and canvases for both previewing and planning — the core moves of the Copilot App.
 - **What you'll build**: **Mona's Bookmark Manager App** — a tiny **Astro** app that saves each URL with a generated short slug (like `mona-7fk2`), persisted in the browser with `localStorage`.
 - **Prerequisites**:
   - A GitHub Copilot subscription (Free, Pro, Pro+, Business, or Enterprise) — you'll install and sign in to the **GitHub Copilot App** in Step 1
   - **Node.js 22.12+ and npm** installed locally (required by Astro 7; used to run the app in Step 4)
   - Basic familiarity with GitHub issues and pull requests
-- **How long**: Roughly **45 minutes**; allow a little extra on your first run.
+- **How long**: Roughly **55 minutes**; allow a little extra on your first run.
 
 In this exercise, you will:
 
@@ -19,6 +19,7 @@ In this exercise, you will:
 2. Set project rules in **`.github/copilot-instructions.md`** on `main`.
 3. Build the bookmarks app in a **dedicated session**, then open, **review, and merge** the pull request — auto-closing the linked issue.
 4. Preview the running app in a **browser canvas** and submit your proof.
+5. Plan the next release in an **editor canvas** and turn it into tracked issues.
 
 ### How to start this exercise
 

@@ -50,6 +50,8 @@ files use `<!-- image: ... -->` HTML-comment placeholders so issue comments stil
 | `step4-browser-canvas-preview.png` | 4 · Theory & Act 1 | Bookmarks app running live in a browser canvas |
 | `step4-bookmark-in-canvas.png` | 4 · Act 1 | A saved bookmark showing its original URL and short slug in the browser canvas |
 | `step4-playwright-trust.png` | 4 · Act 2 | One-time prompt to trust the Playwright MCP server |
+| `step5-roadmap-canvas.png` | 5 · Theory & Act 1 | Editor canvas showing the drafted `ROADMAP.md` beside the session |
+| `step5-issue-from-roadmap.png` | 5 · Act 2 | A GitHub issue created from a roadmap item |
 | `step4-playwright-capture.png` | 4 · Act 2 | The Playwright browser window opening to drive the app and capture the screenshot |
 | `step4-proof-bookmark.png` | 4 · Act 2 | Captured proof: running app with a bookmark and its short slug |
 | `step4-proof-files-tab.png` | 4 · Act 2 | demo-proof.png previewed in the session Files tab |

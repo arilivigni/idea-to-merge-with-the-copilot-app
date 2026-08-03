@@ -1,6 +1,6 @@
 ## Step 4: Preview the running app and capture proof with Playwright MCP
 
-Last stop. 🎬 Run the finished app, see it live in a **browser canvas**, let Copilot verify it with the **Playwright MCP** server, and submit the captured screenshot as your proof of completion.
+Almost there. 🎬 Run the finished app, see it live in a **browser canvas**, let Copilot verify it with the **Playwright MCP** server, and submit the captured screenshot as proof the app works.
 
 ### 📖 Theory: preview in a canvas, verify with Playwright MCP
 
@@ -64,7 +64,7 @@ See the finished bookmarks app running live — right inside the Copilot App —
 
 ### ⌨️ Activity 2: Capture proof with Playwright MCP and submit (graded)
 
-Now let Copilot drive the running app through the **Playwright MCP server**, capture the screenshot, and commit it to `main` as your proof of completion.
+Now let Copilot drive the running app through the **Playwright MCP server**, capture the screenshot, and commit it to `main` as proof the app runs.
 
 > [!NOTE]
 > Keep the dev server from Activity 1 **running** in its Terminal canvas — Playwright opens the same local URL.

@@ -11,6 +11,7 @@ Here's what you accomplished:
 - ✅ Built the bookmarks app in a **dedicated session** and opened a PR
 - ✅ **Reviewed and merged** the PR, auto-closing the linked issue
 - ✅ Previewed the running app in a **browser canvas** and submitted your proof
+- ✅ Planned the next release in an **editor canvas** and turned it into tracked issues
 
 ### What you practiced
 
@@ -18,6 +19,7 @@ Here's what you accomplished:
 - Why **custom instructions on `main`** shape the agent's output before a session starts
 - Keeping browser-only code (`localStorage`) behind a **`client:load`** boundary so a static Astro build stays green
 - Matching **ceremony to change size**: light edits to `main`, real feature work through a session and PR
+- Using canvases two ways — a **browser canvas** to preview the app and an **editor canvas** to author a durable `ROADMAP.md`
 
 ### What's next?
 

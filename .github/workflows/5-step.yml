@@ -1,4 +1,4 @@
-name: Step 4
+name: Step 5 # Last step of the exercise
 
 on:
   workflow_dispatch:
@@ -6,7 +6,7 @@ on:
     branches:
       - main
     paths:
-      - 'submission/demo-proof.png'
+      - 'ROADMAP.md'
 
 permissions:
   contents: write
@@ -14,7 +14,7 @@ permissions:
   issues: write
 
 env:
-  STEP_5_FILE: ".github/steps/5-step.md"
+  REVIEW_FILE: ".github/steps/x-review.md"
 
 jobs:
   find_exercise:
@@ -58,34 +58,34 @@ jobs:
           file: exercise-toolkit/markdown-templates/step-feedback/checking-work.md
           edit-mode: replace
 
-      - name: Check demo proof was added
-        id: check-proof-exists
+      - name: Check roadmap was added
+        id: check-roadmap-exists
         continue-on-error: true
         run: |
-          if [ -f submission/demo-proof.png ]; then
-            echo "Demo proof file exists"
+          if [ -f ROADMAP.md ]; then
+            echo "ROADMAP.md exists"
             exit 0
           else
-            echo "Demo proof file is missing"
+            echo "ROADMAP.md is missing"
             exit 1
           fi
 
-      - name: Check demo proof is a real screenshot
-        id: check-proof-size
+      - name: Check roadmap has real content
+        id: check-roadmap-content
         continue-on-error: true
         run: |
-          if [ -f submission/demo-proof.png ]; then
-            SIZE=$(wc -c < submission/demo-proof.png)
-            echo "Demo proof size: $SIZE bytes"
-            if [ "$SIZE" -gt 10000 ]; then
-              echo "Demo proof looks like a real screenshot"
+          if [ -f ROADMAP.md ]; then
+            ITEMS=$(grep -cE '^[[:space:]]*[-*] ' ROADMAP.md || true)
+            echo "ROADMAP.md list items: $ITEMS"
+            if [ "$ITEMS" -ge 3 ]; then
+              echo "ROADMAP.md lists at least three items"
               exit 0
             else
-              echo "Demo proof is too small to be a real screenshot"
+              echo "ROADMAP.md needs at least three list items"
               exit 1
             fi
           else
-            echo "Demo proof file is missing"
+            echo "ROADMAP.md is missing"
             exit 1
           fi
 
@@ -98,19 +98,19 @@ jobs:
           edit-mode: replace
           file: exercise-toolkit/markdown-templates/step-feedback/step-results-table.md
           vars: |
-            step_number: 4
+            step_number: 5
             results_table:
-              - description: "A demo proof screenshot was added to submission/"
-                passed: ${{ steps.check-proof-exists.outcome == 'success' }}
-              - description: "The screenshot is a real capture (not an empty placeholder)"
-                passed: ${{ steps.check-proof-size.outcome == 'success' }}
+              - description: "A ROADMAP.md was added to the repository root"
+                passed: ${{ steps.check-roadmap-exists.outcome == 'success' }}
+              - description: "The roadmap lists at least three items"
+                passed: ${{ steps.check-roadmap-content.outcome == 'success' }}
 
       - name: Fail job if not all checks passed
         if: contains(steps.*.outcome, 'failure')
         run: exit 1
 
-  post_next_step_content:
-    name: Post next step content
+  post_review_content:
+    name: Post review content
     needs: [find_exercise, check_step_work]
     runs-on: ubuntu-latest
     env:
@@ -128,32 +128,29 @@ jobs:
           path: exercise-toolkit
           ref: v0.9.3
 
-      - name: Create comment - step finished
+      - name: Create comment - review next
         uses: GrantBirki/comment@v2.1.1
         with:
           repository: ${{ env.ISSUE_REPOSITORY }}
           issue-number: ${{ env.ISSUE_NUMBER }}
-          file: exercise-toolkit/markdown-templates/step-feedback/step-finished-prepare-next-step.md
-          vars: |
-            next_step_number: 5
+          file: exercise-toolkit/markdown-templates/step-feedback/lesson-review.md
 
-      - name: Create comment - add step content
+      - name: Create comment - add review content
         uses: GrantBirki/comment@v2.1.1
         with:
           repository: ${{ env.ISSUE_REPOSITORY }}
           issue-number: ${{ env.ISSUE_NUMBER }}
-          file: ${{ env.STEP_5_FILE }}
+          file: ${{ env.REVIEW_FILE }}
 
-      - name: Create comment - watching for progress
-        uses: GrantBirki/comment@v2.1.1
-        with:
-          repository: ${{ env.ISSUE_REPOSITORY }}
-          issue-number: ${{ env.ISSUE_NUMBER }}
-          file: exercise-toolkit/markdown-templates/step-feedback/watching-for-progress.md
-
-      - name: Disable current workflow and enable next one
-        run: |
-          gh workflow disable "${{github.workflow}}"
-          gh workflow enable "Step 5"
+      - name: Disable current workflow
+        run: gh workflow disable "${{github.workflow}}"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  finish_exercise:
+    name: Finish Exercise
+    needs: [find_exercise, post_review_content]
+    uses: skills/exercise-toolkit/.github/workflows/finish-exercise.yml@v0.9.3
+    with:
+      issue-url: ${{ needs.find_exercise.outputs.issue-url }}
+      exercise-title: "Idea to Merge with the Copilot App"
