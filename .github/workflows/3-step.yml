@@ -109,7 +109,7 @@ jobs:
           issue-number: ${{ env.ISSUE_NUMBER }}
           comment-id: ${{ steps.find-last-comment.outputs.comment-id }}
           edit-mode: replace
-          file: exercise-toolkit/markdown-templates/step-feedback/step-results-table.md
+          file: .github/templates/step-3-activity-1-results.md
           vars: |
             step_number: 3
             results_table:
