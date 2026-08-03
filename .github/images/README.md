@@ -19,6 +19,8 @@ files use `<!-- image: ... -->` HTML-comment placeholders so issue comments stil
 | `step2-plan-mode.png` | 2 · Act 1 | Session mode dropdown with **Plan** selected (Plan first, execute when ready) |
 | `ghcp-app-autopilot.png` | 2 · Act 1 | Plan summary with **Approve and implement with autopilot (recommended)** highlighted |
 | `ghcp-app-agent-merge.png` | 2·3 · Act 1 | Session action dropdown with **Agent merge** selected (Automate your pull request lifecycle), above Create PR / Create draft PR |
+| `ghcp-app-allow-agent-merge.png` | 5 · Act 1 | Session action dropdown with **Agent merge** enabled — toggle on and *Allow the agent to* list (Address reviews, Fix CI failures, Resolve conflicts, Merge pull request) |
+| `ghcp-app-ready-to-merge.png` | 5 · Act 1 | Session action button showing **Ready to merge** with the Agent merge toggle — roadmap lands on `main` automatically |
 | `ghcp-app-autopilot-result.png` | 2 · Act 1 | Autopilot result: pull request created via agent merge (+2 -7, PR #3, Plan complete) |
 | `ghcp-app-plan.png` | 2 · Act 1 details | Session **Plan** tab for the copilot-instructions update |
 | `ghcp-app-changes.png` | 2 · Act 1 details | Session **Changes** tab: copilot-instructions.md diff (TODO removed, rules added) |
