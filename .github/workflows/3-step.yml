@@ -79,11 +79,15 @@ jobs:
         env:
           PR_BODY: ${{ github.event.pull_request.body }}
         run: |
-          if echo "$PR_BODY" | grep -Eiq '(clos|fix|resolv)[a-z]*[[:space:]]+(#[0-9]+|[^[:space:]]*/issues/[0-9]+)'; then
-            echo "Pull request links an issue"
+          # Accept a plain closing keyword ("Closes #2" / "Closes .../issues/2")
+          # AND the Copilot App's rich reference, which rewrites the same text as
+          # a <copilot-ref ... target-id=".../issues/N"> chip. Without the chip
+          # branch this false-fails even though the learner linked the issue.
+          if echo "$PR_BODY" | grep -Eiq '(clos|fix|resolv)[a-z]*[[:space:]]+(<copilot-ref[[:space:]][^>]*)?(#[0-9]+|[^[:space:]"]*/issues/[0-9]+)'; then
+            echo "Pull request links an issue with a closing keyword."
             exit 0
           else
-            echo "Pull request does not link an issue with a closing keyword"
+            echo "Pull request does not link an issue with a closing keyword. In the PR body, add a closing reference to your bookmarks issue, e.g. 'Closes #2'."
             exit 1
           fi
 
