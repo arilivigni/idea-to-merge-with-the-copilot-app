@@ -111,9 +111,20 @@ Let Copilot draft the next-release plan in an editor canvas, then use **agent me
 
    Agent merge opens and merges the pull request for you. When the toggle is on and the action shows **Ready to merge**, the roadmap lands on `main` automatically — no manual merge needed.
 
+   <img width="440" alt="Session showing Agent merge landing ROADMAP.md on main — the pull request opened and merged automatically" src="../images/ghcp-app-agent-merge.png" />
+
+   <details>
+   <summary>Where to find these controls 👀</summary><br/>
+
+   The action button shows **Ready to merge** when agent merge is armed:
+
    <img width="420" alt="Session action button showing 'Ready to merge' with the Agent merge toggle, ready to land ROADMAP.md on main" src="../images/ghcp-app-ready-to-merge.png" />
 
+   Open the dropdown to confirm **Agent merge** is enabled and allowed to merge the pull request:
+
    <img width="440" alt="Session action dropdown with Agent merge enabled — the toggle on and 'Allow the agent to' listing Address reviews, Fix CI failures, Resolve conflicts, and Merge pull request" src="../images/ghcp-app-allow-agent-merge.png" />
+
+   </details>
 
    If the pull request doesn't merge on its own, review the roadmap one last time and, once you're satisfied, ask Copilot to merge it:
 
