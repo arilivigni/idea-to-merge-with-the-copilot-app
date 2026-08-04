@@ -97,13 +97,13 @@ A few things to know about the build:
 
    <img width="360" alt="The build prompt in the session with the Build the bookmarks app issue #2 referenced as a chip" src="../images/step3-issue-prompt.png" />
 1. **Watch the agent test the implementation.** Building the feature includes verifying it — Copilot runs the **unit tests** you asked for and the **production build**, all headless: no browser opens and the Playwright MCP server stays idle. The tests cover URL normalisation, corrupted-storage recovery, and the exact `" :: "` formatting, while the build proves `localStorage` stays behind the `client:load` boundary. You'll preview the app live and drive it with Playwright in **Step 4** — here the tests and build are enough to trust the diff before you merge.
-1. **Review the diff before you merge.** Agent merge opens the pull request that links issue **#2** for you — review the changes in the session's **Changes** tab (or a browser canvas on the PR). You'll merge it in **Activity 2** once you're satisfied.
-
-   <img width="440" alt="Session review of the base62 nextSlug helper (mona- prefixed slugs), persistence and event-wiring notes, with Changes +107 -21 and PR #4 buttons at the bottom" src="../images/ghcp-app-step3.png" />
 
    **Agent merge usually happens automatically.** The agent opens the pull request for you via **agent merge**, so you may never open the action dropdown — the view below is optional. If no pull request appears (or you'd rather trigger it yourself), open the session's action dropdown and select **Agent merge**:
 
    <img width="380" alt="Session action dropdown with Agent merge selected — 'Automate your pull request lifecycle' — above Create PR and Create draft PR" src="../images/ghcp-app-agent-merge.png" />
+1. **Review the diff before you merge.** Agent merge opens the pull request that links issue **#2** for you — review the changes in the session's **Changes** tab (or a browser canvas on the PR). You'll merge it in **Activity 2** once you're satisfied.
+
+   <img width="440" alt="Session review of the base62 nextSlug helper (mona- prefixed slugs), persistence and event-wiring notes, with Changes +107 -21 and PR #4 buttons at the bottom" src="../images/ghcp-app-step3.png" />
 
    <details>
    <summary>Walk the diff before you merge 👀</summary><br/>
